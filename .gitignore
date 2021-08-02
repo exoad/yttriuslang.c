@@ -1,4 +1,5 @@
 /.vscode
-/resources
-.env
+configs/nasa.env
 
+/configs/config.json
+/node_modules
