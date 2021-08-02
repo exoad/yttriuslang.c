@@ -1,0 +1,27 @@
+<searchByCommonNameBeginsWithResponse xmlns:ns="http://itis_service.itis.usgs.gov">
+	<return xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd" xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ax21:SvcCommonNameList">
+		<tsn xsi:nil="true" />
+		<commonNames xsi:type="ax21:SvcCommonName">
+			<commonName>
+				inchhigh lupine
+			</commonName>
+			<language>
+				English
+			</language>
+			<tsn>
+				26137
+			</tsn>
+		</commonNames>
+		<commonNames xsi:type="ax21:SvcCommonName">
+			<commonName>
+				inchplant
+			</commonName>
+			<language>
+				English
+			</language>
+			<tsn>
+				505556
+			</tsn>
+		</commonNames>
+	</return>
+</searchByCommonNameBeginsWithResponse>
