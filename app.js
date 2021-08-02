@@ -1,6 +1,14 @@
 const { Client, Collection, Discord, MessageEmbed } = require('discord.js');
 const bot = new Client();
 
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Online.'));
+
+app.listen(port, () => console.log(`On port ${port}`));
+
 const { prefix } = require(`./configs/config.json`);
 [`aliases`, `commands`].forEach(x => bot[x] = new Collection());
 ["command", "events"].forEach(x => require(`./handlers/${x}`)(bot));
