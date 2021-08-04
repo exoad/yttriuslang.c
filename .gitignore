@@ -1,4 +1,4 @@
 /.vscode
 configs/nasa.env
-
+/configs/config.json
 /node_modules
