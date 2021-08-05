@@ -28,10 +28,10 @@ module.exports = {
                 message.channel.send({ embed })
             } else if (!date || date == undefined) {
                 message.channel.send({ files: [{ attachment: `https://api.nasa.gov/planetary/earth/imagery?lon=${longi}&lat=${lat}&dim=0.15&api_key=6xN4Xyh4nluXEufxFnT0fLzku2lEgBUYbv3Orttc`, name: "earth.png" }] })
-                message.channel.send("**If the image does not show up properly, that means such coordinates do not have a picture in the database**")
+                message.channel.send("**Processing image [There is a possibility there is no image of such coordinates]**")
             } else {
                 message.channel.send({ files: [{ attachment: `https://api.nasa.gov/planetary/earth/imagery?lon=${longi}&lat=${lat}&date=${date}&dim=0.15&api_key=6xN4Xyh4nluXEufxFnT0fLzku2lEgBUYbv3Orttc`, name: "earth.png" }] })
-                message.channel.send("**If the image does not show up properly, that means such coordinates do not have a picture in the database**")
+                message.channel.send("**Processing image [There is a possibility there is no image of such coordinates]**");
             }
         } catch (err) {
             const embed = new MessageEmbed()
