@@ -6,7 +6,7 @@ const readdir = promisify(fs.readdir);
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const { MessageEmbed } = require('discord.js');
-const config = require('../../configs/config.json');
+const config = require('../../configs/token.json');
 const resource = require('../../configs/resource.json');
 module.exports = {
     config: {

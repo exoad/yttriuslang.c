@@ -1,6 +1,6 @@
 const { Discord, MessageEmbed } = require("discord.js");
 const { fs } = require('fs');
-const { prefix } = require('../../configs/config.json');
+const { prefix } = require('../../configs/token.json');
 
 module.exports = async (bot, message) => {
   if (message.author.bot || message.channel.type === "dm" || !message.content.startsWith(prefix)) return;

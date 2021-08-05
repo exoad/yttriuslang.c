@@ -9,7 +9,7 @@ app.get('/', (req, res) => res.send('Online.'));
 
 app.listen(port, () => console.log(`On port ${port}`));
 
-const { prefix } = require(`./configs/config.json`);
+const { prefix } = require(`./configs/token.json`);
 [`aliases`, `commands`].forEach(x => bot[x] = new Collection());
 ["command", "events"].forEach(x => require(`./handlers/${x}`)(bot));
 
@@ -25,5 +25,5 @@ bot.on('message', message => {
 })
 
 
-const { TOKEN } = require('./configs/config.json');
+const { TOKEN } = require('./configs/token.json');
 bot.login(`${TOKEN}`);

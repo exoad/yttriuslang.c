@@ -20,7 +20,7 @@
  */
 
 const { MessageEmbed } = require("discord.js");
-const config = require("../../configs/config.json");
+const config = require("../../configs/token.json");
 const chnl = require("../../configs/chnl.json");
 const resource = require("../../configs/resource.json");
 const superagent = require("superagent");
