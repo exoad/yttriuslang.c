@@ -3,6 +3,7 @@ const config = require("../../configs/token.json");
 const chnl = require("../../configs/chnl.json");
 const resource = require("../../configs/resource.json");
 const superagent = require("superagent");
+const token = require("../../configs/token.json");
 const colors = require("../../configs/colors.json");
 module.exports = {
     config: {
@@ -18,17 +19,14 @@ module.exports = {
                 .setDescription(
                     "Wanna invite `Sci-Bot` to your own server(s)? Check the links below!"
                 )
-                .addField(
-                    "Invite Link #1 (Admin)",
-                    "[Admin](https://discord.com/api/oauth2/authorize?client_id=834784133942607882&permissions=8&scope=bot)"
-                )
+                .addField("Invite Link #1 (Admin)", "[Admin](" + token.perm1 + ")")
                 .addField(
                     "Invite Link #2 (Primary Permissions)",
-                    "[Primary Permissions](https://discord.com/oauth2/authorize?client_id=834784133942607882&permissions=3154508918&scope=bot)"
+                    "[Primary Permissions](" + token.perm2 + ")"
                 )
                 .addField(
                     "Invite Link #3 (Limited Permissions)",
-                    "[Limited Permissions](https://discord.com/api/oauth2/authorize?client_id=834784133942607882&permissions=201714752&scope=bot)"
+                    "[Limited Permissions](" + token.perm3 + ")"
                 )
                 .setFooter("Thanks for inviting the bot!");
 
