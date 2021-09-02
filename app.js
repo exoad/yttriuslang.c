@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const { prefix } = require('./configs/token.json');
+const { prefix } = require('../configs/token.json');
 
 app.get("/", (req, res) => res.send("Online."));
 
