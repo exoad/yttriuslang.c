@@ -1,6 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const config = require("../../configs/token.json");
-const chnl = require("../../configs/chnl.json");
+const token = require("../../configs/token.json");
 const resource = require("../../configs/resource.json");
 const superagent = require("superagent");
 module.exports = {
@@ -19,11 +18,11 @@ module.exports = {
                 )
                 .addField(
                     "Main Discord Support Server",
-                    "[Invite Link](" + chnl.spprt_server + ")"
+                    "[Invite Link](" + token.server_invite1 + ")"
                 )
                 .addField(
                     "Backup Invite Link",
-                    "[Backup Link](" + chnl.bckup_link + ")"
+                    "[Backup Link](" + token.backup_server_invite + ")"
                 );
 
             message.channel.send({ embed });
