@@ -1,8 +1,8 @@
 //https://api.nasa.gov/planetary/earth/imagery?lon=100.75&lat=1.5&dim=0.15&api_key=6xN4Xyh4nluXEufxFnT0fLzku2lEgBUYbv3Orttc
 const { MessageEmbed } = require("discord.js");
-const config = require("../../configs/token.json");
-const chnl = require("../../configs/chnl.json");
-const resource = require("../../configs/resource.json");
+const config = require("../../../configs/token.json");
+const chnl = require("../../../configs/chnl.json");
+const resource = require("../../../configs/resource.json");
 const superagent = require("superagent");
 module.exports = {
     config: {

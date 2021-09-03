@@ -58,7 +58,7 @@ module.exports = {
                 message.channel.send({ embed })
             } else if (args[0] == "others" || args[0] == "other") {
                 const embed = new MessageEmbed()
-                    .setTitle("Other Commands")
+                    .setTitle("Fun Commands")
                     .setDescription("Here are all the commands that cannot fit into a definitive category. To find info on a specific command use `" + config.prefix + "cmd {command}`")
                     .addField("Commands List", "```fact```")
                     .setThumbnail(resource.yet)

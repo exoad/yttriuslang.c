@@ -8,7 +8,7 @@
     },
     "fact":{
         "name":"Random Fact",
-        "group":"Others",
+        "group":"Fun",
         "description":"Get a random fact",
         "usage":"fact",
         "alias":"No Aliases"
@@ -64,14 +64,14 @@
     },
     "math":{
         "name":"Calculator",
-        "group":"Others",
+        "group":"Math",
         "description":"A math calculator",
         "usage":"math {equation}",
         "alias":"calc"
     },
     "calc":{
         "name":"Calculator",
-        "group":"Others",
+        "group":"Math",
         "description":"A math calculator",
         "usage":"math {equation}",
         "alias":"calc"
