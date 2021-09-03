@@ -2,7 +2,7 @@ const { Discord, MessageEmbed } = require("discord.js");
 module.exports = {
     config: {
         name: `eval`,
-        aliases: [``],
+        aliases: [`jseval`],
     },
     run: async(bot, message, args) => {
         message.delete();
