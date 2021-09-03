@@ -29,8 +29,7 @@ module.exports = {
             } else if (file_type == "md" || file_type == "markdown") {
                 message.channel.send("Fetching documentations for type `MARKDOWN`...").then(m => {
                     setTimeout(function() {
-                        m.edit("Fetched it successfully!")
-                        message.channel.send({ file: "../../lib/archives/README.md" });
+                        m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`", { file: "../../lib/archives/README.md" });
                     }, 2000)
                 })
             }
