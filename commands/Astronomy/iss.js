@@ -8,7 +8,7 @@ module.exports = {
         name: `iss`,
         category: "",
         description: "",
-        aliases: [``],
+        aliases: [`internationalspacestation`, `spacestation`],
     },
     run: async(bot, message, args) => {
         try {
