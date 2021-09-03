@@ -1,11 +1,11 @@
 const { MessageEmbed } = require("discord.js");
-const config = require("../../configs/token.json");
-const chnl = require("../../configs/chnl.json");
-const resource = require("../../configs/resource.json");
+const config = require("../../../configs/token.json");
+const chnl = require("../../../configs/chnl.json");
+const resource = require("../../../configs/resource.json");
 const superagent = require("superagent");
 const chemicaltools = require("chemicaltools");
 const fetch = require("node-fetch");
-const colors = require("../../configs/colors.json");
+const colors = require("../../../configs/colors.json");
 const npt = require("node-periodic-table");
 module.exports = {
     config: {
