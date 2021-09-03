@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed, DiscordAPIError } = require("discord.js");
 const config = require("../../configs/token.json");
 const chnl = require("../../configs/chnl.json");
 const resource = require("../../configs/resource.json");
@@ -30,7 +30,7 @@ module.exports = {
                 message.channel.send("Fetching documentations for type `MARKDOWN`...").then(m => {
                     setTimeout(function () {
                         m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`");
-                        message.channel.send
+                        message.channel.send(new Discord.Attachment("../../lib/archives/README.md"));
                     }, 1000)
                 })
             }
