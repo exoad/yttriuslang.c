@@ -1,4 +1,5 @@
 const { MessageEmbed, DiscordAPIError } = require("discord.js");
+const Discord = require("discord.js");
 const config = require("../../configs/token.json");
 const chnl = require("../../configs/chnl.json");
 const resource = require("../../configs/resource.json");
