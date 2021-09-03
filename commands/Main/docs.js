@@ -31,7 +31,7 @@ module.exports = {
                     setTimeout(function () {
                         m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`");
                         message.channel.send
-                    }, 2000)
+                    }, 1000)
                 })
             }
         } catch (err) {
