@@ -12,7 +12,7 @@ module.exports = {
         description: "",
         aliases: [``],
     },
-    run: async(bot, message, args) => {
+    run: async (bot, message, args) => {
         try {
             let file_type = args[0];
             if (!file_type || file_type == undefined || file_type == null) {
@@ -28,8 +28,9 @@ module.exports = {
                 message.channel.send({ embed });
             } else if (file_type == "md" || file_type == "markdown") {
                 message.channel.send("Fetching documentations for type `MARKDOWN`...").then(m => {
-                    setTimeout(function() {
-                        m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`", { file: "../../lib/archives/README.md" });
+                    setTimeout(function () {
+                        m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`");
+                        message.channel.send
                     }, 2000)
                 })
             }
