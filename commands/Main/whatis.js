@@ -6,7 +6,6 @@ const superagent = require("superagent");
 const colors = require("../../configs/colors.json");
 const talkedRecently = new Set();
 const wiki = require("wikipedia");
-const { notDependencies } = require("mathjs");
 var profanity = require("@2toad/profanity").profanity;
 module.exports = {
   config: {
