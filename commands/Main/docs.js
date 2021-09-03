@@ -31,7 +31,8 @@ module.exports = {
                 message.channel.send("Fetching documentations for type `MARKDOWN`...").then(m => {
                     setTimeout(function () {
                         m.edit("**Fetched it successfully!**\nOther formats are: `md, txt, html`");
-                        message.channel.send(new Discord.Attachment("../../lib/archives/README.md"));
+                        const doc = new Discord.MessageAttachment("../../lib/archives/README.md");
+                        message.channel.send(doc);
                     }, 1000)
                 })
             }
