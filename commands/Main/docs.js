@@ -15,6 +15,22 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
+      //function only accepts a value of .md or .pdf or .html etc.
+      function askFile(filetype) {
+        message.channel
+          .send("Fetching documentations for type `"+filetype.replace('.', "").toUpperCase()+"`...")
+          .then((m) => {
+            setTimeout(function () {
+              m.edit(
+                "**Fetched it successfully!**\nOther formats are: `md, txt, html, pdf`"
+              );
+              const doc = new Discord.MessageAttachment(
+                "lib/archives/README."+filetype
+              );
+              message.channel.send(doc);
+            }, 1000);
+          });
+      }
       let file_type = args[0];
       if (!file_type || file_type == undefined || file_type == null) {
         const embed = new MessageEmbed()
@@ -30,7 +46,7 @@ module.exports = {
           )
           .addField(
             "file_type",
-            "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html`"
+            "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html, pdf`"
           )
           .addField(
             "Command Description",
@@ -44,51 +60,17 @@ module.exports = {
           .setColor(colors.error);
         message.channel.send({ embed });
       } else if (file_type == "md" || file_type == "markdown") {
-        message.channel
-          .send("Fetching documentations for type `MARKDOWN`...")
-          .then((m) => {
-            setTimeout(function () {
-              m.edit(
-                "**Fetched it successfully!**\nOther formats are: `md, txt, html`"
-              );
-              const doc = new Discord.MessageAttachment(
-                "lib/archives/README.md"
-              );
-              message.channel.send(doc);
-            }, 1000);
-          });
+        askFile(".md");
       } else if (file_type == "txt" || file_type == "text") {
-        message.channel
-          .send("Fetching documentations for type `TEXT`...")
-          .then((m) => {
-            setTimeout(function () {
-              m.edit(
-                "**Fetched it successfully!**\nOther formats are: `md, txt, html`"
-              );
-              const doc = new Discord.MessageAttachment(
-                "lib/archives/README.txt"
-              );
-              message.channel.send(doc);
-            }, 1000);
-          });
+        askFile(".txt");
       } else if (
         file_type == "html" ||
         file_type == "mhtml" ||
         file_type == "htm"
       ) {
-        message.channel
-          .send("Fetching documentations for type `HTML`...")
-          .then((m) => {
-            setTimeout(function () {
-              m.edit(
-                "**Fetched it successfully!**\nOther formats are: `md, txt, html`"
-              );
-              const doc = new Discord.MessageAttachment(
-                "lib/archives/README.html"
-              );
-              message.channel.send(doc);
-            }, 1000);
-          });
+        askFile(".html");
+      } else if (file_type == "pdf") {
+        askFile(".pdf");
       } else {
         const embed = new MessageEmbed()
           .setTitle(
@@ -103,7 +85,7 @@ module.exports = {
           )
           .addField(
             "file_type",
-            "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html`"
+            "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html, pdf`"
           )
           .addField(
             "Command Description",
