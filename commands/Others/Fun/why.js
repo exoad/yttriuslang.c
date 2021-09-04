@@ -1,4 +1,5 @@
 const superagent = require("superagent");
+const { MessageEmbed } = require('discord.js');
 module.exports = {
   config: {
     name: `why`,
