@@ -58,14 +58,23 @@ module.exports = {
                 message.channel.send({ embed })
             } else if (args[0] == "others" || args[0] == "other") {
                 const embed = new MessageEmbed()
-                    .setTitle("Fun Commands")
-                    .setDescription("Here are all the commands that cannot fit into a definitive category. To find info on a specific command use `" + config.prefix + "cmd {command}`")
-                    .addField("Commands List", "```fact```")
+                    .setTitle("Other Categories")
+                    .setDescription("Here are all the command categories that cannot fit into a definitive category. To look further use: `" + config.prefix + "help {category}`")
+                    .addField("Commands List", "```fun, text, image```")
                     .setThumbnail(resource.yet)
                     .setAuthor(message.author.username, message.author.displayAvatarURL)
 
                 message.channel.send({ embed })
-            } else {
+            } else if(args[0] == "fun") {
+                const embed = new MessageEmbed()
+                .setTitle("Fun Commands")
+                .setDescription("These are \"fun\" commands. To find more info on a command use: `"+config.prefix+"cmd {command}`")
+                .addField("Commands List", "```fact, 8ball```")
+                .setThumbnail(resource.yet)
+                .setAuthor(message.author.username, message.author.displayAvatarURL)
+                message.channel.send({embed});
+            } 
+            else {
                 const embed = new MessageEmbed() // <-- Main Entry Point
                     .setTitle("Main Help Menu")
                     .setDescription("Here you will find all of the categories! Wanting to find info on a specific command? Use `" + config.prefix + "cmd {command}`Need support? Join my discord server [here](" + chnl.spprt_server + ")")
