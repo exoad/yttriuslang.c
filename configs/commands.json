@@ -187,5 +187,12 @@
         "description":"Get information on how to use this bot properly",
         "usage":"guide",
         "alias":"No Aliases"
+    },
+    "why":{
+        "name":"Why?",
+        "group":"Fun",
+        "description":"Why? Why? Why?",
+        "usage":"why",
+        "alias":"No Aliases"
     }
 }

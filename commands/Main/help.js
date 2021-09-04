@@ -15,7 +15,7 @@ module.exports = {
                 const embed = new MessageEmbed() // <-- Entry point for all Generalized Commands
                     .setTitle("General Commands")
                     .setDescription("Here are all the commands related to the regular functions of the bot. To find info on a specific command use `" + config.prefix + "cmd {command}`")
-                    .addField("Commands List", "```help, support, cmd, invite```")
+                    .addField("Commands List", "```help, support, cmd, invite, docs, botinfo, guide```")
                     .setThumbnail(resource.yet)
                     .setAuthor(message.author.username, message.author.displayAvatarURL)
 
@@ -59,7 +59,7 @@ module.exports = {
             } else if (args[0] == "others" || args[0] == "other") {
                 const embed = new MessageEmbed()
                     .setTitle("Other Categories")
-                    .setDescription("Here are all the command categories that cannot fit into a definitive category. To look further use: `" + config.prefix + "help {category}`")
+                    .setDescription("Here are some extra categories. To look further use: `" + config.prefix + "help {category}`")
                     .addField("Commands List", "```fun, text, image```")
                     .setThumbnail(resource.yet)
                     .setAuthor(message.author.username, message.author.displayAvatarURL)
@@ -69,12 +69,11 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setTitle("Fun Commands")
                 .setDescription("These are \"fun\" commands. To find more info on a command use: `"+config.prefix+"cmd {command}`")
-                .addField("Commands List", "```fact, 8ball```")
+                .addField("Commands List", "```fact, 8ball, why```")
                 .setThumbnail(resource.yet)
                 .setAuthor(message.author.username, message.author.displayAvatarURL)
                 message.channel.send({embed});
-            } 
-            else {
+            } else {
                 const embed = new MessageEmbed() // <-- Main Entry Point
                     .setTitle("Main Help Menu")
                     .setDescription("Here you will find all of the categories! Wanting to find info on a specific command? Use `" + config.prefix + "cmd {command}`Need support? Join my discord server [here](" + chnl.spprt_server + ")")
@@ -82,7 +81,7 @@ module.exports = {
                     .addField(":milky_way: Astronomy", `Use  \`${config.prefix}help astro\` to access all astronomy related commands`, true)
                     .addField(":test_tube: Chemistry", `Use  \`${config.prefix}help chem\` to access all chemistry related commands`, true)
                     .addField(":tools: Tools", `Use  \`${config.prefix}help tools\` to access commands that are general tools (calculators, etc.)`, true)
-                    .addField(":jigsaw: Others", `Use  \`${config.prefix}help others\` to access commands that cannot fit into any categories`, true)
+                    .addField(":jigsaw: Other Categories", `Use  \`${config.prefix}help others\` to access commands that cannot fit into any categories`, true)
                     .setThumbnail(resource.science)
                     .setFooter("The prefix is \"" + config.prefix + "\"!")
 
