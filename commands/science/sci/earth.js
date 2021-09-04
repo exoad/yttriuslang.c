@@ -9,13 +9,13 @@ module.exports = {
         name: `earth`,
         category: "",
         description: "",
-        aliases: [``],
+        aliases: [`earthview`],
     },
     run: async(bot, message, args) => {
         try {
-            let lat = args[1];
-            let longi = args[2];
-            let date = args[3];
+            let lat = args[0];
+            let longi = args[1];
+            let date = args[2];
 
             if (!lat || !longi || lat == undefined || longi == undefined) {
                 const embed = new MessageEmbed()
