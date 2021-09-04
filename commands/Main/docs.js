@@ -25,7 +25,7 @@ module.exports = {
                 "**Fetched it successfully!**\nOther formats are: `md, txt, html, pdf`"
               );
               const doc = new Discord.MessageAttachment(
-                "lib/archives/README."+filetype
+                "lib/archives/README"+filetype
               );
               message.channel.send(doc);
             }, 1000);
