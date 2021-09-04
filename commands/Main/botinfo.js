@@ -17,7 +17,7 @@ module.exports = {
             const embed = new MessageEmbed()
                 .setTitle("Science Bot")
                 .setDescription(
-                    "Science Bot is a discord bot created by `exoad#4166`. It is a bot that incorporates science as its main focus."
+                    "Science Bot is a discord bot created by `"+chnl.owner_name+"`. It is a bot that incorporates science as its main focus."
                 )
                 .addField("Status", ready.status)
                 .addField(
