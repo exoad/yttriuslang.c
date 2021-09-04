@@ -13,9 +13,9 @@ module.exports = {
     },
     run: async(bot, message, args) => {
         try {
-            let lat = args[0];
-            let longi = args[1];
-            let date = args[2];
+            let lat = args[1];
+            let longi = args[2];
+            let date = args[3];
 
             if (!lat || !longi || lat == undefined || longi == undefined) {
                 const embed = new MessageEmbed()
