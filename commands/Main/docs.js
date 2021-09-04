@@ -11,7 +11,7 @@ module.exports = {
     name: `docs`,
     category: "",
     description: "",
-    aliases: [``],
+    aliases: [`doc`],
   },
   run: async (bot, message, args) => {
     try {
