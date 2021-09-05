@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
   config: {
     name: `userdocs`,
