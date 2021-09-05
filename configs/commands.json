@@ -208,5 +208,12 @@
         "description":"See the documentations for the Accounts & Trust Factor system",
         "usage":"userdocs",
         "alias":"No Aliases"
+    },
+    "userdoc":{
+        "name":"Account & Trust Factor Documentations",
+        "group":"Accounts",
+        "description":"See the documentations for the Accounts & Trust Factor system",
+        "usage":"userdocs",
+        "alias":"No Aliases"
     }
 }

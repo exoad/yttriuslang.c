@@ -3,7 +3,7 @@ module.exports = {
     name: `userdocs`,
     category: "",
     description: "",
-    aliases: [`ainfo`],
+    aliases: [`userdoc`],
   },
   run: async (bot, message, args) => {
     try {
