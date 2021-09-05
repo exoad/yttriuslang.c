@@ -19,6 +19,7 @@
     "node-superfetch": "^0.1.11",
     "path": "^0.12.7",
     "random-frog": "^2.0.0",
+    "simple-json-db": "^1.2.3",
     "star-colors": "^1.0.0",
     "stopwatch-node": "^1.1.0",
     "superagent": "^6.1.0",
