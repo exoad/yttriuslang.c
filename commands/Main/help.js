@@ -73,7 +73,10 @@ module.exports = {
                 .setThumbnail(resource.yet)
                 .setAuthor(message.author.username, message.author.displayAvatarURL)
                 message.channel.send({embed});
-            } else {
+            } else if(args[0] == "account" || args[0] == "profile" || args[0] == "user") {
+
+            } 
+            else {
                 const embed = new MessageEmbed() // <-- Main Entry Point
                     .setTitle("Main Help Menu")
                     .setDescription("Here you will find all of the categories! Wanting to find info on a specific command? Use `" + config.prefix + "cmd {command}`Need support? Join my discord server [here](" + chnl.spprt_server + ")")
@@ -82,6 +85,7 @@ module.exports = {
                     .addField(":test_tube: Chemistry", `Use  \`${config.prefix}help chem\` to access all chemistry related commands`, true)
                     .addField(":tools: Tools", `Use  \`${config.prefix}help tools\` to access commands that are general tools (calculators, etc.)`, true)
                     .addField(":jigsaw: Other Categories", `Use  \`${config.prefix}help others\` to access commands that cannot fit into any categories`, true)
+                    .addField(":dividers: User Account", `Use \`${config.prefix}`)
                     .setThumbnail(resource.science)
                     .setFooter("The prefix is \"" + config.prefix + "\"!")
 
