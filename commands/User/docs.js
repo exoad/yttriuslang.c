@@ -1,28 +1,21 @@
-const Database = require("easy-json-database");
-const Discord = require('discord.js');
-const db = new Database("db/registry_user.json");
 module.exports = {
   config: {
-    name: `register`,
+    name: `userdocs`,
     category: "",
     description: "",
-    aliases: [`adduser`],
+    aliases: [`ainfo`],
   },
   run: async (bot, message, args) => {
     try {
-      let author = message.author.id;
-      message.channel.send("Checking the database...").then((m) => {
+      message.channel.send("**Fetching Documetations...**").then((m) => {
         setTimeout(function () {
-          if (!db.has(author)) {
-            db.set(author, { reg : 1, trust : 1});
-            m.edit(
-              "**Registered " +
-                message.author.username +
-                " to the database successfully.**"
-            );
-          } else {
-            m.edit("**Failed to register you.**\nReason: You are already a registered user!");
-          }
+          m.edit(
+            "**Fetched the documentations for:** `Accounts & Trust System`"
+          );
+          const doc = new Discord.MessageAttachment(
+            "lib/archives/account_readmes/README.txt"
+          );
+          message.channel.send(doc);
         }, 1000);
       });
     } catch (err) {

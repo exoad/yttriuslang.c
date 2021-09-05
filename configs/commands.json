@@ -194,5 +194,19 @@
         "description":"Why? Why? Why?",
         "usage":"why",
         "alias":"No Aliases"
+    },
+    "register":{
+        "name":"User Register",
+        "group":"Accounts",
+        "description":"Register the user into the bot's database in order for you too get access to more commands",
+        "usage":"register",
+        "alias":"No Aliases"
+    },
+    "userdocs":{
+        "name":"Account & Trust Factor Documentations",
+        "group":"Accounts",
+        "description":"See the documentations for the Accounts & Trust Factor system",
+        "usage":"userdocs",
+        "alias":"No Aliases"
     }
 }

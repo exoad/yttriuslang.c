@@ -7,6 +7,7 @@
     "chemicaltools": "^1.2.22",
     "discord.js": "^12.5.1",
     "discord.js-commando": "^0.12.2",
+    "easy-json-database": "^1.5.0",
     "element-histories": "^0.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
@@ -27,6 +28,7 @@
     "timer-machine": "^1.1.0",
     "timer-stopwatch": "^0.2.0",
     "timer-stopwatch-dev": "^1.1.0",
+    "uninstall": "0.0.0",
     "util": "^0.10.4",
     "wikipedia": "^1.1.1"
   },
