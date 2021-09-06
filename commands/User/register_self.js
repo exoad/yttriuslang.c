@@ -1,6 +1,7 @@
 const Database = require("easy-json-database");
-const Discord = require('discord.js');
-const db = new Database("db/registry_user.json");
+const Discord = require("discord.js");
+const config = require("../../configs/token.json");
+const moment = require('moment');
 module.exports = {
   config: {
     name: `register`,
@@ -12,16 +13,30 @@ module.exports = {
     try {
       let author = message.author.id;
       message.channel.send("Checking the database...").then((m) => {
+        const db = new Database("db/registry_user.json");
         setTimeout(function () {
           if (!db.has(author)) {
-            db.set(author, { reg : 1, trust : 1});
-            m.edit(
-              "**Registered " +
-                message.author.username +
-                " to the database successfully.**"
-            );
+            if (author == config.owner_id) {
+              db.set(author, { reg: 3, trust: 10, tags: "owner", time_reg : moment().format('MMMM Do YYYY, h:mm:ss a') });
+              m.edit(
+                "**Registered " +
+                  message.author.username +
+                  " to the database successfully as owner**"
+              );
+            } else {
+              db.set(author, { reg: 1, trust: 1, tags: "normal_user", time_reg : moment().format('MMMM Do YYYY, h:mm:ss a') });
+              m.edit(
+                "**Registered " +
+                  message.author.username +
+                  " to the database successfully.**"
+              );
+            }
           } else {
-            m.edit("**Failed to register you.**\nReason: You are already a registered user!");
+            if (db.has(author))
+              m.edit(
+                "**Failed to register you.**\nReason: You are already a registered user!"
+              );
+            else message.channel.send("An error occured");
           }
         }, 1000);
       });
