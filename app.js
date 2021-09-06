@@ -26,6 +26,10 @@ bot.on("message", (message) => {
 
         message.channel.send({ embed });
     }
+
+    if(message.content == "hi") {
+        message.reply("Hello.");
+    }
 });
 
 //user make
