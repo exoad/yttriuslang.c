@@ -5,22 +5,11 @@ FROM ubuntu as intermediate
 RUN apt-get update
 RUN apt-get install -y git
 
-RUN git pull
-RUN git fetch
+RUN git pull https://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:x-oauth-basic@github.com/exoad/yAPI
 
 #work dir
 RUN mkdir -p /usr/src/yAPI
 WORKDIR /usr/src/yAPI
-
-#crew
-ARG SSH_PRIVATE_KEY
-RUN mkdir /root/.ssh/
-RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
-
-RUN touch /root/.ssh/known_hosts
-RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
-
-RUN git clone git@bitbucket.org:exoad/yAPI.git
 
 FROM ubuntu
 COPY --from=intermediate /yAPI /srv/yAPI
@@ -30,4 +19,4 @@ RUN npm i
 
 COPY . /usr/src/yAPI
 
-CMD ["node", "app.js"]
+CMD ["bash", "r.sh"]
