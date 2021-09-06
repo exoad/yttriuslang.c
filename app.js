@@ -27,7 +27,7 @@ bot.on("message", (message) => {
         message.channel.send({ embed });
     }
 
-    if(message.content == "hi") {
+    if(message.content == prefix + "hi") {
         message.channel.send("Hello " + message.author.username);
     }
 });
