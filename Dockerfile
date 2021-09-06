@@ -5,6 +5,9 @@ FROM ubuntu as intermediate
 RUN apt-get update
 RUN apt-get install -y git
 
+RUN git pull
+RUN git fetch
+
 #work dir
 RUN mkdir -p /usr/src/yAPI
 WORKDIR /usr/src/yAPI
