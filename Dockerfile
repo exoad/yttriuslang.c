@@ -9,9 +9,6 @@ RUN apt-get install -y git
 RUN mkdir -p /usr/src/yAPI
 WORKDIR /usr/src/yAPI
 
-FROM ubuntu
-COPY --from=intermediate /yAPI /srv/yAPI
-
 COPY package.json /usr/src/yAPI
 RUN npm i
 
