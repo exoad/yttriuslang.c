@@ -30,4 +30,4 @@ RUN npm i
 
 COPY . /usr/src/yAPI
 
-CMD ["node", "app.js"]
+CMD ["bash", "r.sh"]
