@@ -5,8 +5,6 @@ FROM ubuntu as intermediate
 RUN apt-get update
 RUN apt-get install -y git
 
-RUN git pull https://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:x-oauth-basic@github.com/exoad/yAPI
-
 #work dir
 RUN mkdir -p /usr/src/yAPI
 WORKDIR /usr/src/yAPI
