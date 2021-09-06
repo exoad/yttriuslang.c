@@ -28,7 +28,7 @@ bot.on("message", (message) => {
     }
 
     if(message.content == "hi") {
-        message.reply("Hello " + message.author.username);
+        message.channel.send("Hello " + message.author.username);
     }
 });
 
