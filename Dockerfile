@@ -1,3 +1,11 @@
+# This dockerfile is pretty useless
+# Why?
+#
+# I mainly run the bot directly without the need to deploy it to a separate container and let it roam there.
+#
+# I find this process very tedious to setup and there aren't any guides to help setup a framework of this size properly
+#
+
 FROM node:latest
 FROM ubuntu as intermediate
 
