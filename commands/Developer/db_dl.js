@@ -32,7 +32,7 @@ module.exports = {
           else {
             let obj = JSON.stringify(db.get(id));
             message.channel.send("Informations sent with coverage");
-            bot.channels.cache.get(config.side_channel).send("Requested "+  moment().format('MMMM Do YYYY, h:mm:ss a') + " " + obj);
+            bot.channels.cache.get(config.side_channel).send("Requested "+  moment().format('MMMM Do YYYY, h:mm:ss a') + " "+ obj);
           }
         }
       }
