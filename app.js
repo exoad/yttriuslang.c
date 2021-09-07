@@ -23,10 +23,8 @@ bot.on("message", (message) => {
         const embed = new MessageEmbed().setThumbnail(
             "http://www.thecolorapi.com/id?format=svg&hex=FF0000"
         );
-
         message.channel.send({ embed });
     }
-
     if(message.content == prefix + "hi") {
         message.channel.send("Hello " + message.author.username);
     }

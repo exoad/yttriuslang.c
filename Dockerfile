@@ -5,6 +5,7 @@
 #
 # I find this process very tedious to setup and there aren't any guides to help setup a framework of this size properly
 #
+# A DOCKER CONTAINER SHOULD ONLY BE DEPLOYED DURING A FULL RELEASE
 
 FROM node:latest
 
