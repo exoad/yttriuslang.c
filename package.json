@@ -32,7 +32,7 @@
     "util": "^0.10.4",
     "wikipedia": "^1.1.1"
   },
-  "name": "y_source",
+  "name": "terbius",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -42,5 +42,5 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Beta version of the Yttrius bot"
 }
