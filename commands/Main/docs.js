@@ -19,8 +19,11 @@ module.exports = {
   run: async (bot, message, args) => {
     try {
       const db = new Database("db/registry_user.json");
-      if (!db.has(message.author.id) && message.author.id != config.owner_id) {
-        if (talkedRecently.has(message.author.id)) {
+      if (!db.has(message.author.id)) {
+        if (
+          talkedRecently.has(message.author.id) &&
+          message.author.id != config.owner_id
+        ) {
           message.channel.send(
             "**Command on Cooldown for 30 seconds.**\n*A higher trust factor is required to gain a quicker cooldown.*"
           );
