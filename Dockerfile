@@ -1,25 +1,33 @@
-# This dockerfile is pretty useless
-# Why?
-#
-# I mainly run the bot directly without the need to deploy it to a separate container and let it roam there.
-#
-# I find this process very tedious to setup and there aren't any guides to help setup a framework of this size properly
-#
-# A DOCKER CONTAINER SHOULD ONLY BE DEPLOYED DURING A FULL RELEASE
-
 FROM node:latest
+FROM ubuntu as intermediate
 
 #init git
 RUN apt-get update
 RUN apt-get install -y git
 
+RUN git pull
+RUN git fetch
+
 #work dir
 RUN mkdir -p /usr/src/yAPI
 WORKDIR /usr/src/yAPI
+
+#crew
+ARG SSH_PRIVATE_KEY
+RUN mkdir /root/.ssh/
+RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
+
+RUN touch /root/.ssh/known_hosts
+RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
+
+RUN git clone git@bitbucket.org:exoad/yAPI.git
+
+FROM ubuntu
+COPY --from=intermediate /yAPI /srv/yAPI
 
 COPY package.json /usr/src/yAPI
 RUN npm i
 
 COPY . /usr/src/yAPI
 
-CMD ["bash", "r.sh"]
+CMD ["node", "app.js"]
