@@ -48,10 +48,10 @@ module.exports = {
                 }, 1000);
               });
           }
-          function askCooldown() {
-            talkedRecently.add(message.author.id);
+          function askCooldown(id) {
+            talkedRecently.add(id);
             setTimeout(() => {
-              talkedRecently.delete(message.author.id);
+              talkedRecently.delete(id);
             }, 30000);
           }
           let file_type = args[0];
@@ -84,20 +84,20 @@ module.exports = {
             message.channel.send({ embed });
           } else if (file_type == "md" || file_type == "markdown") {
             askFile(".md");
-            askCooldown();
+            askCooldown(message.author.id);
           } else if (file_type == "txt" || file_type == "text") {
             askFile(".txt");
-            askCooldown();
+            askCooldown(message.author.id);
           } else if (
             file_type == "html" ||
             file_type == "mhtml" ||
             file_type == "htm"
           ) {
             askFile(".html");
-            askCooldown();
+            askCooldown(message.author.id);
           } else if (file_type == "pdf") {
             askFile(".pdf");
-            askCooldown();
+            askCooldown(message.author.id);
           } else {
             const embed = new MessageEmbed()
               .setTitle(
