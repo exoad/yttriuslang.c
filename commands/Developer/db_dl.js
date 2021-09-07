@@ -34,6 +34,8 @@ module.exports = {
             message.channel.send("Informations sent with coverage");
             bot.channels.cache.get(config.side_channel).send("Requested "+  moment().format('MMMM Do YYYY, h:mm:ss a') + " "+ obj);
           }
+        } else if (args[0] == "delete") {
+          
         }
       }
     } catch (err) {
