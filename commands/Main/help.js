@@ -1,3 +1,6 @@
+/*
+ * TODO: Make all science commands a sub category
+ */
 const { MessageEmbed } = require("discord.js");
 const config = require("../../configs/token.json");
 const chnl = require("../../configs/chnl.json");
@@ -11,124 +14,45 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      if (args[0] == "general") {
-        const embed = new MessageEmbed() // <-- Entry point for all Generalized Commands
-          .setTitle("General Commands")
-          .setDescription(
-            "Here are all the commands related to the regular functions of the bot. To find info on a specific command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField(
-            "Commands List",
-            "```help, support, cmd, invite, docs, botinfo, guide```"
-          )
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
+      let cat = args[0];
+      let cat_cmd = args[1];
+      //this function makes the embeds so there wont be repetitive embeds everywhere
+      function makeCommandList(menu_name, list_items, isCat) {
+        if (isCat) {
+          const embed = new MessageEmbed()
+            .setTitle(menu_name + " Category")
+            .setDescription(
+              "Here are all the avaliable " +
+                menu_name.toLowerCase() +
+                " sub-categories.\nUse `" +
+                config.prefix +
+                "help " +
+                menu_name.toLowerCase() +
+                " {subcategory}`"
+            )
+            .addField("Categories", "```" + list_items + "```")
+            .setThumbnail(resource.yet);
 
-        message.channel.send({ embed });
-      } else if (args[0] == "astro" || args[0] == "astronomy") {
-        const embed = new MessageEmbed() // <-- Entry point for all Astronomical Commands
-          .setTitle("Astronomy Commands")
-          .setDescription(
-            "Here are all the commands related to Astronomy. To find info on a specific command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField(
-            "Commands List",
-            "```iss, apod, earth, moonphase, calcsun```"
-          )
-          .setThumbnail(resource.astro)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
+          message.channel.send({ embed });
+        } else {
+          const embed = new MessageEmbed()
+            .setTitle(menu_name + " Commands")
+            .setDescription(
+              "Here are all commands for the category " +
+                menu_name.toLowerCase() +
+                ".\nUse `" +
+                config.prefix +
+                "cmd {command}`"
+            )
+            .addField("Commands", "```" + list_items + "```")
+            .setThumbnail(resource.yet);
 
-        message.channel.send({ embed });
-      } else if (args[0] == "chem" || args[0] == "chemistry") {
-        const embed = new MessageEmbed() // <-- Entry point for all Chemistry commands
-          .setTitle("Chemistry Commands")
-          .setDescription(
-            "Here are all the commands related to Chemistry. To find info on a specific command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField(
-            "Commands List",
-            "```periodic, element, molar, elehistory```"
-          )
-          .setAuthor(message.author.username, message.author.displayAvatarURL)
-          .setThumbnail(resource.chem);
-
-        message.channel.send({ embed });
-      } else if (args[0] == "tools" || args[0] == "tool") {
-        const embed = new MessageEmbed() // <-- Entry point for all other commands
-          .setTitle("Tool Commands")
-          .setDescription(
-            "Here are all the commands that are valid tools that can be used (calculators, etc.). To find info on a specific command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField("Commands List", "```math, whatis, tex```")
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
-
-        message.channel.send({ embed });
-      } else if (args[0] == "sci" || args[0] == "science") {
-        const embed = new MessageEmbed()
-          .setTitle("Other Science Commands")
-          .setDescription(
-            "Here are all the commands related to other science topics/fields. To find info on a specific command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField("Earth Science", "```earth```")
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
-
-        message.channel.send({ embed });
-      } else if (args[0] == "others" || args[0] == "other") {
-        const embed = new MessageEmbed()
-          .setTitle("Other Categories")
-          .setDescription(
-            "Here are some extra categories. To look further use: `" +
-              config.prefix +
-              "help {category}`"
-          )
-          .addField("Commands List", "```fun, text, image```")
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
-
-        message.channel.send({ embed });
-      } else if (args[0] == "fun") {
-        const embed = new MessageEmbed()
-          .setTitle("Fun Commands")
-          .setDescription(
-            'These are "fun" commands. To find more info on a command use: `' +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField("Commands List", "```fact, 8ball, why```")
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
-        message.channel.send({ embed });
-      } else if (
-        args[0] == "account" ||
-        args[0] == "profile" ||
-        args[0] == "user"
-      ) {
-        const embed = new MessageEmbed()
-          .setTitle("Account Commands")
-          .setDescription(
-            "These are commands related to your account. To find more info on a command use `" +
-              config.prefix +
-              "cmd {command}`"
-          )
-          .addField("Commands List", "```register, userdocs```")
-          .setThumbnail(resource.yet)
-          .setAuthor(message.author.username, message.author.displayAvatarURL);
-        message.channel.send({ embed });
-      } else {
+          message.channel.send({ embed });
+        }
+      }
+      if (!cat || cat == undefined) {
         const embed = new MessageEmbed() // <-- Main Entry Point
-          .setTitle("Main Help Menu")
+          .setTitle("Main Help Menu | Categories & Sub-Categories")
           .setDescription(
             "Here you will find all of the categories! Wanting to find info on a specific command? Use `" +
               config.prefix +
@@ -137,38 +61,79 @@ module.exports = {
               ")"
           )
           .addField(
-            ":jigsaw: General",
+            ":jigsaw: General Commands",
             `Use \`${config.prefix}help general\` to access all generalized / utility / fun commands`,
             true
           )
           .addField(
-            ":milky_way: Astronomy",
-            `Use  \`${config.prefix}help astro\` to access all astronomy related commands`,
+            ":test_tube: Science Categories",
+            `Use  \`${config.prefix}help science\` to access all sub-categories for science`,
             true
           )
           .addField(
-            ":test_tube: Chemistry",
-            `Use  \`${config.prefix}help chem\` to access all chemistry related commands`,
-            true
-          )
-          .addField(
-            ":tools: Tools",
+            ":tools: Tools Categories",
             `Use  \`${config.prefix}help tools\` to access commands that are general tools (calculators, etc.)`,
             true
           )
           .addField(
             ":jigsaw: Other Categories",
-            `Use  \`${config.prefix}help others\` to access commands that cannot fit into any categories`,
+            `Use  \`${config.prefix}help others\` to access all other sub-categories that could not fit onto this list`,
             true
           )
           .addField(
-            ":dividers: User Account",
+            ":dividers: User Information Commands",
             `Use \`${config.prefix}help account\` to access all Account related commands`
           )
           .setThumbnail(resource.science)
           .setFooter('The prefix is "' + config.prefix + '"!');
 
         message.channel.send({ embed });
+      } else {
+        if (
+          (cat == "science" || cat == "sci") &&
+          (!cat_cmd || cat_cmd == undefined)
+        )
+          makeCommandList(
+            "Science",
+            "chemistry, astronomy, otherscience",
+            true
+          );
+        else if (
+          (cat_cmd == "chemistry" || cat_cmd == "chem") &&
+          (cat == "science" || cat == "sci")
+        )
+          makeCommandList(
+            "Chemistry",
+            "periodic, element, molar, elehistory",
+            false
+          );
+        else if (
+          (cat_cmd == "astro" || cat_cmd == "astronomy") &&
+          (cat == "science" || cat == "sci")
+        )
+          makeCommandList(
+            "Astronomy",
+            "iss, apod, earth, moonphase, calcsun",
+            false
+          );
+        else if (
+          (cat_cmd == "otherscience" || cat_cmd == "othersci") &&
+          (cat == "science" || cat == "sci")
+        )
+          makeCommandList("Other Science", "earth", false);
+        else if (cat == "general")
+          makeCommandList(
+            "General",
+            "help, support, cmd, invite, docs, botinfo, guide",
+            false
+          );
+        else if (cat == "tools" || cat == "tool")
+          makeCommandList("Tools", "math, whatis, tex", false);
+        else if (
+          (cat == "others" || cat == "other") &&
+          (!cat_cmd || cat_cmd == undefined)
+        )
+          makeCommandList("Other", "fun", true);
       }
     } catch (err) {
       const embed = new MessageEmbed()
