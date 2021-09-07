@@ -63,7 +63,7 @@ module.exports = {
                             )
                             .setFooter("Still facing issues? Join the support server!");
                         message.channel.send({ embed }).then((m) => {
-                            m.delete({ timeout: 5000 });
+                            m.delete({ timeout: 10000 });
                         });
                     }
                 });

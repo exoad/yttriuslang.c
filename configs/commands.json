@@ -215,5 +215,19 @@
         "description":"See the documentations for the Accounts & Trust Factor system",
         "usage":"userdocs",
         "alias":"No Aliases"
+    },
+    "myaccount":{
+        "name":"Account",
+        "group":"Social",
+        "description":"See your user profile or account that is registered",
+        "usage":"myaccount",
+        "alias":"account"
+    },
+        "account":{
+        "name":"Account",
+        "group":"Social",
+        "description":"See your user profile or account that is registered",
+        "usage":"account",
+        "alias":"myaccount"
     }
 }
