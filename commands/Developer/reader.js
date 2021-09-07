@@ -1,4 +1,5 @@
 const { Discord, MessageEmbed } = require("discord.js");
+const config = require("../../configs/token.json");
 module.exports = {
     config: {
         name: `eval`,
@@ -6,7 +7,7 @@ module.exports = {
     },
     run: async(bot, message, args) => {
         message.delete();
-        if (message.author.id !== "709776016314204283")
+        if (message.author.id !== config.owner_id)
             return message.reply("Credentials Mismatch | Access Denied");
         try {
             var code = args.join(" ");

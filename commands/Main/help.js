@@ -81,8 +81,8 @@ module.exports = {
             true
           )
           .addField(
-            ":dividers: User Information Commands",
-            `Use \`${config.prefix}help account\` to access all Account related commands`
+            ":dividers: Social Commands",
+            `Use \`${config.prefix}help social\` to access all Account related commands`
           )
           .setThumbnail(resource.science)
           .setFooter('The prefix is "' + config.prefix + '"!');
@@ -134,6 +134,8 @@ module.exports = {
           (!cat_cmd || cat_cmd == undefined)
         )
           makeCommandList("Other", "fun", true);
+        else if(cat == "social")
+          makeCommandList("Social", "myaccount, userdocs, register", false);
       }
     } catch (err) {
       const embed = new MessageEmbed()

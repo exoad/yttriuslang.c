@@ -197,21 +197,21 @@
     },
     "register":{
         "name":"User Register",
-        "group":"Accounts",
+        "group":"Social",
         "description":"Register the user into the bot's database in order for you too get access to more commands",
         "usage":"register",
         "alias":"No Aliases"
     },
     "userdocs":{
         "name":"Account & Trust Factor Documentations",
-        "group":"Accounts",
+        "group":"Social",
         "description":"See the documentations for the Accounts & Trust Factor system",
         "usage":"userdocs",
         "alias":"No Aliases"
     },
     "userdoc":{
         "name":"Account & Trust Factor Documentations",
-        "group":"Accounts",
+        "group":"Social",
         "description":"See the documentations for the Accounts & Trust Factor system",
         "usage":"userdocs",
         "alias":"No Aliases"
