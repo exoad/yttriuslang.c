@@ -19,7 +19,7 @@ module.exports = {
   run: async (bot, message, args) => {
     try {
       const db = new Database("db/registry_user.json");
-      if (!db.has(message.author.id)) {
+      if (db.has(message.author.id)) {
         if (
           talkedRecently.has(message.author.id) &&
           message.author.id != config.owner_id
@@ -47,6 +47,12 @@ module.exports = {
                   message.channel.send(doc);
                 }, 1000);
               });
+          }
+          function askCooldown() {
+            talkedRecently.add(message.author.id);
+            setTimeout(() => {
+              talkedRecently.delete(message.author.id);
+            }, 30000);
           }
           let file_type = args[0];
           if (!file_type || file_type == undefined || file_type == null) {
@@ -78,16 +84,20 @@ module.exports = {
             message.channel.send({ embed });
           } else if (file_type == "md" || file_type == "markdown") {
             askFile(".md");
+            askCooldown();
           } else if (file_type == "txt" || file_type == "text") {
             askFile(".txt");
+            askCooldown();
           } else if (
             file_type == "html" ||
             file_type == "mhtml" ||
             file_type == "htm"
           ) {
             askFile(".html");
+            askCooldown();
           } else if (file_type == "pdf") {
             askFile(".pdf");
+            askCooldown();
           } else {
             const embed = new MessageEmbed()
               .setTitle(
@@ -116,10 +126,6 @@ module.exports = {
               .setColor(colors.error);
             message.channel.send({ embed });
           }
-          talkedRecently.add(message.author.id);
-          setTimeout(() => {
-            talkedRecently.delete(message.author.id);
-          }, 30000);
         }
       } else {
         const embed = new MessageEmbed()
