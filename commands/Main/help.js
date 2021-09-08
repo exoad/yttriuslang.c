@@ -138,6 +138,7 @@ module.exports = {
           makeCommandList("Social", "myaccount, userdocs, register", false);
       }
     } catch (err) {
+      console.info(err);
       const embed = new MessageEmbed()
         .setTitle(
           "Whoops, looks like the requested command doesn't exist (yet)!"
