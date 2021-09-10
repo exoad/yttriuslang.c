@@ -31,7 +31,7 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 # RUN git clone git@bitbucket.org:exoad/yAPI.git
 
 FROM ubuntu:latest
-COPY --from=intermediate /yAPI /srv/yAPI
+# REMOVE COPY --from=intermediate /yAPI /srv/yAPI
 
 COPY package.json /usr/src/yAPI
 RUN npm i
