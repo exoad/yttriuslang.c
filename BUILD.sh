@@ -3,7 +3,7 @@
 # Docker Build script
 #
 
-cd ~/.yAPI
+echo -e "\e[34mRunning Script..." ; echo ;
 
 sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
