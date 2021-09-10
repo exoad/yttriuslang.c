@@ -6,7 +6,7 @@
 #
 
 FROM node:latest
-FROM ubuntu as intermediate
+#FROM ubuntu as intermediate
 
 #init git
 RUN apt-get update -y
