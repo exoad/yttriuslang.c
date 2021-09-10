@@ -33,7 +33,11 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 FROM ubuntu:latest
 # REMOVE COPY --from=intermediate /yAPI /srv/yAPI
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+ENV TZ=America/New_York
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt update
+RUN apt install -y tzdata
 
 COPY package.json /usr/src/yAPI
 RUN npm i
