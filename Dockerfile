@@ -5,7 +5,6 @@ FROM ubuntu as intermediate
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y git
-RUN apt-get install openssh-server -y
 
 # RUN git pull
 # RUN git fetch
@@ -24,12 +23,22 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 # RUN git clone git@bitbucket.org:exoad/yAPI.git
 
-FROM ubuntu
+FROM ubuntu:latest
 COPY --from=intermediate /yAPI /srv/yAPI
 
 COPY package.json /usr/src/yAPI
 RUN npm i
 
 COPY . /usr/src/yAPI
+
+RUN apt update && apt install  openssh-server sudo -y
+
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 test 
+
+RUN  echo 'test:test' | chpasswd
+
+RUN service ssh start
+
+EXPOSE 22
 
 CMD ["node", "app.js"]
