@@ -33,9 +33,7 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 FROM ubuntu:latest
 # REMOVE COPY --from=intermediate /yAPI /srv/yAPI
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt update && apt install -y tcl
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
 COPY package.json /usr/src/yAPI
 RUN npm i
