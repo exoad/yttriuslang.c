@@ -33,6 +33,7 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 FROM ubuntu:latest
 # REMOVE COPY --from=intermediate /yAPI /srv/yAPI
+ARG DEBIAN_FRONTEND=noninteractive 
 
 COPY package.json /usr/src/yAPI
 RUN npm i
