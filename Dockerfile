@@ -31,10 +31,10 @@ RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
 # RUN git clone git@bitbucket.org:exoad/yAPI.git
 
-FROM ubuntu:latest
+#FROM ubuntu:latest
 # REMOVE COPY --from=intermediate /yAPI /srv/yAPI
-ENV TZ=America/New_York
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+#ENV TZ=America/New_York
+#RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update
 RUN apt install -y tzdata
