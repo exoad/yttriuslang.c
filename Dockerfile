@@ -1,3 +1,10 @@
+# A Docker is necessary in order for me to able to host many different things on my Server without having to worry about another application interfering with another
+#
+# The code in this file is in no way monitored strictly so use at your own risk for your own hardware, I am at no responsibility for any mishaps along YOUR way
+#
+# Docker : LATEST
+#
+
 FROM node:latest
 FROM ubuntu as intermediate
 
