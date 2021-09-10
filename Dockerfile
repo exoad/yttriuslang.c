@@ -2,11 +2,13 @@ FROM node:latest
 FROM ubuntu as intermediate
 
 #init git
-RUN apt-get update
+RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install -y git
+RUN apt-get install openssh-server -y
 
-RUN git pull
-RUN git fetch
+# RUN git pull
+# RUN git fetch
 
 #work dir
 RUN mkdir -p /usr/src/yAPI
@@ -20,7 +22,7 @@ RUN echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
 
-RUN git clone git@bitbucket.org:exoad/yAPI.git
+# RUN git clone git@bitbucket.org:exoad/yAPI.git
 
 FROM ubuntu
 COPY --from=intermediate /yAPI /srv/yAPI
