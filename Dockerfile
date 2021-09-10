@@ -12,7 +12,7 @@ FROM ubuntu as intermediate
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y git
-RUN apt-et install npm -y
+RUN apt-get install npm -y
 
 # RUN git pull
 # RUN git fetch
