@@ -1,4 +1,4 @@
-/** @file */ 
+/** @file */
 
 //
 // Created by danielxing.6 on 11/17/2017.
@@ -24,12 +24,13 @@
  *  info:       something happened
  *  debug:      debug information
  */
-enum ld_log_level {
-    LD_LOG_ERROR = 1<<0,
-    LD_LOG_WARNING = 1<<1,
-    LD_LOG_NOTICE = 1<<2,
-    LD_LOG_INFO = 1<<3,
-    LD_LOG_DEBUG = 1<<4
+enum ld_log_level
+{
+  LD_LOG_ERROR = 1 << 0,
+  LD_LOG_WARNING = 1 << 1,
+  LD_LOG_NOTICE = 1 << 2,
+  LD_LOG_INFO = 1 << 3,
+  LD_LOG_DEBUG = 1 << 4
 };
 
 /*

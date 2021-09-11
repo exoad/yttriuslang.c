@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+
 
 LWS_VERSION="3.1.0"
 

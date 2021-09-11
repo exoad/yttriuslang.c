@@ -1,4 +1,4 @@
-/** @file */ 
+/** @file */
 
 #ifndef LIBDISCORD_0_3_LIBRARY_H
 #define LIBDISCORD_0_3_LIBRARY_H
@@ -6,91 +6,88 @@
 #include <curl/curl.h>
 #include <libwebsockets.h>
 #include <jansson.h>
-//#include <glib.h>
+
 
 #include "libdiscord_config.h"
 
 #include "log.h"
-//#include "json.h"
 
-/*
- *
- * libdiscord main header file
- *
- *
- */
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-//
+
+
+
+
+
 #pragma mark Enumeration declarations
-//
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * @brief Return values from decoding
  * depreciated, use status.h LDS enums
  */
-enum ldecode {
-    LDE_OK = 0, ///< everything is OK
-    LDE_LWS, ///< problem doing something with ulfius
-    LDE_JSON, ///< problem doing something with json manipulation/jansson
-    LDE_CURL, ///< problem with something involving curl
-    LDE_MEM, ///< problem with something involving memory allocation/deallocation
-    LDE_MISSING_PARAM, ///< missing parameters
-    LDE_HB_ACKMISS, ///< didn't recieve an ACK from gateway
-    LDE_HB_RINGBUF_FULL ///< ring buffer full
+enum ldecode
+{
+    LDE_OK = 0,         
+    LDE_LWS,            
+    LDE_JSON,           
+    LDE_CURL,           
+    LDE_MEM,            
+    LDE_MISSING_PARAM,  
+    LDE_HB_ACKMISS,     
+    LDE_HB_RINGBUF_FULL 
 };
 
 /**
  * @brief reasons included with user callback
  */
-enum ld_callback_reason {
-    LD_CALLBACK_UNKNOWN = -1, ///< placeholder
+enum ld_callback_reason
+{
+    LD_CALLBACK_UNKNOWN = -1, 
 
-    /* payload opcodes */
-    LD_CALLBACK_HELLO = 0, ///< opcode 10: Hello
-    LD_CALLBACK_RESUMED = 2, ///< opcode 6: Resume
-    LD_CALLBACK_INVALID_SESSION = 3, ///< opcode 9: Invalid session
+   
+    LD_CALLBACK_HELLO = 0,           
+    LD_CALLBACK_RESUMED = 2,         
+    LD_CALLBACK_INVALID_SESSION = 3, 
 
-    /* Dispatches (opcode 0 types)*/
-    LD_CALLBACK_READY = 1, ///< opcode 0: Dispatch
-    LD_CALLBACK_CHANNEL_CREATE = 4, ///< channel created (connected)
-    LD_CALLBACK_CHANNEL_UPDATE = 5, ///< channel updated
-    LD_CALLBACK_CHANNEL_DELETE = 6, ///< channel deleted (disconnected)
-    LD_CALLBACK_CHANNEL_PINS_UPDATE = 7, ///< pinned messages updated in a guild
-    LD_CALLBACK_GUILD_CREATE = 8, ///< guild created (connected)
-    LD_CALLBACK_GUILD_UPDATE = 9, ///< guild updated
-    LD_CALLBACK_GUILD_DELETE = 10, ///< guild deleted (disconnected)
-    LD_CALLBACK_GUILD_BAN_ADD = 11, ///< banned user in a guild
-    LD_CALLBACK_GUILD_BAN_REMOVE = 12, ///< ban removed for user in a guild
-    LD_CALLBACK_GUILD_EMOJIS_UPDATE = 13, ///< emojis updated in a guild
-    LD_CALLBACK_GUILD_INTEGRATIONS_UPDATE = 14, ///< integrations updated in a guild
-    LD_CALLBACK_GUILD_MEMBER_ADD = 15, ///< member added to guild
-    LD_CALLBACK_GUILD_MEMBER_REMOVE = 16, ///< member removed from guild
-    LD_CALLBACK_GUILD_MEMBER_UPDATE = 17, ///< member updated in guild
-    LD_CALLBACK_GUILD_MEMBERS_CHUNK = 18, ///< .
-    LD_CALLBACK_GUILD_ROLE_CREATE = 19, ///< role created in guild
-    LD_CALLBACK_GUILD_ROLE_UPDATE = 20, ///< role updated in guild
-    LD_CALLBACK_GUILD_ROLE_DELETE = 21, ///< role deleted from guild
-    LD_CALLBACK_MESSAGE_CREATE = 22, ///< message created (received)
-    LD_CALLBACK_MESSAGE_UPDATE = 23, ///< message updated
-    LD_CALLBACK_MESSAGE_DELETE = 24, ///< message deleted
-    LD_CALLBACK_MESSAGE_DELETE_BULK = 25, ///< multiple messages deleted
-    LD_CALLBACK_MESSAGE_REACTION_ADD = 26, ///< reaction added to message
-    LD_CALLBACK_MESSAGE_REACTION_REMOVE = 27, ///< reaction removed from message
-    LD_CALLBACK_MESSAGE_REACTION_REMOVE_ALL = 28, ///< all reactions removed from message
-    LD_CALLBACK_PRESENCE_UPDATE = 29, ///< presence updated
-    LD_CALLBACK_TYPING_START = 30, ///< user/bot started typing
-    LD_CALLBACK_USER_UPDATE = 31, ///< user updated
-    LD_CALLBACK_VOICE_STATE_UPDATE = 32, ///< voice state updated
-    LD_CALLBACK_VOICE_SERVER_UPDATE = 33, ///< voice server updated
-    LD_CALLBACK_WEBHOOKS_UPDATE = 34, ///< webhooks updated
+   
+    LD_CALLBACK_READY = 1,                        
+    LD_CALLBACK_CHANNEL_CREATE = 4,               
+    LD_CALLBACK_CHANNEL_UPDATE = 5,               
+    LD_CALLBACK_CHANNEL_DELETE = 6,               
+    LD_CALLBACK_CHANNEL_PINS_UPDATE = 7,          
+    LD_CALLBACK_GUILD_CREATE = 8,                 
+    LD_CALLBACK_GUILD_UPDATE = 9,                 
+    LD_CALLBACK_GUILD_DELETE = 10,                
+    LD_CALLBACK_GUILD_BAN_ADD = 11,               
+    LD_CALLBACK_GUILD_BAN_REMOVE = 12,            
+    LD_CALLBACK_GUILD_EMOJIS_UPDATE = 13,         
+    LD_CALLBACK_GUILD_INTEGRATIONS_UPDATE = 14,   
+    LD_CALLBACK_GUILD_MEMBER_ADD = 15,            
+    LD_CALLBACK_GUILD_MEMBER_REMOVE = 16,         
+    LD_CALLBACK_GUILD_MEMBER_UPDATE = 17,         
+    LD_CALLBACK_GUILD_MEMBERS_CHUNK = 18,         
+    LD_CALLBACK_GUILD_ROLE_CREATE = 19,           
+    LD_CALLBACK_GUILD_ROLE_UPDATE = 20,           
+    LD_CALLBACK_GUILD_ROLE_DELETE = 21,           
+    LD_CALLBACK_MESSAGE_CREATE = 22,              
+    LD_CALLBACK_MESSAGE_UPDATE = 23,              
+    LD_CALLBACK_MESSAGE_DELETE = 24,              
+    LD_CALLBACK_MESSAGE_DELETE_BULK = 25,         
+    LD_CALLBACK_MESSAGE_REACTION_ADD = 26,        
+    LD_CALLBACK_MESSAGE_REACTION_REMOVE = 27,     
+    LD_CALLBACK_MESSAGE_REACTION_REMOVE_ALL = 28, 
+    LD_CALLBACK_PRESENCE_UPDATE = 29,             
+    LD_CALLBACK_TYPING_START = 30,                
+    LD_CALLBACK_USER_UPDATE = 31,                 
+    LD_CALLBACK_VOICE_STATE_UPDATE = 32,          
+    LD_CALLBACK_VOICE_SERVER_UPDATE = 33,         
+    LD_CALLBACK_WEBHOOKS_UPDATE = 34,             
 
-    /* websocket specific */
-    LD_CALLBACK_WS_ESTABLISHED = 35, ///< websocket connection established and ready to rx/tx
-    LD_CALLBACK_WS_CONNECTION_ERROR = 36, ///< error while trying to connect to the gateway
+   
+    LD_CALLBACK_WS_ESTABLISHED = 35,       
+    LD_CALLBACK_WS_CONNECTION_ERROR = 36,  
     LD_CALLBACK_WS_GATEWAY_INIT_CLOSE = 37 /**
     the gateway closed the connection. len contains the close code,
     and data may or may not contain a string with a close message
@@ -102,37 +99,40 @@ enum ld_callback_reason {
  * @brief State of the gateway connection
  * depreciated
  */
-enum ld_gateway_state {
-    LD_GATEWAY_UNCONNECTED = 0, ///< we're not connected and we can start a fresh connection
-    LD_GATEWAY_CONNECTING = 2, ///< still working out the details
-    LD_GATEWAY_CONNECTED = 3 ///< connected, and everything is working normally
+enum ld_gateway_state
+{
+    LD_GATEWAY_UNCONNECTED = 0, 
+    LD_GATEWAY_CONNECTING = 2,  
+    LD_GATEWAY_CONNECTED = 3    
 };
 
 /**
  * @brief enum for opcodes that can we received from the gateway. 
  */
-enum ld_gateway_opcode {
-    LD_GATEWAY_OPCODE_UNKNOWN = 999, ///< placeholder
-    LD_GATEWAY_OPCODE_DISPATCH = 0, ///< dispatches an event
-    LD_GATEWAY_OPCODE_HEARTBEAT = 1, ///< used for ping checking
-    LD_GATEWAY_OPCODE_IDENTIFY = 2, ///< used for client handshake
-    LD_GATEWAY_OPCODE_PRESENCE = 3, ///< used to update the client status
-    LD_GATEWAY_OPCODE_VOICE_STATE = 4, ///< used to join/move/leave voice channels
-    LD_GATEWAY_OPCODE_VOICE_PING = 5, ///< used for voice ping checking
-    LD_GATEWAY_OPCODE_RESUME = 6, ///< used to resume a closed connection
-    LD_GATEWAY_OPCODE_RECONNECT = 7, ///< used to tell clients to reconnect to the gateway
-    LD_GATEWAY_OPCODE_REQUEST_MEMBERS = 8, ///< used to request guild members
-    LD_GATEWAY_OPCODE_INVALIDATE_SESSION = 9, ///< used to notify client they have an invalid session id
-    LD_GATEWAY_OPCODE_HELLO = 10, ///< sent immediately after connecting, contains heartbeat and server debug information
-    LD_GATEWAY_OPCODE_HEARTBEAT_ACK = 11, ///< sent immediately following a client heartbeat that was received
-    LD_GATEWAY_OPCODE_GUILD_SYNC = 12 ///< .
+enum ld_gateway_opcode
+{
+    LD_GATEWAY_OPCODE_UNKNOWN = 999,          
+    LD_GATEWAY_OPCODE_DISPATCH = 0,           
+    LD_GATEWAY_OPCODE_HEARTBEAT = 1,          
+    LD_GATEWAY_OPCODE_IDENTIFY = 2,           
+    LD_GATEWAY_OPCODE_PRESENCE = 3,           
+    LD_GATEWAY_OPCODE_VOICE_STATE = 4,        
+    LD_GATEWAY_OPCODE_VOICE_PING = 5,         
+    LD_GATEWAY_OPCODE_RESUME = 6,             
+    LD_GATEWAY_OPCODE_RECONNECT = 7,          
+    LD_GATEWAY_OPCODE_REQUEST_MEMBERS = 8,    
+    LD_GATEWAY_OPCODE_INVALIDATE_SESSION = 9, 
+    LD_GATEWAY_OPCODE_HELLO = 10,             
+    LD_GATEWAY_OPCODE_HEARTBEAT_ACK = 11,     
+    LD_GATEWAY_OPCODE_GUILD_SYNC = 12         
 };
 
 /**
  * @brief enums for the four possible fields inside the discord gateway
  *
  */
-enum ld_gateway_payloadtype {
+enum ld_gateway_payloadtype
+{
     LD_GATEWAY_OP = 0,
     LD_GATEWAY_D = 1,
     LD_GATEWAY_T = 2,
@@ -144,39 +144,37 @@ enum ld_gateway_payloadtype {
  * @brief enum used to identify dispatch events
  * @todo identify events and put them here
  */
-enum ld_dispatch_event {
+enum ld_dispatch_event
+{
     LD_DISPATCH_UNKNOWN = 999,
-    LD_PRESENCES_REPLACE ///< undocumented event
+    LD_PRESENCES_REPLACE 
 };
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-//
-#pragma mark Struct declarations
-//
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
 
-/*
- * gateway ringbuffer elements
- * contains payload to be send and metadata
- */
+
+
+#pragma mark Struct declarations
+
+
+
+
+
 
 /**
  * @brief Gateway ringbuffer elements
  * 
  * Contains payload to be sent and metadata
  */
-struct ld_gateway_payload {
-    void *payload; //array of chars to send
-    size_t len; //size of payload in bytes
-
+struct ld_gateway_payload
+{
+    void *payload; 
+    size_t len;    
 };
 
 struct ld_gi;
 
-struct ld_gateway_session {
-
+struct ld_gateway_session
+{
 };
 
 /**
@@ -190,42 +188,42 @@ struct ld_gateway_session {
  * gateway_unconnected: have we ever connected to the gateway?
  * user_callback: user defined callback function for event loops.
  */
-struct ld_context {
-    char *bot_token; ///< string containing bot token
-    void *user_data; ///< user-specified pointer
-    unsigned long log_level; ///< DEPRECATED, use functions in log.h
-    char *gateway_url; ///< url returned by GET /gateway
-    char *gateway_bot_url; ///< url returned by GET /gateway/bot
-    int shards; ///< number of shards allowed
-    CURLM *curl_multi_handle; ///<
-    CURL *curl_handle; ///< curl easy handle used for simple HTTP requests
-    struct lws_context *lws_context; ///< lws context for gateway connections
-    struct lws *lws_wsi; ///< lws wsi used per gateway connection
-    int (*user_callback)
-            (struct ld_context *context, enum ld_callback_reason reason, void *data, int len);
-    unsigned int heartbeat_interval; ///< gateway heartbeat interval, in milliseconds
-    int last_seq; ///< last sequence number received in the gateway
-    unsigned long last_hb; ///< time last heartbeat was recieved at
-    int hb_count; ///< increments for every sent heartbeat, decrements for every received HB_ACK
-    struct lws_ring *gateway_ring; ///< lws ring buffer for queueing gateway tx payloads
-    unsigned int close_code; ///< gateway-returned close code
-    char *gateway_rx_buffer; ///< pointer to rx buffer used for large websocket payloads
-    size_t gateway_rx_buffer_len; ///< rx buffer size
-    // struct _ld_json_presence *presence;
-    char *gateway_session_id; ///< gateway session ID, received in READY payload
-    int gateway_bot_limit; ///< ratelimit reset amount \todo integrate into library ratelimit interface
-    int gateway_bot_remaining; ///< last ratelimit remaining value \todo
-    unsigned long gateway_bot_reset; ///< unix time for reset \todo
-    struct ld_gi **gi; ///< ???
-    int gi_count; ///< ???
-    struct ld_json_user *current_user; ///< current user (i.e. the bot) user info struct
+struct ld_context
+{
+    char *bot_token;                 
+    void *user_data;                 
+    unsigned long log_level;         
+    char *gateway_url;               
+    char *gateway_bot_url;           
+    int shards;                      
+    CURLM *curl_multi_handle;        
+    CURL *curl_handle;               
+    struct lws_context *lws_context; 
+    struct lws *lws_wsi;             
+    int (*user_callback)(struct ld_context *context, enum ld_callback_reason reason, void *data, int len);
+    unsigned int heartbeat_interval; 
+    int last_seq;                    
+    unsigned long last_hb;           
+    int hb_count;                    
+    struct lws_ring *gateway_ring;   
+    unsigned int close_code;         
+    char *gateway_rx_buffer;         
+    size_t gateway_rx_buffer_len;    
+    
+    char *gateway_session_id;          
+    int gateway_bot_limit;             
+    int gateway_bot_remaining;         
+    unsigned long gateway_bot_reset;   
+    struct ld_gi **gi;                 
+    int gi_count;                      
+    struct ld_json_user *current_user; 
 
-    //init presence
+    
     char *device;
     char *browser;
     char *os;
 
-    struct ld_json_status_update *init_presence; ///< initial presence (game, status) struct
+    struct ld_json_status_update *init_presence; 
 };
 
 /**
@@ -237,18 +235,19 @@ struct ld_context {
  * 
  * (TODO: when is a shard closed?)
  */
-struct ld_gi {
-    struct ld_context *parent_context; ///< pointer to the parent context
-    void *user; ///< user defined pointer for user stuff (TODO: add way of allocating *user and setting its size)
-//    enum ld_gateway_state state; ///< connected, connecting, disconnected (TODO: have seperate states for websocket connecting and gateway identifying)
-    int shardnum; ///< which shard this gateway connection refers to
-    struct lws *lws_wsi; ///< lws wsi corresponding to this connection
-    unsigned int hb_interval; ///< interval to send heartbeats at, in ms
-    int last_seq; ///< last sequence number recieved using this connection
-    int hb_count; ///< starts at 0, increment
-    struct lws_ring *tx_ringbuffer; ///< lws ringbuffer used to queue payloads to be sent;
-    unsigned int close_code; ///< close_code
-    int session_valid; ///< 0 - no resume, non-0 - resume
+struct ld_gi
+{
+    struct ld_context *parent_context; 
+    void *user;                        
+                                       
+    int shardnum;                      
+    struct lws *lws_wsi;               
+    unsigned int hb_interval;          
+    int last_seq;                      
+    int hb_count;                      
+    struct lws_ring *tx_ringbuffer;    
+    unsigned int close_code;           
+    int session_valid;                 
 };
 
 /**
@@ -259,40 +258,40 @@ struct ld_gi {
  *  user-defined pointer to anything, can be metadata about the bot (creator, version, etc.)
  *  libdiscord logging level (see ld_log_level), DEPRECIATED, use logging functions in log.h instead
  */
-struct ld_context_info {
-    char *bot_token; ///< bot token string
-    int (*user_callback)(struct ld_context *context, enum ld_callback_reason reason, void *data, int len); ///< callback
-    size_t gateway_ringbuffer_size; ///< gateway ringbuffer size (default is 16)
-    struct ld_json_status_update *init_presence; ///< json_status_update
+struct ld_context_info
+{
+    char *bot_token;                                                                                       
+    int (*user_callback)(struct ld_context *context, enum ld_callback_reason reason, void *data, int len); 
+    size_t gateway_ringbuffer_size;                                                                        
+    struct ld_json_status_update *init_presence;                                                           
 
-    //identify payload fields
-    char *device; ///< device
-    char *browser; ///< browser
-    char *os; ///< operating system
+    
+    char *device;  
+    char *browser; 
+    char *os;      
 };
 
 /**
  * @brief ld_dispatch struct, used in dict
  */
-struct ld_dispatch {
-    const char *name; ///< name
-    enum ld_callback_reason cbk_reason; ///< callback reason
-    int (*dispatch_callback)(struct ld_context *context, json_t *data); ///< callback
+struct ld_dispatch
+{
+    const char *name;                                                   
+    enum ld_callback_reason cbk_reason;                                 
+    int (*dispatch_callback)(struct ld_context *context, json_t *data); 
 };
 
 
-
-//forward declarations
 struct ld_json_identify;
 struct ld_json_identify;
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-//
+
+
+
 #pragma mark Function declarations
-//
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
+
+
+
 
 /**
  * @brief Initializes a ld_context_info struct
@@ -431,7 +430,7 @@ ld_status ld_gateway_connect(struct ld_context *context);
  * @return int 
  */
 ld_status ld_lws_callback(struct lws *wsi, enum lws_callback_reasons reason,
-                    void *user, void *in, size_t len);
+                          void *user, void *in, size_t len);
 
 /**
  * @brief 
@@ -498,7 +497,6 @@ ld_status ld_gateway_queue_heartbeat(struct ld_context *context);
  * @return char* A string containing the operating system name
  */
 char *ld_get_os_name();
-
 
 #include "REST.h"
 #include "json.h"
