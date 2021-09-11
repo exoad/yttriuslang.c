@@ -628,7 +628,7 @@ int main()
         TOKEN_SYMBOL, 
   );
 
-  _test("hashbang with following comment", "#!hello\n
+  _test("hashbang with following comment", "#!hello\n");
 
   _test("class extends op-like", "class X extends foo.bar { if() {} }",
         TOKEN_KEYWORD, 
