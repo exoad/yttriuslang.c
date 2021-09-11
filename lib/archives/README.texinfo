@@ -1,0 +1,150 @@
+@node Top
+@top Top
+
+@menu
+* Yttrius Documentations::
+@end menu
+
+@node Yttrius Documentations
+@chapter Yttrius Documentations
+@anchor{#yttrius-documentations}
+@iftex
+@bigskip@hrule@bigskip
+@end iftex
+@ifnottex
+------------------------------------------------------------------------
+@end ifnottex
+@strong{Support Server:} @uref{https://discord.gg/PbJQRT9zQ8,Click Here}
+@strong{Available Download Types:} @code{TXT} @code{MD} @code{MDX*}
+@code{HTML} @code{MHTML} @code{RTXT*}
+
+** - being worked on* ___ ### Section 0 - Introduction This is a curated
+list of information regarding Yttrius, the bot, and the framework(s).
+
+@strong{All Available Sections} > Section 0 - Introduction
+
+@quotation
+Section 1.0 - Documentation Informations
+@end quotation
+@quotation
+Section 1.1 - Internal Structuring
+@end quotation
+@quotation
+Section 1.2 - Yttrius Introduction
+@end quotation
+@quotation
+Section 1.2.1 - Yttrius Information
+@end quotation
+@quotation
+Section 1.3 - Yttrius Discord Bot Usages
+@end quotation
+@quotation
+Section 1.4 - Commands Categories Explanation ___ ### Section 1.0 -
+Documentational Informations
+@end quotation
+@strong{Documentation Version:} @code{1.0 (LATEST-UNFINISHED)}
+
+@strong{Documentation Type:} @code{MARKDOWN}
+
+@strong{Bot Version:} @code{1.7 (STABLE-BRANCH@@62bc834)}
+
+@strong{Assets Repo Version:} @code{3 (UNCHECKED)}
+
+@strong{License:} @code{Closed Source}
+
+@strong{Package Licensing:} @code{ISC | BSD-3 | MIT}
+
+@strong{Package Manager:} @code{snapd} @code{yum} @code{vcpkg}
+@code{conan} @code{cget}
+
+@strong{Documentation Last Revision:} @code{September-2-2021} ___ ###
+Section 1.1 - Internal Structuring
+
+@strong{Language(s):} @code{en-US}
+
+@strong{Programming Language(s):} @code{C++} @code{JavaScript}
+@code{Elixir}
+
+@strong{Archival Language(s):} @code{JSON} @code{YAML} @code{XML}
+@code{TXT} @code{RTXT}
+
+@strong{Frameworks:} @code{sleepy-discord} @code{NodeJS} @code{Sugar}
+
+@strong{Operators / Compilation Handlers:} @code{NPM} @code{YARN}
+@code{CMAKE}
+
+@strong{Host Platform:} @code{Ubuntu-16.04LTS} ___
+
+@node Section 12 - Yttrius Introduction
+@subsection Section 1.2 - Yttrius Introduction
+@anchor{#section-1.2---yttrius-introduction}
+Yttrius is written mainly in C++ using this library
+@uref{https://github.com/yourWaifu/sleepy-discord,here}. However, it
+also incorporates compatibility with JavaScript & TypeScript in order to
+allow more efficient packages from YARN & NPM to be installed.
+
+@iftex
+@bigskip@hrule@bigskip
+@end iftex
+@ifnottex
+------------------------------------------------------------------------
+@end ifnottex
+
+@node Section 121 - Yttrius Information
+@subsection Section 1.2.1 - Yttrius Information
+@anchor{#section-1.2.1---yttrius-information}
+Yttrius itself is not the bot, no no. It is a framework I can use to
+make Discord Bots and other online automated services. However, in this
+case it is a Discord Bot.
+
+@strong{Bot Information}
+
+User Friendliness Level (1 least 5 most): @code{3}
+
+Response Time (1 Slowest, 10 Fastest): @code{7}
+
+APIs Overtime (1 most, 5 least): @code{1}
+
+Error Handling Depth (1 least 5 most): @code{4}
+
+Self User Debugging? @code{y}
+
+Unhandled Errors Expected (1 always, 3 never): @code{3}
+
+Profanity Filtering Level (1 none 5 strictest): @code{5}
+
+Auto-Logging? @code{y}
+
+Data Collection (1 security, 5 all): @code{2} ___
+
+@node Section 13 - Yttrius Discord Bot Usages
+@subsection Section 1.3 - Yttrius Discord Bot Usages
+@anchor{#section-1.3---yttrius-discord-bot-usages}
+All commands if input is required will specify when the command is read
+without necessary inputs. If no input is detected, a help menu of the
+command will be displayed along with the appropriate format for the
+command.
+
+This bot requires the strictest of command formatting. If a necessary
+input is required and is not received within the user input, then the
+whole operation will cease.
+
+@strong{Prefix Retrieval:} @code{@@Yttrius}
+
+@strong{Prefix:} @code{$}
+
+@strong{Help Menu:} @code{$help}
+
+@strong{Command Help Seek} @code{$cmd} ___
+
+@node Section 14 - Commands Categories Explanation
+@subsection Section 1.4 - Commands Categories Explanation
+@anchor{#section-1.4---commands-categories-explanation}
+This section will explain the different categories of topics of commands
+within the bot.
+
+@strong{Main}
+
+Main Commands List
+
+@code{bot}
