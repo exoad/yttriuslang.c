@@ -163,7 +163,7 @@ int main()
         TOKEN_SYMBOL, 
   );
 
-  _test("single comment", "blah,
+  _test("single comment", "blah",
         TOKEN_SYMBOL, 
         TOKEN_NUMBER, 
   );
