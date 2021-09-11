@@ -3,7 +3,7 @@ const config = require("../../configs/token.json");
 module.exports = {
     config: {
         name: `eval`,
-        aliases: [``],
+        aliases: [`jseval`],
     },
     run: async(bot, message, args) => {
         message.delete();
