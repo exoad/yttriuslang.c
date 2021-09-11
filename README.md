@@ -1,5 +1,5 @@
 # yAPI
-![](https://img.shields.io/github/languages/code-size/exoad/yAPI)
+![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI)
 
 This is a Discord Bot I made.
 
