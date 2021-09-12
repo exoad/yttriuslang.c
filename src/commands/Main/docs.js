@@ -102,7 +102,7 @@ module.exports = {
             askFile(".ipynb");
             askCooldown(message.author.id);
           } else if (file_type == "texinfo") {
-            askFile(".ipynb");
+            askFile(".texinfo");
             askCooldown(message.author.id);
           } else if (file_type == "tex") {
             askFile(".tex");
