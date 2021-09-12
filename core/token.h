@@ -7,7 +7,7 @@
 
 struct token
 {
-  char *vp; // void-pointer (before token)
+  char *vp; 
   char *p;
   int len;
   int line_no;
@@ -27,14 +27,13 @@ int blep_token_restore();
 
 typedef struct
 {
-  struct token curr; // cursor before head
-  struct token peek; // also before head if p is !NULL
+  struct token curr; 
+  struct token peek; 
 
-  int line_no; // line_no at head
-  char *at;    // head pointer
-  char *end;   // end of input (must point to NULL)
+  int line_no; 
+  char *at;    
+  char *end;   
 
-  // depth/stack at head (just used for balancing)
   int depth;
   int stack[STACK_SIZE];
 
@@ -44,7 +43,6 @@ typedef struct
   int restore__depth;
 } tokendef;
 
-// global
 #ifdef EMSCRIPTEN
 #define td ((tokendef *)20)
 #else
@@ -52,4 +50,4 @@ extern tokendef _td;
 #define td (&_td)
 #endif
 
-#endif //__BLEP_TOKEN_H
+#endif 
