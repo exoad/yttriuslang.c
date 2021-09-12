@@ -5,4 +5,6 @@ This is a Discord Bot I made.
 
 `/core` is mainly used for one of the C libraries I use to parse JS.
 
+This folder does not only include the bot, but also includes its API.
+
 Invite it [here](https://discord.com/oauth2/authorize?client_id=871572127806017627&permissions=3154508918&scope=bot)
