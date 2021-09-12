@@ -39,10 +39,10 @@ module.exports = {
               .then((m) => {
                 setTimeout(function () {
                   m.edit(
-                    "**Fetched it successfully!**\nOther formats are: `md, txt, html, pdf`"
+                    "**Fetched it successfully!**\nOther formats are: `markdown, text, htm, pdf, html, mhtml, xml, ipynb, tex, texinfo`"
                   );
                   const doc = new Discord.MessageAttachment(
-                    "lib/archives/README" + filetype
+                    "lib/archives/bot_docs/README" + filetype
                   );
                   message.channel.send(doc);
                 }, 1000);
@@ -69,7 +69,7 @@ module.exports = {
               )
               .addField(
                 "file_type",
-                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html, pdf`"
+                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml, xml, ipynb, tex, texinfo`"
               )
               .addField(
                 "Command Description",
@@ -98,6 +98,18 @@ module.exports = {
           } else if (file_type == "pdf") {
             askFile(".pdf");
             askCooldown(message.author.id);
+          } else if (file_type == "ipynb") {
+            askFile(".ipynb");
+            askCooldown(message.author.id);
+          } else if (file_type == "texinfo") {
+            askFile(".ipynb");
+            askCooldown(message.author.id);
+          } else if (file_type == "tex") {
+            askFile(".tex");
+            askCooldown(message.author.id);
+          } else if (file_type == "xml") {
+            askFile(".xml");
+            askCooldown(message.author.id);
           } else {
             const embed = new MessageEmbed()
               .setTitle(
@@ -112,7 +124,7 @@ module.exports = {
               )
               .addField(
                 "file_type",
-                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `md, markdown, txt, text, html, pdf`"
+                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml, xml, ipynb, tex, texinfo`"
               )
               .addField(
                 "Command Description",
