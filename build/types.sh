@@ -1,3 +1,5 @@
+#!/usr/bin/env
+
 set -eu
 
 rm -rf generatedTypes
