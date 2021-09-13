@@ -1,7 +1,7 @@
 # yAPI
 ![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI)
 
-This is a Discord Bot I made.
+This is a Discord Bot I made along with an internal API (thats why its called YttriusAPI or yAPI)
 
 `/core` is mainly used for one of the C libraries I use to parse JS.
 
