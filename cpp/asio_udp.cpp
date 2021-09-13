@@ -1,3 +1,5 @@
+// MIT 
+
 #include "asio_udp.h"
 #ifndef NONEXISTENT_ASIO
 
