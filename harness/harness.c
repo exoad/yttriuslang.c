@@ -22,5 +22,5 @@ int isalnum(int c) {
 }
 
 int isspace(int c) {
-  return c == ' ' || (c >= '\t' && c <= '\r');  // \t, \n, \v, \f, \r
+  return c == ' ' || (c >= '\t' && c <= '\r');  // \t, \n, \v, \f, \r escape codes used
 }
