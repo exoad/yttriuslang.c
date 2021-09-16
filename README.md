@@ -1,5 +1,5 @@
 # yAPI
-![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![CMake](https://github.com/exoad/yAPI/actions/workflows/cmake.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/cmake.yml)
+![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![CMake](https://github.com/exoad/yAPI/actions/workflows/cmake.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/cmake.yml) [![CodeQL](https://github.com/exoad/yAPI/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/codeql-analysis.yml)
 
 This is a Discord Bot I made along with an internal API (thats why its called YttriusAPI or yAPI)
 
