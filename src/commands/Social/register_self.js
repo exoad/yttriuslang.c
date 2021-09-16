@@ -1,4 +1,4 @@
-const Database = require("easy-json-database");
+// DEPRECATED : const Database = require("easy-json-database");
 const Discord = require("discord.js");
 const config = require("../../../configs/token.json");
 const moment = require("moment");
@@ -13,8 +13,9 @@ module.exports = {
     try {
       let author = message.author.id;
       message.channel.send("Checking the database...").then((m) => {
-        const db = new Database("db/registry_user.json");
+        /* DEPRECATED CODE : const db = new Database("db/registry_user.json"); */
         setTimeout(function () {
+          /*
           if (!db.has(author)) {
             if (author == config.owner_id) {
               db.set(author, {
@@ -48,6 +49,7 @@ module.exports = {
               );
             else message.channel.send("An error occured");
           }
+          */ // DEPRECATED CODE
         }, 1000);
       });
     } catch (err) {

@@ -1,4 +1,4 @@
-const Database = require("easy-json-database");
+// DEPRECATED : const Database = require("easy-json-database");
 const { MessageEmbed } = require("discord.js");
 module.exports = {
   config: {
@@ -11,12 +11,14 @@ module.exports = {
     try {
       message.channel.send("**Checking the database...**\n*Please be patient, this won't last long*").then((m) => {
         setTimeout(function () {
+          /*
           const db = new Database("db/registry_user.json");
           if(!db.has(message.author.id)) {
             m.edit("**Failed to retrieve your account**\nReason: You are not registered");
           } else {
             m.edit("Found.");
           }
+          */ // DEPRECATED CODE
         }, 1500);
       })
     } catch (err) {
