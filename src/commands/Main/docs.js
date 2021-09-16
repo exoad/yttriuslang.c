@@ -69,7 +69,7 @@ module.exports = {
               )
               .addField(
                 "file_type",
-                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml, xml, ipynb, tex, texinfo`"
+                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml"
               )
               .addField(
                 "Command Description",
@@ -97,18 +97,6 @@ module.exports = {
             askCooldown(message.author.id);
           } else if (file_type == "pdf") {
             askFile(".pdf");
-            askCooldown(message.author.id);
-          } else if (file_type == "ipynb") {
-            askFile(".ipynb");
-            askCooldown(message.author.id);
-          } else if (file_type == "texinfo") {
-            askFile(".texinfo");
-            askCooldown(message.author.id);
-          } else if (file_type == "tex") {
-            askFile(".tex");
-            askCooldown(message.author.id);
-          } else if (file_type == "xml") {
-            askFile(".xml");
             askCooldown(message.author.id);
           } else {
             const embed = new MessageEmbed()
