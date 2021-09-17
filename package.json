@@ -11,6 +11,8 @@
     "element-histories": "^0.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
+    "leveldown": "^6.0.2",
+    "levelup": "^5.0.1",
     "lunarphase-js": "^1.0.5",
     "molarcalc": "^1.0.2",
     "moment": "^2.29.1",
@@ -42,5 +44,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "url": "https://github.com/exoad/yAPI"
+  }
 }

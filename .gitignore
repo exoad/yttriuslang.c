@@ -3,3 +3,4 @@ configs/nasa.env
 /node_modules/
 /configs/token.json
 /db/registry_user.json
+/db/registry_patch.sql

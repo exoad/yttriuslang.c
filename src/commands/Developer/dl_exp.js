@@ -3,6 +3,9 @@ const { MessageEmbed, MessageAttachment } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
 const moment = require("moment");
+var levelup = require("levelup");
+var leveldown = require("leveldown");
+var db = levelup(leveldown("./mydb"));
 module.exports = {
   config: {
     name: `dl`,
@@ -12,10 +15,15 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      let choice = args[0];
       // DEPRECATED CODE : const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
       else {
+        let msgHat = args.slice(0).join(" ");
+        if (!msgHat || msgHat == null || msgHat == undefined)
+          message.channel.send("MSGHAT RETURNED NULL");
+        else {
+          
+        }
         /*
         if (args[0] == "clear") {
           db.clear();
