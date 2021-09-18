@@ -1,4 +1,4 @@
-// DEPRECATED CODE : const Database = require("easy-json-database");
+const Database = require("easy-json-database");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
@@ -15,16 +15,9 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      // DEPRECATED CODE : const db = new Database("db/registry_user.json");
+      const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
       else {
-        let msgHat = args.slice(0).join(" ");
-        if (!msgHat || msgHat == null || msgHat == undefined)
-          message.channel.send("MSGHAT RETURNED NULL");
-        else {
-          
-        }
-        /*
         if (args[0] == "clear") {
           db.clear();
           message.channel.send("Cleared");
@@ -46,7 +39,6 @@ module.exports = {
         } else if (args[0] == "delete") {
           
         }
-        */ // DEPRECATED CODE
       }
     } catch (err) {
       console.error(err);
