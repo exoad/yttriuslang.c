@@ -1,2 +1,6 @@
 *.json binary
 *.txt text
+*.sql binary
+*.out binary
+*.zip binary
+*.h diff=text
