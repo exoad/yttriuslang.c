@@ -11,4 +11,6 @@ Invite it [here](https://discord.com/oauth2/authorize?client_id=8715721278060176
 
 You can find this code [Not really updated] on other Git Providers here:
 
-[BitBucket](https://bitbucket.org/exoad/yapi/src/master/)
+[BitBucket](https://bitbucket.org/exoad/yapi/src/master/) (Not Updated regularly)
+
+[GitLab](https://gitlab.com/exoad/yAPI) (Mirrored)
