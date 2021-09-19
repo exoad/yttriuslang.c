@@ -19,6 +19,7 @@ module.exports = {
         let ans = args[0];
         let para = args[1];
         db.add(ans, para);
+        message.channel.send(db.get(ans));
         /*
         if (args[0] == "clear") {
           db.clear();
