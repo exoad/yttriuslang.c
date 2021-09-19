@@ -1,0 +1,13 @@
+diff --git a/glib/configure.ac b/glib/configure.ac
+index 4653090..8fc86ed 100644
+--- a/glib/configure.ac
++++ b/glib/configure.ac
+@@ -293,8 +293,6 @@ AC_PROG_INSTALL
+ 
+ AC_SYS_LARGEFILE
+ 
+-PKG_PROG_PKG_CONFIG(0.16)
+-
+ if test "x$enable_debug" = "xyes"; then
+   if test x$cflags_set != xset ; then
+       case " $CFLAGS " in
