@@ -14,3 +14,7 @@ You can find this code [Not really updated] on other Git Providers here:
 [BitBucket](https://bitbucket.org/exoad/yapi/src/master/) (Not Updated regularly)
 
 [GitLab](https://gitlab.com/exoad/yAPI) (Mirrored)
+
+
+Any files within `./database` or `./db` are kept confidential unless details are meant to be shown to the public. 
+
