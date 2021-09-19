@@ -7,7 +7,7 @@ const chnl = require("../../../configs/chnl.json");
 const resource = require("../../../configs/resource.json");
 const superagent = require("superagent");
 const colors = require("../../../configs/colors.json");
-const Database = require("easy-json-database");
+//const Database = require("easy-json-database");
 const token = require("../../../configs/token.json");
 module.exports = {
   config: {
@@ -18,6 +18,7 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
+      /*
       const db = new Database("db/registry_user.json");
       if (db.has(message.author.id)) {
         if (
@@ -141,6 +142,7 @@ module.exports = {
 
         message.channel.send({ embed });
       }
+      */
     } catch (err) {
       const embed = new MessageEmbed()
         .setTitle("Whoops, looks like something went wrong!")
