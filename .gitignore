@@ -7,4 +7,4 @@ configs/nasa.env
 #All database files are held confidential
 /db/registry_user.json
 /db/*.json
-/database/*.db
+/database/
