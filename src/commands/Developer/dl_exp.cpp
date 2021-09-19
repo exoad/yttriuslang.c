@@ -1,11 +1,9 @@
-const Database = require("easy-json-database");
+//const Database = require("easy-json-database");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
 const moment = require("moment");
-var levelup = require("levelup");
-var leveldown = require("leveldown");
-var db = levelup(leveldown("./mydb"));
+const db = require('secure-db');
 module.exports = {
   config: {
     name: `dl`,
@@ -15,9 +13,13 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      const db = new Database("db/registry_user.json");
+      //const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
       else {
+        let ans = args[0];
+        let para = args[1];
+        db.add(ans, para);
+        /*
         if (args[0] == "clear") {
           db.clear();
           message.channel.send("Cleared");
@@ -39,6 +41,7 @@ module.exports = {
         } else if (args[0] == "delete") {
           
         }
+        */
       }
     } catch (err) {
       console.error(err);
