@@ -16,10 +16,11 @@ module.exports = {
       //const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
       else {
+        const TestDB = db.Database("TESTDB", true);
         let ans = args[0];
         let para = args[1];
-        db.add(ans, para);
-        message.channel.send(db.get(ans));
+        TestDB.add(ans, para);
+        message.channel.send(TestDB.get(ans));
         /*
         if (args[0] == "clear") {
           db.clear();
