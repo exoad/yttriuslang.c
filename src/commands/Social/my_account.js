@@ -1,5 +1,7 @@
 // DEPRECATED : const Database = require("easy-json-database");
+const { Database } = require('secure-db');
 const { MessageEmbed } = require("discord.js");
+const config = require("../../../configs/token.json");
 module.exports = {
   config: {
     name: `myaccount`,
@@ -11,14 +13,18 @@ module.exports = {
     try {
       message.channel.send("**Checking the database...**\n*Please be patient, this won't last long*").then((m) => {
         setTimeout(function () {
-          /*
-          const db = new Database("db/registry_user.json");
+          const db = new Database("account");
+          // DEPRECATED DEPENDENCY : const db = new Database("db/registry_user.json");
           if(!db.has(message.author.id)) {
             m.edit("**Failed to retrieve your account**\nReason: You are not registered");
           } else {
-            m.edit("Found.");
+            m.edit("Your Account information below:");
+            const embed = new MessageEmbed()
+            .setTitle(message.author.username + "'s Public Account")
+            .setDescription("See any anomalies? Use `" + config.prefix + "support` to report the issue!")
+            .addField("")
           }
-          */ // DEPRECATED CODE
+
         }, 1500);
       })
     } catch (err) {

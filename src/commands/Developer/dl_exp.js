@@ -3,7 +3,7 @@ const { MessageEmbed, MessageAttachment } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
 const moment = require("moment");
-const { Database } = require('secure-db');
+const { Database } = require("secure-db");
 module.exports = {
   config: {
     name: `dl`,
@@ -16,11 +16,17 @@ module.exports = {
       //const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
       else {
-        const db = new Database('test-db');
+        const db = new Database("test-db");
         let ans = args[0];
-        message.channel.send(ans);
-        db.add(ans, 4);
-        message.channel.send("WORD: "+ JSON.parse((db.get(ans))));
+        if (!ans || ans == null || ans == undefined)
+          message.channel.send("Null");
+        else {
+          message.channel.send(ans);
+          if (!db.has(ans)) {
+            db.add(ans, 4);
+            message.channel.send("WORD: " + JSON.parse(db.get(ans)));
+          } else message.channel.send("No");
+        }
         /*
         if (args[0] == "clear") {
           db.clear();
