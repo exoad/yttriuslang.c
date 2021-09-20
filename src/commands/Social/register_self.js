@@ -1,4 +1,5 @@
-const Database = require("easy-json-database");
+// DEPRECATED : const Database = require("easy-json-database");
+const { Database } = require('secure-db');
 const Discord = require("discord.js");
 const config = require("../../../configs/token.json");
 const moment = require("moment");
@@ -13,7 +14,8 @@ module.exports = {
     try {
       let author = message.author.id;
       message.channel.send("Checking the database...").then((m) => {
-        const db = new Database("db/registry_user.json");
+        /* DEPRECATED CODE : const db = new Database("db/registry_user.json"); */
+        const db = new Database("account");
         setTimeout(function () {
           if (!db.has(author)) {
             if (author == config.owner_id) {
@@ -21,6 +23,9 @@ module.exports = {
                 reg: 3,
                 trust: 10,
                 tags: "owner",
+                wallet: "INF_NULL",
+                coins: "INF_NULL",
+                reps: 0,
                 time_reg: moment().format("MMMM Do YYYY, h:mm:ss a"),
               });
               m.edit(
@@ -33,6 +38,9 @@ module.exports = {
                 reg: 1,
                 trust: 1,
                 tags: "normal_user",
+                wallet: "INF_NULL",
+                coins: "INF_NULL",
+                reps: 0,
                 time_reg: moment().format("MMMM Do YYYY, h:mm:ss a"),
               });
               m.edit(

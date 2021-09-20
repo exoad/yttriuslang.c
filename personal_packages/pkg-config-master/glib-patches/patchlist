@@ -1,0 +1,15 @@
+# pkg-config specific
+glib-only.patch
+no-installed-files.patch
+foreign-automake.patch
+no-gregex.patch
+no-pkg-config.patch
+no-gettext.patch
+cross-compiling.patch
+static-only.patch
+win32-static-init.patch
+osx-static-framework.patch
+
+# Upstream backports
+gcc-format-nonliteral-1.patch
+gcc-format-nonliteral-2.patch

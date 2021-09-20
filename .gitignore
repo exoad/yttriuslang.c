@@ -1,5 +1,10 @@
 /.vscode
+*.env
 configs/nasa.env
 /node_modules/
 /configs/token.json
+
+#All database files are held confidential
 /db/registry_user.json
+/db/*.json
+/database/

@@ -7,7 +7,7 @@ const chnl = require("../../../configs/chnl.json");
 const resource = require("../../../configs/resource.json");
 const superagent = require("superagent");
 const colors = require("../../../configs/colors.json");
-const Database = require("easy-json-database");
+//const Database = require("easy-json-database");
 const token = require("../../../configs/token.json");
 module.exports = {
   config: {
@@ -18,6 +18,7 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
+      /*
       const db = new Database("db/registry_user.json");
       if (db.has(message.author.id)) {
         if (
@@ -69,7 +70,7 @@ module.exports = {
               )
               .addField(
                 "file_type",
-                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml, xml, ipynb, tex, texinfo`"
+                "**Description:** The file type specified to view the documentations\n**Avaliable Parameters:** `markdown, text, htm, pdf, html, mhtml"
               )
               .addField(
                 "Command Description",
@@ -97,18 +98,6 @@ module.exports = {
             askCooldown(message.author.id);
           } else if (file_type == "pdf") {
             askFile(".pdf");
-            askCooldown(message.author.id);
-          } else if (file_type == "ipynb") {
-            askFile(".ipynb");
-            askCooldown(message.author.id);
-          } else if (file_type == "texinfo") {
-            askFile(".texinfo");
-            askCooldown(message.author.id);
-          } else if (file_type == "tex") {
-            askFile(".tex");
-            askCooldown(message.author.id);
-          } else if (file_type == "xml") {
-            askFile(".xml");
             askCooldown(message.author.id);
           } else {
             const embed = new MessageEmbed()
@@ -153,6 +142,7 @@ module.exports = {
 
         message.channel.send({ embed });
       }
+      */
     } catch (err) {
       const embed = new MessageEmbed()
         .setTitle("Whoops, looks like something went wrong!")

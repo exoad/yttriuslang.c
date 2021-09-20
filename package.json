@@ -5,9 +5,8 @@
     "@f/elapsed-time": "^1.0.0",
     "@types/mathjs": "^6.0.11",
     "chemicaltools": "^1.2.22",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
     "discord.js-commando": "^0.12.2",
-    "easy-json-database": "^1.5.0",
     "element-histories": "^0.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
@@ -20,7 +19,7 @@
     "node-superfetch": "^0.1.11",
     "path": "^0.12.7",
     "random-frog": "^2.0.0",
-    "simple-json-db": "^1.2.3",
+    "secure-db": "^1.5.1",
     "star-colors": "^1.0.0",
     "stopwatch-node": "^1.1.0",
     "superagent": "^6.1.0",
@@ -32,7 +31,7 @@
     "util": "^0.10.4",
     "wikipedia": "^1.1.1"
   },
-  "name": "y_source",
+  "name": "yttrius_yapi",
   "version": "1.0.0",
   "main": "src/app.js",
   "scripts": {
@@ -42,5 +41,8 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "repository": {
+    "url": "https://github.com/exoad/yAPI"
+  }
 }

@@ -13,11 +13,13 @@ module.exports = {
     },
     run: async(bot, message, args) => {
         try {
+            //replace + & /
             let toCalc = args.slice(0).join(" ");
             const body = await superagent.get(
                 "https://api.mathjs.org/v4/?expr=" +
-                toCalc.replace("+", "%2B").replace("/", "%")
+                toCalc.replace(/+/g, "%2B").replace(/\//g, "%")
             );
+            console.log(body)
             if (!toCalc || toCalc == undefined) {
                 const embed = new MessageEmbed()
                     .setTitle("Oops, looks like you're missing some parameters!")

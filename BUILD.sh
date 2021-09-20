@@ -2,6 +2,8 @@
 #
 # Docker Build script
 #
+# STATE : [] [BO]
+#
 
 echo -e "\e[34mRunning Script..." ; echo ;
 
