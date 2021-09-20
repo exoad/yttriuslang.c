@@ -9,6 +9,7 @@ echo -e "\e[34mStarting Daemon..." ; echo ;
 
 while :
 do	
+        killall -s KILL node # we restart the node process by killing it then starting it again
 	node app.js # restart the application
 	git pull https://github.com/exoad/yAPI.git # Note the SSH & GPG keys are already set this means if you are going to use this, you must set that manually
   	echo -e "\e[31mPulled new updates..." ; echo -e "\e[0m "; echo ; # reset the colors
