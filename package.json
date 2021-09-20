@@ -31,7 +31,7 @@
     "util": "^0.10.4",
     "wikipedia": "^1.1.1"
   },
-  "name": "y_source",
+  "name": "yttrius_yapi",
   "version": "1.0.0",
   "main": "src/app.js",
   "scripts": {
