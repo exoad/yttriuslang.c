@@ -1,5 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const superagent = require("superagent");
+const resource = require("../../../../configs/resource.json");
+const config = require("../../../../configs/token.json");
 module.exports = {
     config: {
         name: `fact`,
