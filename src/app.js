@@ -1,3 +1,4 @@
+// @ts-ignore
 const { Client, Collection, Discord, MessageEmbed } = require("discord.js");
 const bot = new Client();
 
@@ -5,6 +6,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+// @ts-ignore
 app.get("/", (req, res) => res.send("Online."));
 
 app.listen(port, () => console.log(`On port ${port}`));

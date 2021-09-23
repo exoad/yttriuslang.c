@@ -17,6 +17,7 @@
     "ms": "^2.1.3",
     "node-periodic-table": "^0.0.6",
     "node-superfetch": "^0.1.11",
+    "panlang": "0.0.2",
     "path": "^0.12.7",
     "random-frog": "^2.0.0",
     "secure-db": "^1.5.1",
