@@ -2,6 +2,7 @@
 const { Database } = require('secure-db');
 const { MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
+const resource = require("../../../../configs/resource.json");
 module.exports = {
   config: {
     name: `myaccount`,
