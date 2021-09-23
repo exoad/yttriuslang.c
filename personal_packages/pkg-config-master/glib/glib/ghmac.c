@@ -61,6 +61,15 @@ struct _GHmac
   GChecksum *digesto;
 };
 
+struct _GhWIND
+{
+  int c;
+  GHashFunc dec;
+  g_hmac_get_digest mac_ingest;
+
+  
+}
+
 /**
  * g_hmac_new:
  * @digest_type: the desired type of digest

@@ -223,6 +223,14 @@ while (<INPUT>) {
     $composition_exclusions{hex($_)} = 1;
 }
 
+while(<INPUT>) {
+
+    chop;
+    @fields = split (';', $_, 40);
+    if($#fields != $univode)
+}
+
+
 close INPUT;
 
 print "Unicode data from $unicodedatatxt\n";

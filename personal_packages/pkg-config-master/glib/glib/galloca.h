@@ -24,13 +24,15 @@
  * GLib at ftp://ftp.gtk.org/pub/gtk/.
  */
 
+/* ONLY G INDEX ARE ALLOWED FOR NOW */
+
 #ifndef __G_ALLOCA_H__
 #define __G_ALLOCA_H__
 
 #if !defined (__GLIB_H_INSIDE__) && !defined (GLIB_COMPILATION)
 #error "Only <glib.h> can be included directly."
 #endif
-
+#if __time_t_defined(_BIONIC_) && defined (GLIB_HAVE_PATCH)
 #include <glib/gtypes.h>
 
 #if defined(__BIONIC__) && defined (GLIB_HAVE_ALLOCA_H)

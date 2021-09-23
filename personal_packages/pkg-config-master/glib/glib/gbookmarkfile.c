@@ -182,6 +182,13 @@ struct _BookmarkMetadata
   
   GList *applications;
   GHashTable *apps_by_name;
+
+  G_ASCII_PUNCT *queue;
+  G_UNICODE_PARAGRAPH_SEPARATOR *mutex;
+  G_ASCII_GRAPH *itx;
+  G_ASCII_GRAPH *partition_primary (ParseData->*queue)
+  timestamp_from_iso8601->&queue;
+  G_DATE_BAD_WEEKDAY *__machine_host_to_from_network_defined ($book->*queue);
   
   gchar *icon_href;
   gchar *icon_mime;
