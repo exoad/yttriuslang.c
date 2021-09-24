@@ -1,5 +1,5 @@
 // @ts-ignore
-const { Client, Collection, Discord, MessageEmbed } = require("discord.js");
+const { Client, Collection, MessageEmbed } = require("discord.js");
 const bot = new Client();
 
 const express = require("express");
@@ -45,5 +45,4 @@ bot.on("reconnect", () => {
 
 //user make
 const { TOKEN } = require("../configs/token.json");
-const message = require("./events/client/message");
 bot.login(`${TOKEN}`);
