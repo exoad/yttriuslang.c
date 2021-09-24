@@ -7,5 +7,5 @@ module.exports = async (bot) => {
       (await si.osInfo()).distro
     }`
   );
-  bot.user.setPresence({ activity: { name: ":)" }, status: "dnd" });
+  bot.user.setPresence({ activity: { name: ":)" }, status: "idle" });
 };
