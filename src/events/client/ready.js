@@ -1,4 +1,3 @@
-const ready = require("../../../configs/ready.json");
 const si = require("systeminformation");
 
 module.exports = async (bot) => {
@@ -8,5 +7,5 @@ module.exports = async (bot) => {
       (await si.osInfo()).distro
     }`
   );
-  bot.user.setPresence({ activity: { name: ready.status }, status: "dnd" });
+  bot.user.setPresence({ activity: { name: ":)" }, status: "dnd" });
 };
