@@ -1,0 +1,7 @@
+build/
+test
+test2
+*.o
+a.out*
+
+/nbproject/private/

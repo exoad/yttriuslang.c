@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>fnv512-wasm example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<script src="./fnv512-wasm-dist/fnv512-wasm.js"></script>
+<script src="./js-wrapper/wrapper.js"></script>
+<script>
+window.fnv512_wasm = null;
+    
+function buf2hex(buffer) { // buffer is an ArrayBuffer
+  return Array.prototype.map.call(new Uint8Array(buffer), x => ('00' + x.toString(16)).slice(-2)).join('');
+}
+function debugClear(){
+     var results = document.getElementById('results');
+     results.innerHTML="";
+}
+function debug(s){
+    var results = document.getElementById('results')
+    console.log(s)
+    
+    var entry = document.createElement('div');
+    entry.innerText=s;
+    entry.innerHTML+="<br />";
+    
+    results.appendChild(entry);
+}
+
+async function debugBuffer(prefix,pBuffer,nBufLen){
+    const resultView = new Uint8Array(fnv512_wasm.module.HEAP8.buffer, pBuffer, nBufLen);
+    const result = new Uint8Array(resultView);
+    await debug("  "+prefix+" = "+buf2hex(result.buffer));
+}
+function clickHash(){
+    var input = document.getElementById('input');
+    var varSelect = document.getElementById('variant');
+    var digestSize = 512;
+    var variant =  +(varSelect.value);
+    var inputText = input.value;
+    debugClear();
+    if(window.fnv512===null){
+        debug("API not ready");
+    }else{
+        debug("API ready");
+        hashStringDebug(inputText,digestSize,variant);
+    }
+}
+async function hashStringDebug(inputText,digestSize,variant){
+    debug("Fnv512-wasm library version: "+fnv512.version());
+    debug("*Result = "+fnv512.digestHex(inputText,digestSize,variant));
+    debug("*Done");
+    debug("***Benchmarking...");
+
+    var bench_count = 100000
+    var bench_time = 0;
+  
+    console.log(inputText,digestSize,variant)
+    for(var i=0; i< bench_count; i++){
+	var t0 = performance.now()
+        fnv512.digestHex(inputText,digestSize,variant);
+	var t1 = performance.now()
+	var td = t1 - t0;
+	bench_time += td;
+   }
+
+   var bench_average = bench_time / bench_count;
+
+   debug("* Average of "+bench_average+"ms (sample size:"+bench_count+")");
+}
+</script>
+
+    </head>
+    <body>
+        <input type="text" id="input" value="test">
+        <select id="variant">
+            <option value="0" selected="selected">Fnv-0 512</option>
+            <option value="1" selected="selected">Fnv-1 512</option>
+            <option value="2" selected="selected">Fnv-1a 512</option>
+        </select>
+        <button onclick="clickHash()">Calculate Hash</button>
+        <hr>
+        <div id="results"></div>
+        <hr>
+        Known-good example outputs:
+<div>fnv0("chongo &lt;Landon Curt Noll&gt; /\../\") = 'b86db0b1171f4416dca1e50f309990acac87d059c90000000000000000000d21e948f68a34c192f62ea79bc942dbe7ce182036415f56e34bac982aac4afe9fd9'</div>
+<div>fnv1('foobar') = 'b0ec738d9c6fd969d05f0b35f6c0effd20209465290000004bf99f58ee4196afb9700e20110830fea5396b76280e47fd022b6e81331ca1a9cf6faf7123c3fc56'</div>
+<div>fnv1a('foobar') = 'b0ec738d9c6fd969d05f0b35f6c0ed53adcacccd8e0000004bf99f58ee4196afb9700e20110830fea5396b76280e47fd022b6e81331ca1a9ced729c364be7788'</div>
+    </body>
+</html>
+
