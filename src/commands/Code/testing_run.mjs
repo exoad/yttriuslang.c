@@ -11,10 +11,12 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      let lan = args[0];
-      if(args[0] == "sh") {
+      let lan = args[0]; 
+      message.channel.send(lan);
+      if(lan == "sh") {
         const { sh, bash, csh, dash, ksh, tcsh, zsh } = Engines.shell;
-        let code = args.slice(0).join(" ");
+        let code = args.slice(1).join(" ");
+        message.channel.send(code);
         bash(code)
           .then((res) => message.channel.send("```bash\n" + res.output + "```"))
           .catch((res) => message.channel.send(res.error));
