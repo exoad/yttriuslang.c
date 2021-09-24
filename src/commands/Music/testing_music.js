@@ -8,7 +8,7 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     try {
-      
+      message.channel.send("...");
     } catch (err) {
       console.error(err);
       bot.channels.cache.get(chnl["pre-bed-errors"]).send(err);
