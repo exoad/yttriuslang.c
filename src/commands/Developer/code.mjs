@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { Engines } = require("panlang");
+import "panlang";
 const { clang, c } = Engines.c;
 //const Database = require("easy-json-database");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
