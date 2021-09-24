@@ -1,10 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
-const chnl = require("../../../configs/chnl.json");
 const resource = require("../../../configs/resource.json");
-const superagent = require("superagent");
 const token = require("../../../configs/token.json");
-const colors = require("../../../configs/colors.json");
 module.exports = {
   config: {
     name: `guide`,
@@ -12,7 +9,7 @@ module.exports = {
     description: "",
     aliases: [`howto`],
   },
-  run: async (bot, message, args) => {
+  run: async (bot, message) => {
     try {
       const embed = new MessageEmbed()
         .setTitle("How to use this bot | Bot prefix: " + token.prefix)

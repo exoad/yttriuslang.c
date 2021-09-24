@@ -2,9 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const config = require("../../../../configs/token.json");
 const chnl = require("../../../../configs/chnl.json");
 const resource = require("../../../../configs/resource.json");
-const superagent = require("superagent");
 const chemicaltools = require("chemicaltools");
-const fetch = require("node-fetch");
 const colors = require("../../../../configs/colors.json");
 const npt = require("node-periodic-table");
 module.exports = {
@@ -36,8 +34,8 @@ module.exports = {
 
                 message.channel.send({ embed });
             } else {
-                const smth = stringify(chemicaltools.searchElement(capStuff(toSearch)));
-                var body = parse(smth);
+                const smth = JSON.stringify(chemicaltools.searchElement(capStuff(toSearch)));
+                var body = JSON.parse(smth);
                 if (body.iupac == null || !body.iupac || body.iupac == undefined) {
                     const embed = new MessageEmbed()
                         .setTitle("Hmmm, looks like that element doesn't exist (yet)")
@@ -60,8 +58,8 @@ module.exports = {
 
                     message.channel.send({ embed });
                 } else {
-                    const oc = stringify(npt.getBySymbol(body.symbol));
-                    const ewww = parse(oc);
+                    const oc = JSON.stringify(npt.getBySymbol(body.symbol));
+                    const ewww = JSON.parse(oc);
                     const embed = new MessageEmbed()
                         .setTitle(body.iupac)
                         .setDescription(
@@ -101,3 +99,7 @@ module.exports = {
         }
     },
 };
+
+function stringify(arg0) {
+    throw new Error("Function not implemented.");
+}

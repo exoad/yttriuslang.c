@@ -2,8 +2,6 @@ const { MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
 const chnl = require("../../../configs/chnl.json");
 const resource = require("../../../configs/resource.json");
-const superagent = require("superagent");
-const colors = require("../../../configs/colors.json");
 const ready = require("../../../configs/ready.json");
 module.exports = {
     config: {
@@ -12,7 +10,7 @@ module.exports = {
         description: "",
         aliases: [``],
     },
-    run: async(bot, message, args) => {
+    run: async(bot, message) => {
         try {
             const embed = new MessageEmbed()
                 .setTitle("Science Bot")

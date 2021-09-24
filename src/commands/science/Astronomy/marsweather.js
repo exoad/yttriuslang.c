@@ -1,9 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const config = require("../../../../configs/token.json");
-const chnl = require("../../../../configs/chnl.json");
 const resource = require("../../../../configs/resource.json");
-const superagent = require("superagent");
-const colors = require("../../../../configs/colors.json");
 module.exports = {
     config: {
         name: `marsweather`,
@@ -11,7 +8,7 @@ module.exports = {
         description: "",
         aliases: [`marsw`],
     },
-    run: async(bot, message, args) => {
+    run: async(bot, message) => {
         try {
             let getMarsData = async() => {
                 let result = await fetch(
@@ -23,7 +20,7 @@ module.exports = {
             let marsDataVal = await getMarsData();
             let sol = marsDataVal.sol_keys[6];
             let lastestTemp = marsDataVal[sol].AT.av;
-            msg.reply(
+            message.reply(
                 "Latest temperature from NASA's InSight Mars Lander at Elysium Planitia: " +
                 lastestTemp +
                 "°C"

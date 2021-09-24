@@ -1,6 +1,5 @@
 const { MessageEmbed } = require("discord.js");
 const config = require("../../../../configs/token.json");
-const chnl = require("../../../../configs/chnl.json");
 const resource = require("../../../../configs/resource.json");
 const superagent = require("superagent");
 module.exports = {
@@ -10,7 +9,7 @@ module.exports = {
         description: "",
         aliases: [`nasadaily`],
     },
-    run: async(bot, message, args) => {
+    run: async(bot, message) => {
         try {
             const { body } = await superagent.get(
                 `https://api.nasa.gov/planetary/apod?api_key=6xN4Xyh4nluXEufxFnT0fLzku2lEgBUYbv3Orttc`

@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
-const token = require("../../../configs/token.json");
+const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
-const superagent = require("superagent");
+
 module.exports = {
     config: {
         name: `support`,
@@ -9,7 +9,7 @@ module.exports = {
         description: "",
         aliases: [`supportserver`],
     },
-    run: async(bot, message, args) => {
+    run: async(bot, message) => {
         try {
             const embed = new MessageEmbed()
                 .setTitle("Support")
@@ -18,11 +18,11 @@ module.exports = {
                 )
                 .addField(
                     "Main Discord Support Server",
-                    "[Invite Link](" + token.server_invite1 + ")"
+                    "[Invite Link](" + config.server_invite1 + ")"
                 )
                 .addField(
                     "Backup Invite Link",
-                    "[Backup Link](" + token.backup_server_invite + ")"
+                    "[Backup Link](" + config.backup_server_invite + ")"
                 );
 
             message.channel.send({ embed });

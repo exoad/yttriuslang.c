@@ -1,8 +1,6 @@
 const fs = require("fs");
 const { promisify } = require("util");
-const readdir = promisify(fs.readdir);
 const Discord = require("discord.js");
-const bot = new Discord.Client();
 const { MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
@@ -14,7 +12,7 @@ module.exports = {
         aliases: [``],
     },
 
-    run: async(bot, message, args) => {
+    run: async(bot, message) => {
         const command = message.content.split(" ");
         if (command[1] == undefined) {
             const embed = new Discord.MessageEmbed()
@@ -35,7 +33,7 @@ module.exports = {
             if (command[1] != undefined) {
                 fs.readFile("./configs/commands.json", (err, dataJson) => {
                     if (err) throw err;
-                    let helpMe = JSON.parse(dataJson);
+                    let helpMe = JSON.parse(JSON.stringify(dataJson));
                     let commandName = command[1];
 
                     try {
