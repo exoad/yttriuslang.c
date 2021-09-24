@@ -12,5 +12,5 @@ module.exports = (bot) => {
             console.log(`Command | ${pull.config.name} has loaded`)
         }
     };
-    ["Main"].forEach(x => load(x));
+    ["Main", "Music"].forEach(x => load(x));
 }
