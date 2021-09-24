@@ -7,7 +7,7 @@ module.exports = {
   },
   run: async (bot, message, args) => {
     
-    let changeLog = "**CANARY Testing Commands v1.0**\nDescription: These commands are in testing and are not \"FINAL\"!!!\n```\ntesting_list```\n\n*The Yttrius Canary Program Copyright (C) 2021*";
+    let changeLog = "**CANARY Testing Commands v1.0**\nDescription: These commands are in testing and are not \"FINAL\"!!!\n```\ntesting_list, testing_about```\n\n*The Yttrius Canary Program Copyright (C) 2021*";
     message.channel.send(changeLog);
   },
 };
