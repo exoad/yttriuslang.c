@@ -32,6 +32,14 @@ bot.on("message", (message) => {
     }
 });
 
+bot.on("disconnect", () => {
+    console.error("Disconnected...\n");
+})
+
+bot.on("reconnect", () => {
+    console.error("Reconnect...\n");
+})
+
 //user make
 const { TOKEN } = require("../configs/token.json");
 bot.login(`${TOKEN}`);
