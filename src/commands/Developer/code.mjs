@@ -2,19 +2,17 @@
 import "panlang";
 const { clang, c } = Engines.c;
 //const Database = require("easy-json-database");
-const { MessageEmbed, MessageAttachment } = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
 const resource = require("../../../configs/resource.json");
-const moment = require("moment");
-const { Database } = require("secure-db");
 module.exports = {
   config: {
-    name: `dl`,
+    name: `lp`,
     category: "",
     description: "",
     aliases: [``],
   },
-  run: async (bot, message, args) => {
+  run: async (bot, message) => {
     try {
       //const db = new Database("db/registry_user.json");
       if (message.author.id != config.owner_id) return;
