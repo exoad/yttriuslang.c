@@ -8,3 +8,6 @@ configs/nasa.env
 /db/registry_user.json
 /db/*.json
 /database/
+
+#code output files
+/temp/

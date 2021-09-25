@@ -4,7 +4,7 @@ const bot = new Client();
 
 const express = require("express");
 const app = express();
-const port = 8080;
+const port = 5080;
 
 // @ts-ignore
 app.get("/", (req, res) => res.send("Online."));
