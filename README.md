@@ -3,7 +3,7 @@
 
 This is a Discord Bot I made along with an internal API (thats why its called YttriusAPI or yAPI)
 
-`/core` is mainly used for one of the C libraries I use to parse JS.
+`/core` is mainly used for one of the C libraries I use to parse JS and also some other common packages I need
 
 This folder does not only include the bot, but also includes its API.
 
