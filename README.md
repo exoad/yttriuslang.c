@@ -24,3 +24,7 @@ Files / Directories in `./personal_packages` are to be deleted if said consumer 
 
 
 > You pronounce "yAPI" as either "why-A-P-I" OR "yaa-Ah-Pie"
+
+## API OR SDK (lib)
+
+## This is a secondary addition of the main yAPI version and will have differing features
