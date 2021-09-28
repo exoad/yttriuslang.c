@@ -1,6 +1,111 @@
-*.json binary
-*.txt text
-*.sql binary
-*.out binary
-*.zip binary
-*.h diff=text
+# LF Normalization
+*          text=auto
+
+*.pbxproj binary -merge=union
+*.m       text diff=objc
+*.c     text diff=c
+*.cc    text diff=cpp
+*.cxx   text diff=cpp
+*.cpp   text diff=cpp
+*.c++   text diff=cpp
+*.hpp   text diff=cpp
+*.h     text diff=c
+*.h++   text diff=cpp
+*.hh    text diff=cpp
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+*.gch   binary
+*.pch   binary
+*.so    binary
+*.dylib binary
+*.dll   binary
+*.lai   binary
+*.la    binary
+*.a     binary
+*.lib   binary
+*.ex  diff=elixir
+*.exs diff=elixir
+*.exe   binary
+*.out   binary
+*.app   binary
+*.java          text diff=java
+*.kt            text diff=java
+*.groovy        text diff=java
+*.scala         text diff=java
+*.gradle        text diff=java
+*.gradle.kts    text diff=java
+*.css           text diff=css
+*.scss          text diff=css
+*.sass          text
+*.df            text
+*.htm           text diff=html
+*.html          text diff=html
+*.js            text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.properties    text
+*.tld           text
+*.tag           text
+*.tagx          text
+*.xml           text
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.jar           binary
+*.so            binary
+*.war           binary
+*.jks           binary
+*.bibtex   text diff=bibtex
+*.doc      diff=astextplain
+*.DOC      diff=astextplain
+*.docx     diff=astextplain
+*.DOCX     diff=astextplain
+*.dot      diff=astextplain
+*.DOT      diff=astextplain
+*.pdf      diff=astextplain
+*.PDF      diff=astextplain
+*.rtf      diff=astextplain
+*.RTF      diff=astextplain
+*.md       text diff=markdown
+*.tex      text diff=tex
+*.adoc     text
+*.textile  text
+*.mustache text
+*.csv      text
+*.tab      text
+*.tsv      text
+*.txt      text
+*.sql      text
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.tif      binary
+*.tiff     binary
+*.ico      binary
+*.svg      text
+*.eps      binary
+*.bash     text eol=lf
+*.fish     text eol=lf
+*.sh       text eol=lf
+*.zsh      text eol=lf
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+*.ps1      text eol=crlf
+*.json     text
+*.toml     text
+*.xml      text
+*.yaml     text
+*.yml      text
+*.7z       binary
+*.gz       binary
+*.tar      binary
+*.tgz      binary
+*.zip      binary
+*.patch    -text
+.gitattributes export-ignore
+.gitignore     export-ignore
+.gitkeep       export-ignore
