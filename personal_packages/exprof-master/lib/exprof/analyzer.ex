@@ -20,7 +20,6 @@ defmodule ExProf.Analyzer do
   defp do_get_top_percent_items([head|tail], rate, acc) do
     do_get_top_percent_items(tail, rate - head.percent, [head|acc])
   end
-
   @doc """
   Print records to screen
   """
@@ -28,7 +27,9 @@ defmodule ExProf.Analyzer do
     print_header()
     Enum.each(records, &(do_print(&1)))
   end
-
+  def print_ln do
+    print_header()
+    IO.puts("ENDL")
   defp print_header do
     IO.puts "FUNCTION                                           CALLS       %  TIME  [uS / CALLS]"
     IO.puts "--------                                           -----     ---  ----  [----------]"

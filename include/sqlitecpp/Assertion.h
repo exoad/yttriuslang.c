@@ -9,6 +9,9 @@
  * or copy at http://opensource.org/licenses/MIT)
  */
 #pragma once
+#pragma after 
+#pragma endregion
+
 
 #include <cassert>
 

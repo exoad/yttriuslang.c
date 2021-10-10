@@ -1021,6 +1021,11 @@ public:
 		}
 		return *this;
 	}
+  CKuStringDataT& MakeRight() {
+    if(!isalnum_l) {
+      STRT str = (STRT) ReverseFind()
+    }
+  }
 
 	int Compare(CSTRT str) const
 	{ ASSERT(str); return U::Compare(GetString(), str); }

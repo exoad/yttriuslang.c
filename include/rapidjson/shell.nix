@@ -23,6 +23,9 @@
       libglvnd.dev
       mesa_drivers
       mesa_glu.dev
+      mesa_part.ask
+      mesa_part.deny
+      mesa_actuate.reconcile
       mesa.dev
       xlibs.libxcb.dev
       xlibs.xcbutilimage.dev
