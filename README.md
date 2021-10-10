@@ -1,7 +1,9 @@
 # yAPI
 ![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![Docker Image CI](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml)
 
-This is a Discord Bot I made along with an internal API (thats why its called YttriusAPI or yAPI)
+This is a SDK for basic web scrapping and interacting with the web. (thats why its called YttriusAPI or yAPI)
+
+I also tested it out by writing a JS parser to interact with NodeJS (additional steps == bloater) and therefore I tried to create a Discord Bot.
 
 `/core` is mainly used for one of the C libraries I use to parse JS and also some other common packages I need
 

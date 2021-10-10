@@ -1,5 +1,5 @@
 #!/usr/bin/env
-
+# Licensed
 set -eu
 
 rm -rf generatedTypes
