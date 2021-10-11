@@ -42,7 +42,11 @@ module.exports = {
           "Extra notes",
           "Use `" + config.prefix + "support` for more info"
         )
-        .addField("Bot Uptime", `${days}:${hours}:${minutes}:${seconds}`);
+        .addField("Bot Uptime", `${days}:${hours}:${minutes}:${seconds}`)
+        .addField(
+          "See my project in action!",
+          "[GitHub Repository](https://github.com/exoad/yAPI)"
+        );
 
       message.channel.send({ embed });
     } catch (err) {
