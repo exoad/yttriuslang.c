@@ -10,7 +10,7 @@
     "element-histories": "^0.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
-    "lunarphase-js": "^1.0.5",
+    "lunarphase-js": "^1.0.8",
     "molarcalc": "^1.0.2",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
