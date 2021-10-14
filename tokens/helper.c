@@ -13,7 +13,7 @@ int consume_known_lit(char *p, uint32_t *out)
   }
   switch (*p++)
   {
-  case 'a':
+  case 'p':
     switch (*p++)
     {
     case 's':
