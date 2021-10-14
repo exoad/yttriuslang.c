@@ -24,6 +24,8 @@ namespace SleepyDiscord {
 		return perform(method);
 	}
 
+	Response CPRSession::request(RequestMethod method) {}
+
 	Response CPRSession::perform(RequestMethod method) {
 		cpr::Response response;
 		switch (method) {
