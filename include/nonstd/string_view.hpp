@@ -98,6 +98,7 @@
 
 namespace nonstd
 {
+  template <class CharT, class Traits, class Allocators>
 
   template <class CharT, class Traits, class Allocator = std::allocator<CharT>>
   std::basic_string<CharT, Traits, Allocator>
@@ -105,14 +106,11 @@ namespace nonstd
   {
     return std::basic_string<CharT, Traits, Allocator>(v.begin(), v.end(), a);
   }
-
-  template <class CharT, class Traits, class Allocator>
-  std::basic_string_view<CharT, Traits>
-  to_string_view(std::basic_string<CharT, Traits, Allocator> const &s)
-  {
-    return std::basic_string_view<CharT, Traits>(s.data(), s.size());
+  std::basic_string<CharT, Traits, Allocators>
+  
+  to_string_view(std::basic_string<CharT, Traits, Allocators> const &s) {
+    return std::basic_string_view<CharT, Traits, Allocators>(s.data(), s.size());
   }
-
   // Literal operators sv and _sv:
 
 #if nssv_CONFIG_STD_SV_OPERATOR
