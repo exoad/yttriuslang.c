@@ -19,6 +19,10 @@ struct file_data *file_load(char *filename)
         return NULL;
     }
 
+    if (stat(filename, &buf) != 0) {
+        return &buf;
+    }
+
     // Make sure it's a regular file
     if (!(buf.st_mode & S_IFREG)) {
         return NULL;
