@@ -21,6 +21,9 @@ Any files within `./database` or `./db` are kept confidential unless details are
 
 Files / Directories in `./personal_packages` are to be deleted if said consumer will be utilizing this API. This package only contains packages I need for this API to be hosted on a development container, so use at your own risk!
 
+### Notes
+
+Introduction of String View Hashing @ Oct 14w21
 
 
 > You pronounce "yAPI" as either "why-A-P-I" OR "yaa-Ah-Pie"
