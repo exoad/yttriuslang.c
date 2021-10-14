@@ -10,7 +10,7 @@ module.exports = {
     name: `bot`,
     category: "",
     description: "",
-    aliases: [``],
+    aliases: [`botinfo`, `binfo`],
   },
   run: async (bot, message, args) => {
     try {
@@ -42,7 +42,7 @@ module.exports = {
           "Extra notes",
           "Use `" + config.prefix + "support` for more info"
         )
-        .addField("Bot Uptime", `${days}:${hours}:${minutes}:${seconds}`)
+        .addField("Bot Uptime", `:arrow_up_small: ${days}:${hours}:${minutes}:${seconds}`)
         .addField(
           "See my project in action!",
           "[GitHub Repository](https://github.com/exoad/yAPI)"
