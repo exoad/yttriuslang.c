@@ -6,7 +6,7 @@
     "@types/mathjs": "^9.4.2",
     "chemicaltools": "^1.2.22",
     "discord.js": "^12.5.3",
-    "discord.js-commando": "^0.12.2",
+    "discord.js-commando": "^0.12.3",
     "element-histories": "^0.0.2",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
