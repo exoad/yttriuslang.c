@@ -57,6 +57,10 @@ public:
     }
     return ch;
   }
+  
+  Ch take() {
+    return ch;
+  }
 
   //! Get the error line number, if error exists.
   size_t GetLine() const { return line_; }
