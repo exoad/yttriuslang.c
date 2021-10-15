@@ -30,7 +30,7 @@
     "timer-stopwatch-dev": "^1.1.0",
     "uninstall": "0.0.0",
     "util": "^0.10.4",
-    "wikipedia": "^1.1.1"
+    "wikipedia": "^1.1.6"
   },
   "name": "yttrius_yapi",
   "version": "1.0.0",
