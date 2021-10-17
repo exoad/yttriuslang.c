@@ -4,7 +4,7 @@ project(yAPI C)
 include(CTest)
 enable_testing()
 
-add_library(yAPI main.c)
+add_library(yAPI yAPI.c)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
