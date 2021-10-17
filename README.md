@@ -1,5 +1,5 @@
 # yAPI
-![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![Docker Image CI](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml) [![CMake](https://github.com/exoad/yAPI/actions/workflows/cmake.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/cmake.yml)
+![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![Docker Image CI](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml) [![CMake](https://github.com/exoad/yAPI/actions/workflows/cmake.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/cmake.yml) [![Labeler](https://github.com/exoad/yAPI/actions/workflows/label.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/label.yml)
 
 This is a SDK for basic web scrapping and interacting with the web. (thats why its called YttriusAPI or yAPI)
 
