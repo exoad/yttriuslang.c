@@ -20,6 +20,7 @@ void delete_figure(Figure * fig) {
 			curr = curr->next;
 
 			free(prev->point);
+			free(curr->data);
 			free(prev);			
 		}
 		
