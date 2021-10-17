@@ -484,22 +484,11 @@ int main() {
 	//END OF DEMO BLOCK import svg
 	/********************************************************/
 
-	printf("\n\nDrawing a giant...\n\n");
 	draw_me(me);
 	export_eps(me, "./itsme.eps");
 	delete_figure(me);	
 
-	printf("\n\nDrawing something like a galaxy...\n\n");
 	draw_space();
 
-	//draw_weather();
-
-	printf("\n/********************************************************/\n");
-	printf("\nEND OF DEMO\n\n");
-	printf("Project: Library for creating EPS and SVG vector graphics in C.\n");
-	printf("Author: Buğra Eren Yılmaz\n");
-	printf("Supervisor: \n");
-	printf("\nGebze Technical University\n");
-	printf("\n/********************************************************/\n\n");
 
 }
