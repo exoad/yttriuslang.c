@@ -13,7 +13,7 @@
     "lunarphase-js": "^1.0.8",
     "molarcalc": "^1.0.2",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.34",
     "ms": "^2.1.3",
     "node-periodic-table": "^0.0.6",
     "node-superfetch": "^0.2.3",
