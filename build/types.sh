@@ -13,3 +13,4 @@ echo "export {default} from '../src/tool/imports/lib';" >> imports/index.d.ts
 
 sudo reboot -y
 sudo exit #$
+sudo exit #z
