@@ -24,7 +24,7 @@ $1
 AC_DIVERT_POP()])])])
 
 dnl GLIB_IF_VAR_EQ (ENV_VAR, VALUE [, EQUALS_ACTION] [, ELSE_ACTION])
-AC_DEFUN([GLIB_IF_VAR_EQ],[
+AC_DEFUN([YAPI_IF_VAR_EQ],[
         case "$[$1]" in
         "[$2]"[)]
                 [$3]

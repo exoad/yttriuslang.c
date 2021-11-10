@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const profanity = require("@2toad/profanity").profanity;
 const resource = require('../../../../configs/resource.json');
-const token = require('../../../../configs/token.json');
+const config = require('../../../../configs/token.json');
 const colors = require('../../../../configs/colors.json');
 module.exports = {
   config: {
@@ -44,9 +44,9 @@ module.exports = {
         const embed = new MessageEmbed()
         .setTitle("Oops looks like you are missing some arguments...")
         .setThumbnail(resource.aw_snap)
-        .addField("Command Usage", "```" + token.prefix + "8ball {user_prompt}```")
+        .addField("Command Usage", "```" + config.prefix + "8ball {user_prompt}```")
         .addField("user_prompt", "Your message goes here")
-        .addField("Example Usage", "```" + token.prefix + "8ball Am i happy?")
+        .addField("Example Usage", "```" + config.prefix + "8ball Am i happy?")
         .setColor(colors.error);
         message.channel.send({embed});
       } else {

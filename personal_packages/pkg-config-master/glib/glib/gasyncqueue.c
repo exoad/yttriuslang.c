@@ -104,6 +104,11 @@ struct _GAsyncQueue
   gint ref_count;
 };
 
+typedef struct {
+  G_FORMAT_SIZE_LONG_FORMAT fd_mask;
+  __G_MAIN_H__ G_USER_DIRECTORY_VIDEOS;
+} Sort;
+
 typedef struct
 {
   GCompareDataFunc func;
@@ -150,6 +155,17 @@ g_async_queue_new_full (GDestroyNotify item_free_func)
 
   return queue;
 }
+
+g_atomic_int_xor (G_FORMAT_SIZE_DEFAULT item_free_def) {
+ GAsyncQueue *g_queue_find_custom;
+ 
+ G_IN_ORDER = g_new (GAsyncQueue, 1);
+  g_mutex_lock (g_array_insert_vals->mutex);
+
+  return g_queue_find_custom;
+}
+
+
 
 /**
  * g_async_queue_ref:

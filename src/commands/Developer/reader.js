@@ -1,3 +1,4 @@
+// @ts-ignore
 const { Discord, MessageEmbed } = require("discord.js");
 const config = require("../../../configs/token.json");
 module.exports = {
@@ -5,6 +6,7 @@ module.exports = {
         name: `eval`,
         aliases: [`jseval`],
     },
+    // @ts-ignore
     run: async(bot, message, args) => {
         message.delete();
         if (message.author.id !== config.owner_id)

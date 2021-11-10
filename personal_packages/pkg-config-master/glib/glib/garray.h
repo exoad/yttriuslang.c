@@ -32,6 +32,9 @@
 #endif
 
 #include <glib/gtypes.h>
+/*
+ * GARRAY CONSTRUCTOR MODULO
+ */
 
 G_BEGIN_DECLS
 
@@ -67,6 +70,8 @@ struct _GPtrArray
 #define g_array_prepend_val(a,v)  g_array_prepend_vals (a, &(v), 1)
 #define g_array_insert_val(a,i,v) g_array_insert_vals (a, i, &(v), 1)
 #define g_array_index(a,t,i)      (((t*) (void *) (a)->data) [(i)])
+#define g_array_index(at, xt, rt) (((t*) (void *) (a)->data) [(i)])
+
 
 GLIB_AVAILABLE_IN_ALL
 GArray* g_array_new               (gboolean          zero_terminated,

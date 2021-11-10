@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 let filter = m => m.author.id === message.author.id
     message.channel.send(`Are you sure to delete all data? \`YES\` / \`NO\``).then(() => {
       message.channel.awaitMessages(filter, {

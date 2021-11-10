@@ -229,5 +229,6 @@
         "description":"See your user profile or account that is registered",
         "usage":"account",
         "alias":"myaccount"
-    }
+    },
+    
 }

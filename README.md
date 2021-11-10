@@ -1,9 +1,11 @@
 # yAPI
-![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![Docker Image CI](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml)
+![](https://img.shields.io/github/languages/code-size/exoad/yAPI) ![](https://img.shields.io/github/repo-size/exoad/yAPI) [![Docker Image CI](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/docker-image.yml) [![CMake](https://github.com/exoad/yAPI/actions/workflows/cmake.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/cmake.yml) [![Labeler](https://github.com/exoad/yAPI/actions/workflows/label.yml/badge.svg)](https://github.com/exoad/yAPI/actions/workflows/label.yml)
 
-This is a Discord Bot I made along with an internal API (thats why its called YttriusAPI or yAPI)
+This is a SDK for basic web scrapping and interacting with the web. (thats why its called YttriusAPI or yAPI)
 
-`/core` is mainly used for one of the C libraries I use to parse JS.
+I also tested it out by writing a JS parser to interact with NodeJS (additional steps == bloater) and therefore I tried to create a Discord Bot.
+
+`/core` is mainly used for one of the C libraries I use to parse JS and also some other common packages I need
 
 This folder does not only include the bot, but also includes its API.
 
@@ -18,3 +20,10 @@ You can find this code [Not really updated] on other Git Providers here:
 Any files within `./database` or `./db` are kept confidential unless details are meant to be shown to the public. 
 
 Files / Directories in `./personal_packages` are to be deleted if said consumer will be utilizing this API. This package only contains packages I need for this API to be hosted on a development container, so use at your own risk!
+
+### Notes
+
+Introduction of String View Hashing @ Oct 14w21
+
+
+> You pronounce "yAPI" as either "why-A-P-I" OR "yaa-Ah-Pie"
