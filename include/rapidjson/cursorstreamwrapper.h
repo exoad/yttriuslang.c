@@ -52,9 +52,7 @@ public:
       col_ = 0;
     }
     else
-    {
       col_++;
-    }
     return ch;
   }
   

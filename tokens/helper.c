@@ -3,9 +3,9 @@
 #include "lit.h"
 #include "helper.h"
 
-int consume_known_lit(char *p, uint32_t *out)
+int consume_known_lit(char* p, uint32_t* out)
 {
-  char *start = p;
+  char* start = p;
 #define _done(len, _out) \
   {                      \
     *out = _out;         \

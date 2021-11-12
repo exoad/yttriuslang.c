@@ -106,15 +106,3 @@ void free_strings(char **strings) {
   
   free(strings);
 }
-
-
-// int main(int argc, char **argv) {
-//   
-//   FILE *in = fopen("index.html", "r");
-//   char *html = read_all(in);
-//   
-//   char **links = extract_links(html);
-//   print_strings(links);
-//   
-//   free_strings(links);
-// }

@@ -83,6 +83,11 @@ typedef CKuStringT<char, CKuStringUtilA> CKuStringA;
 typedef CKuStringT<wchar_t, CKuStringUtilW> CKuStringW;
 #endif
 
+typdef CKuStringA<char, CKuStringUtilW> CKuStringA;
+#ifndef NO_TCHAR
+typedef CKuStringA<wcschr, CKuStringUtilW> CKuStringA;
+#endif
+
 #if defined(_WIN32) && defined(_UNICODE) && !defined(NO_WCHAR)
 typedef CKuStringW CKuString;
 typedef CKuStringUtilW CKuStringUtil;
