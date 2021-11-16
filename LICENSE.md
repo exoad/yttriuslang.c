@@ -1,25 +1,30 @@
-# C-License 1.0
+=== YAPI & Yttrium Terminus Provisions of Software Development ===
 
-```
-COPYRIGHT (C) 2021 JACKMENG
+yAPI covers all licenses and provides all licensing for kernels & source code used for:
+  - Yttrius-Lang v1.0.6@GPL
+  - Ytttrius-SDK v5.2@GPLv3
+  - Compiler@APGL
+  - YttriusTranspiler v1.3@EPL2.0
+  - Externel Kernels (G-lib...)@Their respective licenses
+  - Yttrius-WASMEngine v?.?@GPLv3
+  - Y++ v1.0@GPLv3
+  - Yttrius WASMSDK-v3@proprietary
+  - ArctiXCv3@MIT
+  - Y-Lang Extension Lib v3.4@proprietary
+  - Y++ Extension Lib v3.9.3@proprietary
+  - Y++ Compiler & Standard Lib v1.0@proprietary
+Note: Not all of the mentioned above are or will be used in the development of yAPI
+- All included packages and used development kits are used in accordance with their licenses
+- All packages are under the development of a subsidary non-profit organization Yttrium Terminus
+- Y++ & Yttrius-Lang are licensed differently depending on the version you will be using
+- The compilers for Y++ & Yttrius-Lang are of no difference and are licensed under the same license
+- The Yttrius Transpiler is not for commerical distribution
 
-Permission is hereby granted to anyone of all associated pieces of software, code, and documentations free of charge under the ntice of the following permits: 
-```
+YttriusAPI is a bridge of Yttrius into WASM and is licensed under the respective license:
+  MPL v2.0
+  GPLv3
+  EPL2.0
 
-**Eligible**
-1. Distribution for education and only educational usage.
-2. Modification of said software with the preservation of original license notices and documentations
-3. Preservation of all documentations and license notices & Copyright notices
-4. Same license
-5. Disclosure of original source
+All source code is provided AS IS.
 
-**Limitations**
-1. Liability
-2. Private Usage
-3. Commercial and non standard educational usages
-4. Trademark use
-
-### Quick Summary of License
-
-This License allows for the distribution of said software for only educational purposes. However, no matter the distribution, all original documentations and licensing
-notices must be preserved. Source code is also allowed to be distributed under different names and terms, but not licenses.
+Copyright (C) Jack Meng 2018-2021
