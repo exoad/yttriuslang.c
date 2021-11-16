@@ -3,7 +3,7 @@
 ```
 COPYRIGHT (C) 2021 JACKMENG
 
-Permission is hereby granted to anyone of all associated pieces of software, code, and documentations free of charge under the notice of the following permits: 
+Permission is hereby granted to anyone of all associated pieces of software, code, and documentations free of charge under the ntice of the following permits: 
 ```
 
 **Eligible**
