@@ -2,6 +2,7 @@
 #include "client.h"
 #include "discord_object_interface.h"
 #include "vector"
+#include "mkn"
 
 #if _MSC_VER && !__INTEL_COMPILER
 #pragma warning( disable: 4458 ) //warns about variables that hide class members
