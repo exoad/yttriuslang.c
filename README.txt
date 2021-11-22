@@ -10,5 +10,9 @@ interactions between JavaScript, Typescript
 This is currently in pre-alpha
 Licensed under a custom license
 
+The included discord bot communicator
+is for the announcement of any changes 
+to the Discord Server
+
 Copyright (C) Jack Meng 2021
 -------------------------------------------
