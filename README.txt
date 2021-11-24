@@ -16,3 +16,5 @@ to the Discord Server
 
 Copyright (C) Jack Meng 2021
 -------------------------------------------
+
+File types: *.yttr *.ypp *.exol *.yhh *.yxx *.yys
