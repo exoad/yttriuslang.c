@@ -1,2 +1,5 @@
 tasks: 
   - init: npm install && cmake .
+  - init: cmake -v 
+  - init: gcc -v
+  - init: gradlew build
