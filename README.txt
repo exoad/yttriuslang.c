@@ -18,3 +18,9 @@ Copyright (C) Jack Meng 2021
 -------------------------------------------
 
 File types: *.yttr *.ypp *.exol *.yhh *.yxx *.yys
+
+-------------------------------------------
+
+Note: I originally made this for a paper
+but after the paper, I just decided to expand
+upon it :D
