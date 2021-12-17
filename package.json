@@ -8,7 +8,7 @@
     "discord.js": "^13.3.1",
     "discord.js-commando": "^0.12.3",
     "element-histories": "^0.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "fs": "^0.0.1-security",
     "lunarphase-js": "^1.0.8",
     "molarcalc": "^1.0.2",
