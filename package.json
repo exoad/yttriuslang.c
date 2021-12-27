@@ -5,7 +5,7 @@
     "@f/elapsed-time": "^1.0.0",
     "@types/mathjs": "^9.4.2",
     "chemicaltools": "^1.2.22",
-    "discord.js": "^13.3.1",
+    "discord.js": "^13.4.0",
     "discord.js-commando": "^0.12.3",
     "element-histories": "^0.0.2",
     "express": "^4.17.2",
