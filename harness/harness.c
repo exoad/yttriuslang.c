@@ -4,7 +4,7 @@
 #include <assert.h>
 #include <string.h> 
 
-static_assert(sizeof(struct token) == 24, "`struct token` should be 24 bytes");
+static_assert(sizeof(struct token) >= 24, "`struct token` should be 24 bytes or of another size");
 static_assert(__builtin_offsetof(struct token, vp) == 0, "vp=0");
 static_assert(__builtin_offsetof(struct token, p) == 4, "p=4");
 static_assert(__builtin_offsetof(struct token, len) == 8, "len=8");
