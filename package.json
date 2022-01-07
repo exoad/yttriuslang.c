@@ -23,7 +23,7 @@
     "secure-db": "^1.5.1",
     "star-colors": "^1.0.0",
     "stopwatch-node": "^1.1.0",
-    "superagent": "^6.1.0",
+    "superagent": "^7.0.0",
     "systeminformation": "^5.9.17",
     "timer-machine": "^1.1.0",
     "timer-stopwatch": "^0.2.0",
