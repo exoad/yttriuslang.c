@@ -1,0 +1,23 @@
+includes {
+    std@io -> yttrius@std {
+        built_in_offsetof(struck_troken -> vp),
+        [],
+        [0, 0, 0]
+    },
+    charset@stl -> stl {
+        extends_as_def : true ;
+    }
+}
+
+extends : {var} -> {
+    :prof.print(var.filler!(CHARSET_HEX32))
+    return {action::break}
+}
+
+main():
+    static :
+        var: fill >>= [0] >>= [1] -> ; -> [%{j}]
+    out::print -> {
+        fill.extends(!filler as var); ;
+    }
+    exit 0
