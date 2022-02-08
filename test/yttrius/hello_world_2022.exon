@@ -1,0 +1,42 @@
+PRAGMAS :
+    @IGNORE_UNUSED
+    @IGNORED_UNDEFINED
+    @IGNORED_FILE_REDIRECT
+    @SUPPRESS_UNCHECKED_TYPE
+
+includes {
+    sample_server@stl -> {
+        ver: 1.0
+    }
+    runner@stl -> {
+        xmoon@bsdf: @built_in_offsetof
+    }
+    elixir@ext -> {[]}
+}
+
+family DIED_TERM {
+    friend type<abbr, address, port(?)> -> extends {
+        class Xmoon_Definer: {
+            owned state {
+                master: this.XM
+                slave: #ICC (offset() >% off(2))
+            }
+            public : 
+                (var t, xmoon::state) 
+                this.state =& state
+        }    
+    }
+}
+
+main(): 
+    takes -> 0;
+    DIED_TERM t =>> extends DIED_TERM.Xm @AS XML {
+        <Details>
+            "Defined"
+        </Details>
+    }
+    host -> DIED_TERM port:8080
+
+    host.pack
+    host::start(host.packed:[prev])
+
