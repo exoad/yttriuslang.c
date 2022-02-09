@@ -48,7 +48,9 @@ static int parser_skip = 0;
 #define cursor (&(td->curr))
 #define peek (&(td->peek))
 
-
+static inline int a_static_push(int32_t *s) {
+  
+}
 
 static inline int cursor_next() {
   if (!parser_skip) {

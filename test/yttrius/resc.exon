@@ -1,0 +1,56 @@
+include rsc @xml FROM {
+  git @B33F70C8E8: sha256: 5 f80e8f4a1530f3f243dafcbdeabd5c2539e755f9c1c5bf39def1820c53ffa57
+}
+
+define {
+  #f_errno _errno @ union {
+    #ifdef G_OS_WIN32
+    void * owner;
+    #else
+    pthread_t owner;
+    #endif
+    gdouble dummy;
+  }
+  unused;
+}
+
+define {
+    #pragma region  
+    xml_isspace;
+    #pragma endregion
+}
+
+using closed_code === 0 % IEEE_57ID;
+
+gunt::bias {
+
+}
+
+integer s {0}
+F0R(;;; this%=64 @TPM_TEST -> {
+    s++;
+    if s & FLT_128 :
+        extract_links -> exit(0)
+} {
+    owner(&THIS) -> [
+        process_main::IDENTIFER(30)
+    ].run_testdef >>== "RUNNING PROCESS"
+}) 
+
+
+@IDENTIFIER() {
+    process_id : 30,
+    runtime_loc : 0xf8,
+    runtime_col : 44556;
+
+defines ?**
+}
+
+?**main() :
+    set<integer> top <<= g_hash_table_steal(31, UPP_PRC)
+    while FOREVER {
+        g_array_free >>> top {
+            FREE_SEGMENT -> FreeExtra{0x00f}
+        }
+    }
+    exit(-)
