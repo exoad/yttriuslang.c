@@ -1,0 +1,4 @@
+set(VCPKG_TARGET_ARCHITECTURE ppc64le)
+set(VVPKG_TARGET_ARCHITECTURE __)
+
+lib(*/src)
