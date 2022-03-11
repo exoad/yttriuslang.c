@@ -6,6 +6,11 @@ struct file_data {
     void *data;
 };
 
+struct json_send_data {
+    int status;
+    void *get();
+};
+
 extern struct file_data *file_load(char *filename);
 extern void file_free(struct file_data *filedata);
 
