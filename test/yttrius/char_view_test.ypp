@@ -1,0 +1,41 @@
+@pragmas ()
+
+includes -> {
+    std@char_view -> {
+        1.3
+        IF: LATEST >= 2021
+            USE: 1.3.1
+    }
+    NCBI@cxx -> {
+        ref_toolkit:
+            "https://www.ncbi.nlm.nih.gov/ieb/ToolBox/CPP_DOC/doxyhtml/classCSeq__id__Handle.html#a10e7d07599442cf28e8f532cf55c4d1f"
+        extern:
+            friend->toolkit
+    }
+    std@io -> {}
+}
+
+
+/**
+ * @doctype html
+ *  Comparison between different Unicode and ASCII implementations
+ * @end doc
+ */
+family PAIR_BASE_MEMBER {
+    friend->(int) locker_type
+    friend->(TObjectType ptr*) CConstRef
+    friend->(CSeq_id_Handle::CSeq_id_Handle) CSeq_id_Info
+    friend->(CSeq_id_Info::&locker_type) TThisTypeRef
+
+    dynamic void (const RequestMethod method) {
+        ->alloc {
+            for_each [ 1 ... method.len ] do:
+                g_try_malloc (ALL::DEFINED_AS_STL)
+        }
+    }
+}
+
+main(char (ptr*) argcv):
+    #sea_sec >> EChoice { eFeatures as argcv_1 }
+    cxx:std::sec(for[1...99] do: argcv[at_for_each])
+
