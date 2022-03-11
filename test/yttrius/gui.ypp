@@ -1,0 +1,42 @@
+@pragma all
+
+includes -> {
+    stl@pencil@vpencil -> {
+        NULL as 0
+    } : pencil@vpencil -> {
+        include_below spriter
+    }
+    std@pair -> {}
+    std@build -> {}
+    std@pkg -> {}
+}
+
+typdef template pt {
+    address: kNullFlag
+    pair < x:u32i, y:u32i > alloc; // demonstrates the usage of unsigned 32 bit integers
+}
+
+main():
+    pen ptr_ = (vpencil**) this.$?WIN_32 : ?NIX;
+    ptr_.real_node_free, render_style=FREEC 
+    if ptr_ >>= vpenci** RENDER_STYLE_1 == true {
+        VG_USERREQ__PRINTF_BACKTRACE_VALIST_BY_REF -> {
+            add_env_variable_to_list()
+        }
+    }
+    ptr_.alignX(0)
+    ptr_.alignY(0)
+    ptr_.alignCenter(this@SCREEN.X, this@SCREEN.Y);
+    ptr_.labellingRenderHint(RenderHint, 0)
+    ptr_.LD_CALLBACK_WS_ESTABLISHED;
+    ptr_.draw_rectangle () {
+        adopt->pt as __FILLE_SCREEN
+    }
+    actuate_pen ppe <- (verbose_pen AST ast) Pointer ptr_;
+    ptr_.pack(ppe);
+    ptr_.draw(end);
+
+    ptr_.points_freec;
+
+
+
