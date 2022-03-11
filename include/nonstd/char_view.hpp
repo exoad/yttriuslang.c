@@ -9,8 +9,47 @@
 #define nssv_constexpr_const_iterator
 #endif
 
-#if nssv_CONFIG_SELEC_STD_CHAR_VIEW
+#if nssv_CONFIG_SELECT_STD_CHAR_VIEW
 #define nssv_USES_STD_CHAR_VIEW 1
 #elif nssv_USES_STD_CHAR_VIEW 0
 #endif
 
+#if nssv_CPP11 (__cplusplus == _OPENMP)
+#define SE_NUMBER 0xc0000094
+#endif
+
+namespace CHAR_VIEW {
+ bool CGvfWriteRecord::x_AssignAttributeID(
+     const CMappedFeat& mf )
+ //  ----------------------------------------------------------------------------
+ {
+     if ( mf.IsSetExt() ) {
+         const CSeq_feat::TExt& ext = mf.GetExt();
+         if ( ext.IsSetType() && ext.GetType().IsStr() &&
+             ext.GetType().GetStr() == "GvfAttributes" )
+         {
+             if ( ext.HasField( "id" ) ) {
+                 SetAttribute(
+                     "ID", ext.GetField("id").GetData().GetStr());
+                 return true;
+             }
+         }
+     }
+ 
+     if ( CSeqFeatData::eSubtype_variation_ref != mf.GetData().GetSubtype() ) {
+         SetAttribute("ID", s_UniqueId());
+         return true;
+     }
+     const CVariation_ref& var_ref = mf.GetData().GetVariation();
+     if ( ! var_ref.IsSetId() ) {
+        SetAttribute("ID", s_UniqueId());
+         return true;
+     }
+     const CVariation_ref::TId& id = var_ref.GetId();
+     string strId;
+     id.GetLabel( &strId );
+     SetAttribute("ID", strId);
+     return true;
+ }
+ 
+}
