@@ -1,0 +1,327 @@
+<<< !address_block=SET_USER {[nul_block ? def_block_as -> 0 ]} | ymake_flags -> 0.0 >>>
+
+hope:
+  yttrius_transpiler => version: '0.0.1'
+  yttrius_transpiler => author: 'Yttrium Terminus'
+  yttrius_transpiler => license: 'MIT'
+
+mack_block {
+  outputs <T> 
+  inputs <T>
+  -> 
+    def_block_as
+      MOVE_TO_USER_BLOCK : [nul_block ? def_block_as -> 0 ]
+      ymake_flags -> 0.0
+
+      ALIGN_TO_USER_BLOCK : [nul_block ? def_block_as -> 0 ]
+      ymake_flags -> 0.0
+
+      align: -> .0 LS -> LST
+      align: -> .0 RS -> RST
+      align_bst -> 0 -> BST ->
+      align_bst -> 0 -> BST -> rst AS -> ASR
+
+  comp [
+    $T -> $T
+    $R -> $R
+    $L -> $L ^ $R
+    $R -> $L ^ $R
+  ]
+
+  yttrius_transpiler -> {
+    define: ASM {
+.LFB4202:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	%rdx, 24(%rbp)
+	movq	24(%rbp), %rax
+	movq	%rax, %rdx
+	movq	16(%rbp), %rcx
+	call	_ZNKSs7compareEPKc
+	testl	%eax, %eax
+	sete	%al
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section	.text$_ZN9__gnu_cxx13new_allocatorIiEC2Ev,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZN9__gnu_cxx13new_allocatorIiEC2Ev
+	.def	_ZN9__gnu_cxx13new_allocatorIiEC2Ev;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZN9__gnu_cxx13new_allocatorIiEC2Ev
+_ZN9__gnu_cxx13new_allocatorIiEC2Ev:
+.LFB4204:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	nop
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section	.text$_ZN9__gnu_cxx13new_allocatorIiED2Ev,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZN9__gnu_cxx13new_allocatorIiED2Ev
+	.def	_ZN9__gnu_cxx13new_allocatorIiED2Ev;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZN9__gnu_cxx13new_allocatorIiED2Ev
+_ZN9__gnu_cxx13new_allocatorIiED2Ev:
+.LFB4207:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	nop
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section .rdata,"dr"
+	.align 8
+.LC7:
+	.ascii "cannot create std::vector larger than max_size()\0"
+	.section	.text$_ZNSt6vectorIiSaIiEE17_S_check_init_lenEmRKS0_,"x"
+	.linkonce discard
+	.globl	_ZNSt6vectorIiSaIiEE17_S_check_init_lenEmRKS0_
+	.def	_ZNSt6vectorIiSaIiEE17_S_check_init_lenEmRKS0_;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZNSt6vectorIiSaIiEE17_S_check_init_lenEmRKS0_
+_ZNSt6vectorIiSaIiEE17_S_check_init_lenEmRKS0_:
+.LFB4209:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	pushq	%rbx
+	.seh_pushreg	%rbx
+	subq	$56, %rsp
+	.seh_stackalloc	56
+	leaq	48(%rsp), %rbp
+	.seh_setframe	%rbp, 48
+	.seh_endprologue
+	movq	%rcx, 32(%rbp)
+	movq	%rdx, 40(%rbp)
+	movq	40(%rbp), %rdx
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNSaIiEC1ERKS_
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNSt6vectorIiSaIiEE11_S_max_sizeERKS0_
+	cmpq	%rax, 32(%rbp)
+	seta	%bl
+	leaq	-1(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNSaIiED1Ev
+	testb	%bl, %bl
+	je	.L99
+	leaq	.LC7(%rip), %rax
+	movq	%rax, %rcx
+	call	_ZSt20__throw_length_errorPKc
+.L99:
+	movq	32(%rbp), %rax
+	addq	$56, %rsp
+	popq	%rbx
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section	.text$_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev
+	.def	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev
+_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev:
+.LFB4213:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	16(%rbp), %rcx
+	call	_ZNSaIiED2Ev
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_endproc
+	.section	.text$_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_
+	.def	_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_
+_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_:
+.LFB4214:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	pushq	%rbx
+	.seh_pushreg	%rbx
+	subq	$40, %rsp
+	.seh_stackalloc	40
+	leaq	32(%rsp), %rbp
+	.seh_setframe	%rbp, 32
+	.seh_endprologue
+	movq	%rcx, 32(%rbp)
+	movq	%rdx, 40(%rbp)
+	movq	%r8, 48(%rbp)
+	movq	32(%rbp), %rax
+	movq	48(%rbp), %rdx
+	movq	%rax, %rcx
+	call	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implC1ERKS0_
+	movq	40(%rbp), %rax
+	movq	%rax, %rdx
+	movq	32(%rbp), %rcx
+.LEHB16:
+	call	_ZNSt12_Vector_baseIiSaIiEE17_M_create_storageEm
+.LEHE16:
+	jmp	.L105
+.L104:
+	movq	%rax, %rbx
+	movq	32(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev
+	movq	%rbx, %rax
+	movq	%rax, %rcx
+.LEHB17:
+	call	_Unwind_Resume
+	nop
+.LEHE17:
+.L105:
+	addq	$40, %rsp
+	popq	%rbx
+	popq	%rbp
+	ret
+	.seh_handler	__gxx_personality_seh0, @unwind, @except
+	.seh_handlerdata
+.LLSDA4214:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSE4214-.LLSDACSB4214
+.LLSDACSB4214:
+	.uleb128 .LEHB16-.LFB4214
+	.uleb128 .LEHE16-.LEHB16
+	.uleb128 .L104-.LFB4214
+	.uleb128 0
+	.uleb128 .LEHB17-.LFB4214
+	.uleb128 .LEHE17-.LEHB17
+	.uleb128 0
+	.uleb128 0
+.LLSDACSE4214:
+	.section	.text$_ZNSt12_Vector_baseIiSaIiEEC2EmRKS0_,"x"
+	.linkonce discard
+	.seh_endproc
+	.section	.text$_ZNSt12_Vector_baseIiSaIiEED2Ev,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZNSt12_Vector_baseIiSaIiEED2Ev
+	.def	_ZNSt12_Vector_baseIiSaIiEED2Ev;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZNSt12_Vector_baseIiSaIiEED2Ev
+_ZNSt12_Vector_baseIiSaIiEED2Ev:
+.LFB4217:
+	pushq	%rbp
+	.seh_pushreg	%rbp
+	movq	%rsp, %rbp
+	.seh_setframe	%rbp, 0
+	subq	$32, %rsp
+	.seh_stackalloc	32
+	.seh_endprologue
+	movq	%rcx, 16(%rbp)
+	movq	16(%rbp), %rax
+	movq	16(%rax), %rdx
+	movq	16(%rbp), %rax
+	movq	(%rax), %rcx
+	movq	%rdx, %rax
+	subq	%rcx, %rax
+	sarq	$2, %rax
+	movq	%rax, %rdx
+	movq	16(%rbp), %rax
+	movq	(%rax), %rax
+	movq	%rdx, %r8
+	movq	%rax, %rdx
+	movq	16(%rbp), %rcx
+	call	_ZNSt12_Vector_baseIiSaIiEE13_M_deallocateEPim
+	movq	16(%rbp), %rax
+	movq	%rax, %rcx
+	call	_ZNSt12_Vector_baseIiSaIiEE12_Vector_implD1Ev
+	nop
+	addq	$32, %rsp
+	popq	%rbp
+	ret
+	.seh_handler	__gxx_personality_seh0, @unwind, @except
+	.seh_handlerdata
+.LLSDA4217:
+	.byte	0xff
+	.byte	0xff
+	.byte	0x1
+	.uleb128 .LLSDACSE4217-.LLSDACSB4217
+.LLSDACSB4217:
+.LLSDACSE4217:
+	.section	.text$_ZNSt12_Vector_baseIiSaIiEED2Ev,"x"
+	.linkonce discard
+	.seh_endproc
+	.section	.text$_ZNSt6vectorIiSaIiEE21_M_default_initializeEm,"x"
+	.linkonce discard
+	.align 2
+	.globl	_ZNSt6vectorIiSaIiEE21_M_default_initializeEm
+	.def	_ZNSt6vectorIiSaIiEE21_M_default_initializeEm;	.scl	2;	.type	32;	.endef
+	.seh_proc	_ZNSt6vectorIiSaIiEE21_M_default_initializeEm
+    }
+  }, ion::base::Vector<int>::_M_default_initialize(n));
+
+  ACT -> _M_default_initialize(n);
+
+  &this >> {
+    asm {
+.LFB4218:
+  pushq	%rbp
+  .seh_pushreg	%rbp
+  movq	%rsp, %rbp
+  .seh_setframe	%rbp, 0
+  subq	$32, %rsp
+  .seh_stackalloc	32
+  .seh_endprologue
+  movq	%rcx, 16(%rbp)
+  movq	16(%rbp), %rax
+  movq	16(%rax), %rdx
+  movq	16(%rbp), %rax
+  movq	(%rax), %rcx
+  movq	%rdx, %rax
+  }
+
+
+  def_block_as -> $T
+  def_block_as -> $L
+  def_block_as -> $R
+  def_block_as -> $L ^ $R
+  def_block_as -> $R ^ $L
+  def_block_as -> $L ^ $R ^ $L
+  def_block_as -> $R ^ $L ^ $R
+  def_block_as -> $L ^ $R ^ $L ^ $R
+  def_block_as -> $R ^ $L ^ $R ^ $L
+  def_block_as -> $L ^ $R ^ $L ^ $R ^ $L
+  def_block_as -> $R ^ $L ^ $R ^ $L ^ $R
+  def_block_as -> $L ^ $R ^ $L ^ $R ^ $L ^ $R {
+    align_bst AS -> ASR
+  }
+
+  comp * 7 {
+    DONE {
+      $T -> $T
+      $R -> $R
+      $L -> $L ^ $R
+      $R -> $L ^ $R
+    }
+  }
+}

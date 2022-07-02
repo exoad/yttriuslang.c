@@ -1,0 +1,34 @@
+// imports styling: lib_name@attribute_name
+imports {
+  stdio@io -> tie::console(0)
+  maths@arth -> 0
+  complex@arth -> maths_infinite("HASH_MATH")
+}
+
+defs {
+  i >>> int
+  d >>> long
+  ll >>> unsta long
+  ull >>> unsta unsig long
+  str >>> char<CHAR@ALL>
+}
+
+alloc_1024 []
+alloc_489 []
+
+nsp io = IO@STD
+nsp std = arth@STD
+
+main() :
+  make ;
+  i number -> 
+    [32]
+  i number2 ->
+    [32]
+  puts :: "Enter a number: " >> number;
+  puts :: "Enter another number: " >> number2;
+  
+  io::writes << { arth: number + number2 } // arth keeps the values unloaded 
+  
+  exit 0;
+

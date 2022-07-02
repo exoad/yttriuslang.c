@@ -1,0 +1,4 @@
+unsafe: 
+    defines: MAXN -> 1e+9
+    defines: MINN -> 1e9
+endef
