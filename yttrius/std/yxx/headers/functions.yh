@@ -1,0 +1,4 @@
+// funcs can have undefined func names
+implement: func(boolean x, int y);
+implemented: func(int x, int y) return x + y;
+implemented: sum func(int z, int s) return z + s; // function with a name of "sum"

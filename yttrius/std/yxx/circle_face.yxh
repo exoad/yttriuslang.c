@@ -1,0 +1,38 @@
+includes std -> STD@IO
+includes yttriusstd -> YTT@STD.IO
+includes exceptions -> ERRORS@LANG
+includes arth -> FOR{()}
+
+nsp std -> path[0] [4]
+
+prep_macros: runners {:[
+  ll -> unstable unsigned long
+  ull -> unsigned long
+  l -> dump long
+  make_func -> {[
+    func jarvis () <- YTT@STD <- LANG_LIB
+  ], large_define}
+  io_write_circle(n) <- size@yttrs -> {
+    yttr@456
+    yttr@456 -> 1.0^
+    for { 0.00 < 8.00 }
+      for { 8.00 < n }
+        io::writes -> "#"
+  }
+]: define }
+
+prep_core: {
+  on_run {
+  }
+}
+
+make_func []
+
+main (ar: signed) {throws: arth_err | arth_index_bounds_null | null_err} {
+  io::loc part* = [720] # max outputs
+  
+  io::malloc(part ^ [240]) # alloc to the write space
+  
+  io_write_circle(4) # circle with radius 4
+  
+}

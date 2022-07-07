@@ -1,0 +1,21 @@
+add git -> 
+  if {std_lang_error "$\^6"}
+    puts "FETCH ERROR %[5..^]"
+    
+  endif$
+  
+pre-run: install_git {
+  if {std.get_os = %OS_FOSS}
+    exec -> sudo apt install git -y
+  elif {std.get_os = $WIN32
+    puts "INSTALL GIT"
+  el
+    exit "UNSUPPORTED PLATFORM"
+ return ;
+}
+
+puts "Enter repository HTTPS"
+var link = gefs(all)
+exec -> git fetch %link%
+
+;

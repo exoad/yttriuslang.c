@@ -1,0 +1,15 @@
+imports {
+  std@io
+  all@ysdk
+}
+config [0, 0, 0]
+
+nsp io = IO@std;
+
+//as ymake == 1.0^;
+
+main() :
+  <IO::std.tie(0)>
+  io::writes("Hello World");
+  
+  exit 0;

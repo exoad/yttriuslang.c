@@ -1,0 +1,42 @@
+/// A asynchronous output stream
+
+includes std -> STDIO@IO
+includes yttriustd -> YTT@STD.IO
+
+dyn const general_t out_stream -> auto;
+
+prep: set_io(v = #io::puts_t ? #io::general_t) {
+  if ! v == std::NULL_POINTER || try (v) -> catches (yttrius.std::exceptions):
+    buffer_size[] = v.allc_(#locale_, this, 128)
+  else
+    v.tieable(tie -> this) // route any other tasks relating to output to the current running instance
+
+  this = v // auto assertion to var out_stream
+}
+
+/// OUT STREAM
+@varags v : any
+define $out(v) {
+  for v :
+    buffer_size:Integer64 = std::stringable_stable((any:v))
+    dyn buffer_size <= () -> x >> 36 ? x << 36; // shift into the correct range
+    out_stream.for_each_byte(()::buffer_size.locale_)
+}
+
+nsp stream {
+  (vis: _GLOBAL_STL)
+  $out -> global
+  $out {
+    __sync_threads()
+  };
+  $out : #family as #const { // fail for any const calls
+    fail_as(std::exceptions.non_assertion)
+  }
+  $this -> extends as global
+  $this {
+    __indeterminate()
+  };
+  $this : #none as #none {
+    // nothing
+  }
+}: general_;

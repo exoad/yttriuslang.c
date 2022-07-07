@@ -1,0 +1,3 @@
+// think of "defined" as a shortened C++ ifndef then define
+defined: ll unstable long long 
+defined: ull static long long

@@ -1,0 +1,24 @@
+add_builders {
+  CMAKE,
+  GRADLE,
+  MAVEN,
+  GNUMAKE,
+  APACHEANT,
+  MSBUILD
+}
+# revised version for transpilers of versions 1.2^
+pre_run: [1] get_os {
+  os = transpiler.getarch 
+  if { os == "\32^$" }
+    
+}
+
+# remember in all of the languages in the yttrius family, the keyword "runner" is a special reserved word
+compiler_builder: [] runner {
+  # it has a feature to call a variable from a scope
+  exec -> (os^get_os ? "\32^$" then {
+      for { * in _dir }
+        exec -> cmake 
+    }
+}
+;

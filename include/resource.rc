@@ -1,0 +1,2 @@
+#define MAX_INT 690
+#include "default.h" // hidden

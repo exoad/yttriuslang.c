@@ -1,0 +1,20 @@
+// a general purpose include for the Y++ Language 
+
+
+imports: yttrius@std -> unstable templates {v0} 
+imports: yttrius@transpiler ALL // standalone imports
+
+transpiler_pr {
+   conf:
+      yttrius >> exon
+      conf [128 >> 328]
+   // here all code are to pull code from the exon language to demonstrate the transpiler
+   exon("arth")
+   outputs >> (circle_face) $ FILE ;
+}
+
+nsp ystd < yttrius@std
+
+main(types: ystd):
+   hello_world ;
+   transpile >> exon("arth")

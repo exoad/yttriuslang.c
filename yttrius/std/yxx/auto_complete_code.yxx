@@ -1,0 +1,61 @@
+/*
+Y++ has the option for the compiler to auto determine
+the usage of the code if it is intentionally left
+blank. However this feature is never perfect and should
+only be used when there are less than 3 possible options.
+
+This is a simple Algorithm using the Yttrius API
+protocol to determine the next usage. 
+
+Reminder, this feature is only avaliable for Compiler
+of versions: 1.3+ 
+
+Otherwise the compiler would throw exceptions.
+
+*/
+
+pragmas#
+  - exec -> "yttrius.compiler.version".getValue >= @VERSION(1.3) ? EXIT { 0 } >> throw_
+end_pragmas#
+
+imports {
+  stdio@io -> 1.0,
+  yapi@ml -> 1.0
+  std@compile -> < ? ... > -> { " " }
+}
+
+/* Configuring the compiler and the ml algo to work for all STDIO functions*/
+yapi::conf {
+  autoc : true -> {
+    // configure the algorithm to recognize
+    for { i ... X } -> x.pb[0] >> x[10] 
+    for { i ... X } -> [
+      listen_is == EOF ; throw_
+      node_1 += "autom"
+      node_2 += "autoc"
+      for { j ... X } -> [
+        xb.eb(x.p) ; xb.rollback()
+      ]
+      array<<Matrix>, args[]> xg -> {} ; init_
+      for { j ... X } -> [
+        listen_is == STY ; dispose(this < ? ... item: type@OBJECT>
+        args[j] -> STDIO.templates AS { comparator.init (node_[j] + args[j % 6) }
+      ]
+    ]
+    ret ${st};
+  }
+}
+
+asr : init_ml_autocl != ${FAIL_ST};
+
+imports@STDL
+
+main() :
+  io.tie(0);
+  io::fpts("Hello World"
+
+/* fpts is not a familiar function of io, and the only function that takes a charset is puts() as writes is a bitwise output operator, thus easily telling the 
+   algo to replace with "puts" however the syntax error can only be minor and thus this algo will also manage to fix the extra need ");"
+
+  NEVER DEPEND ON THIS ALGO TO FIX YOUR ERRORS
+*/
