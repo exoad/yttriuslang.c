@@ -13,7 +13,7 @@ family: {
         i32 serial_id = 0x03;
         i32 default_alloc = 2048;
         auto<[]> stream;
-    ([]:stream) {
+    ([]:stream [tries -> non_catchable as (stream)]) {
         ((..)stream) = stream // cast the current stream to the one in the family bc of the same naming, there are no direct "this" keyword as ".." always refer to the current struct scope
         op.inset((i32) stream.get(REQUESTABLE))
         default_alloc = op.len
