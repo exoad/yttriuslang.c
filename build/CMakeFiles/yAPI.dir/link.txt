@@ -1,0 +1,2 @@
+/usr/bin/ar qc libyAPI.a CMakeFiles/yAPI.dir/yAPI.c.o
+/usr/bin/ranlib libyAPI.a

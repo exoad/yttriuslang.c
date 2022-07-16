@@ -1,3 +1,5 @@
+// ok this will not work as the syntax of this file are not supported anymore
+
 includes -> {AS __has_include} yttrius_crypto@std/main.yxh
 
 imports {
@@ -31,5 +33,5 @@ fun: {
   }
 }
 
-main(): 
+main():
   crypto::rsa::rsa_key_pair<crypto::rsa::rsa_key_pair_type::private_key> kp ;

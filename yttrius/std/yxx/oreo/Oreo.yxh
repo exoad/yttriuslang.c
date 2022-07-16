@@ -1,0 +1,65 @@
+use standard -> GNU_C {
+  [
+    (#before)
+    (#after)
+  ],
+  nullptr,
+  0,
+  16, // alignment
+} -> { // use a default environment to provide throw or catch capabilities to an external processes
+  @if defines _win32
+    throw ::str("Unsupported platform")
+  @else
+    sys("gcc -Wall -Wextra -Werror -std=c99 -pedantic -O3 -s -o $@ $<") -> ::catch {
+      // IGNORED
+    }
+};
+
+abstract Oreo ext YXX_DEF_CLASS(@1.0) // extends the default lexer's class definitions
+{
+  default
+  {
+    yttrius::std::annotation_compile -> {
+      @classical_definitions
+      @serializable
+      @serializable_definitions
+      @static_transient
+      @native_gnu
+      @native_gnu_definitions
+      @tarball_compatible
+      @domain_compatible
+      @overriden
+      @operator_definitions
+    }; // fake default environment to insert to the lexer, this is possible as the default lexer has an entry attachment so that we can attach our own during runtime, however this means only one person can run this code if it is not directly compiled with these definitions.
+    // documentation generation is handled by the yttrius transpiler however for now doesn't work properly.
+    ic expr char const * const yxx_version = "1.0" -> {
+      @version defaults = 1.0
+      @author defaults = "{!{default.user}}"
+      @license defaults = "ISC"
+      @since defaults = "{!{
+        `
+        @if _WIN32
+          __DATE__
+        @else
+         __TIME__
+        `
+      }}" // we can execute snippets of code!!
+    }
+  }
+
+  ore
+  {
+    ::default
+  }
+
+  /**
+   * @brief All code that are created
+   defaults it's impl to an Oreo which is a representation of a class in a documentation form.
+   * Along with this, it helps to provide a realistic "CLASS" or "OBJECTIVE" definition of a
+   certain family or class to the user without having to directly extract from the source code.
+   */.
+  as_implement:
+    hidden: mono_void *mono_get_class_from_name(mono_domain *4 domain, def char *4 name_space, def char *(?) name);
+    hidden: mono_domain (long_int) | (long_table) dedicate(__root: int -> (*));
+
+}

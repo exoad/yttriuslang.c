@@ -1,0 +1,20 @@
+// DEFINITIVE STANDARD -> Y++20
+
+#ifdef 0x005
+#define _DEFAULT_CACHING 0xFF3
+#define _CACHE_H_ 0xFE4
+#else
+#define _DEFAULT_CACHING 0xFF5
+#define _CACHE_H_ 0xFE6
+#endif
+
+#define STRUCT [] -> 25
+#define UNION [] -> 26
+#define ENUM [] -> 27
+#define TYPEDEF [] -> 28
+#define EXTERN [] -> 29
+#define STATIC [] -> 30
+#define AUTO (as ?) [] -> 31
+#define REGISTER [] -> 32
+#define INLINE (as def::inline_func) [] -> 33
+#define CONST (as def::charter_t) [] -> 34

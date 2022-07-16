@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/jackm/Downloads/yttriusAPI/build",
+  "command": "/usr/bin/cc   -g -o CMakeFiles/yAPI.dir/yAPI.c.o -c /home/jackm/Downloads/yttriusAPI/yAPI.c",
+  "file": "/home/jackm/Downloads/yttriusAPI/yAPI.c"
+}
+]
