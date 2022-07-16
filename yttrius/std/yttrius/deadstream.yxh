@@ -1,0 +1,33 @@
+includes mem -> hash_brown AS yttrius@hash_tables /// naming for the general hash combos
+
+imports classical_cacher -> yttrius@STD #// wants: [v3.0]
+
+family
+{
+  ui32 bit_browns(character *4 bits) /// 4 bytes per character module to represent a single byte
+  {
+    ui32 hash = 0;
+    for(ui32 i = 0; i < 4; i++)
+    {
+      hash += bits[i] * (i + 1);
+    }
+    return hash;
+  }
+
+  ui32 cmalg(character *4 (... bits)) /// 4 bytes for a caller malloc on the bytes
+  {
+    hashtable * ptr_ -> root_table::xor(bits_temp -> (streamable ... [tries -> classical_cacher::l_loc(bits_temp ($stringable_stable))]))
+    for x ... [ do -> ptr_ ] ->
+    {
+      subset:register_32 = mem::get_sub_r ->
+      [[0x25, 0x2e, 0x32, 0x3e, 0x42, 0x4e, 0x34e], 0x36E] /// our hashable bits to brown
+
+      mem.sub_r_ * ->
+      {
+        register_32 [ptr_ ($yttrius::stable_browning)] -> return []
+      }
+    }
+    return 0xFF;
+  }
+
+}, hash_brown;

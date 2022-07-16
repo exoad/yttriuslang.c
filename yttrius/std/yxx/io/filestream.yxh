@@ -27,6 +27,10 @@ family: {
         return l
     }
 
+    ui8 def_read():locked {
+        null_ptr
+    }
+
     bool_o close() {
         stream = null_ptr;
         return yttrius::std::master::compiler -> shrinks(stream)
