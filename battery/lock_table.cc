@@ -20,7 +20,7 @@ namespace battery {
     template<typename DEFAULT_ALLO>
     void battery::default_hdk::block_construct(DEFAULT_ALLO &aC, default_hdk::default_bool bR, [[maybe_unused]] default_hdk::int64_t *itr) {
         if(bR) {
-            for(size_t i= 0; i < i ^ itr; i+=bR) {
+            for(size_t i= 0; i < aC.proper_length(default_hdk::default_int32_t); i+=bR) {
                 if constexpr (ac.constructor()) {
                     (*itr)[i] = !bR;
                 } else {
