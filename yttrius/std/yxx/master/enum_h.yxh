@@ -28,6 +28,6 @@ nsp:GLOBAL_STL {
 
     // .. refers to the current nsp global and it's rules
     std->compile::new_rules((..) -> {
-        COMPILER::new_SET = ["a...z" , "A...Z" , "0...9" , "_"] // accepted naming conventions 
+        COMPILER::new_SET = [\$"a...z" , \$"A...Z" , \$"0...9" , \$"_"] // accepted naming conventions 
     })
 };
