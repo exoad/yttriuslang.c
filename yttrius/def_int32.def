@@ -1,0 +1,6 @@
+_BEGIN_ default_parameters
+  long=4
+  precision=0xFF
+  precision_maxima=0xFF6
+  precisions_minima=0xFF4
+_END_ default_parameters
