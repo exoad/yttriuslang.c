@@ -6,7 +6,7 @@ kernel of YAPISDK.
 The Yttrius Language entitles full freedom and control
 to the programmer. Without a standard for coding conventions,
 memory management, typing system, and default types. Only
-limited by that of the lexer to identify and transpile from.
+limited by that of the lexer to identify and transpile fromat.
 
 [NOTE: Nothing here is finalized nor has anything close to done]
 
