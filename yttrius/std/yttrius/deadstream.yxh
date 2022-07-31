@@ -24,6 +24,7 @@ family
 
       mem.sub_r_ * ->
       {
+        // C++ based lambdas
         register_32 [ptr_ ($yttrius::stable_browning)] -> return []
       }
     }
