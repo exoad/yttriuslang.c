@@ -1,14 +1,8 @@
-<<< !address_block=SET_USER {[nul_block ? def_block_as -> 0 ]} | ymake_flags -> 0.0 >>>
+<<< !address_block=SET_USER {[null_block ? def_block_as -> 0 ]} | ymake_flags -> 0.0 >>>
+<<< !imports {[yxx::str ? def_str -> 0 ]} >>>
 
-hope:
-  NULL_PRT
-  
-mesh_block outputs<T> {
-  SIG_T [] -> 0
-  for{0.1}
-    do ->
-      byte_buffer -> MALLOC c<t>
-    stop;
+mesh_block outputs<T> (args:int32 ...) {
+  byte_buffer -> for ... alloc(def_str([for ... args -> this]))
 }
 
 outputs >> "Hello World" ;
