@@ -1,0 +1,45 @@
+dyn arr:32;
+
+@calleable(x : int32) {
+  #arr -> quarry(x, *arr)
+  for(int i=0;i< (...); i++) {
+    internal::i[#i] -> arr[i]; 
+  }
+}
+
+noop dyn #funcVoid default_args():
+    inline :
+      *<T> x := this#writer.get_default_head()
+      if(x::reads.get(0)==hexify("YXX"){
+        kill 2;
+      }
+      x.denies((args.returnable)):[x.length()&8]
+      this#runs_(directives_ | [
+        @prep,
+        @hope,
+        @calleable,
+        @nontransient,
+        @nonvolatile
+      ]);
+      this#run_(root_table_ | [
+        0,
+        0,
+        0,
+      ]);
+      
+main():
+  args -> {
+    default[i] |= delete[] as NULL_PTR;
+  }
+  
+  var:i(int32) -> for ... arr {
+    for ... (#...) {
+      access -> (...) this#;
+      check((*default_decay)(access) >> 0xFF) {
+        (this#checks !== ERRN_CODE_NO_EXECUTE) || (this#checks !== ERRN_CODE_NO_READ) : {
+          kill 1;
+        }
+      }
+      this#.getbufferizer () is_fertile() ? default_args() : (lambda: kills 1);
+    }
+  }
