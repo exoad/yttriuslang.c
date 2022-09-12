@@ -52,7 +52,7 @@ code from one lang to the much more low level code.
 A simple StdLangSet snippet can be:
 
 """
-forma:Node -> {
+forma:default_struct [stl_node, stl_RTV ]::0 -> {
   #__name: "My Node :)":str_ascii % an optional default attribute required for all declared nodes
   (:${forma::std::write_in}(&__name:))->[::4]
   (:)->(:??)[{ % a list of random attribute. the ":??" asserting that at least one attribute will be online or be retreivable by any congruent node
