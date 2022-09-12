@@ -70,6 +70,18 @@ forma?->[##__name]->func:print_some_where % this part won't work as i didn't wan
                                          % runtime
 """
 
+However, a simple Y++ code to add two numbers together could be as simple as:
+
+"""
+imports -> {
+   maths@arth -> 0 // include standard math arithmetics in order to not rely on pure bitwise 
+}
+
+main(<int32:varags> x[]): // standard compliant argument listing
+   int32 &t = make -> x:0 + x:1 // array acessing of the provided runtime arguments
+   exit ((t)&0xFF) // exit the program (in theory prints, however, for IO, stdIO should be used) the value
+"""
+
 Execution & Compilation Arch.:
   - Primarily the standard SDK bundles a compiler
   that transpiles a child language to the compatible
