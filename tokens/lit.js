@@ -7,6 +7,8 @@ export const _DECL = 32;
 export const _CONTROL = 64;
 export const _CONTROL_PAREN = 128;
 
+// SYSTEM DEFINITIONS
+export const ASSY = 1085503420;
 export const AS = 1085506560;
 export const ASYNC = 1098089472;
 export const AWAIT = 1098351621;
