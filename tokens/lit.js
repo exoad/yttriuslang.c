@@ -1,3 +1,4 @@
+// RUNTIME DEFINITIONS
 export const _KEYWORD = 1;
 export const _REL_OP = 2;
 export const _UNARY_OP = 4;
