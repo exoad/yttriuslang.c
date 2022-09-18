@@ -117,6 +117,11 @@ Execution & Compilation Arch.:
   queue. This restriction is to prevent overhead on the runtime's
   filesystem API which was developed with single threaded applications
   in mind.
+  - During runtime, the programmer may request for a memory page, in
+  which memory is brought in from the hard drive and used temporarily.
+  This in turn means that the runtime cannot check for any validity
+  or perform any memory compression. This process only returns a single
+  memory bloc to the programmer.
 
 Copyright (C) Jack Meng 2020
 -------------------------------------------
