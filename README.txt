@@ -121,7 +121,28 @@ Execution & Compilation Arch.:
   which memory is brought in from the hard drive and used temporarily.
   This in turn means that the runtime cannot check for any validity
   or perform any memory compression. This process only returns a single
-  memory bloc to the programmer.
+  memory bloc to the programmer. Another downside is that the memory 
+  paging process is completely black boxed from the programmer. The 
+  programmer can suggest a buffering strategy and paging strategy 
+  through a dynamic enum defining the standard strategies, but the 
+  runtime can ignore this (and will most likely override this call).
+  - Memory paging also takes significant CPU overhead and may cause 
+  dramatic memory vulns including the fact that the programmer must keep
+  track of everything including calling the operating system directly
+  for a process id header for the memory allocated. This in turn dramatically
+  ruins the cross platform ability of this language.
+  - Native compiled applications do not have valid runtime calls; in which these 
+  functions that were once allocated to the runtime are now nullable. 
+  No errors are thrown but may cause errors because the functions returns a 
+  random memory address. The toolkit provides a standard directive that 
+  throws an error during native runtime if the requested function is processed
+  as undefined (ONLY RUNTIME COMPLIANT). This can be achieved by 
+  multiple implemented functions in the toolkit, but the most suitable
+  and compliant will be found "__stl_yttrius_sysu.yxh"'s __y_kick_
+  which can be called with 1 argument or none. This argument of type:
+  "TT_YXX_strate_nameq” which is used as an allocator for a standard 
+  strategy that is suggested to be compiled as a specific paging callback.
+ 
 
 Copyright (C) Jack Meng 2020
 -------------------------------------------
