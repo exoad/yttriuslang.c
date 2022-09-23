@@ -13,6 +13,24 @@ The Yttrius Language entitles full freedom and control
 to the programmer. Without a standard for coding conventions,
 memory management, typing system, and default types. Only
 limited by that of the lexer to identify and transpile fromat.
+The programmer is allowed to modify and redefine the lexer 
+within source code, and call compiler and runtime directives 
+to configure how they act.
+
+Everything below is detailed under the Yttrius subset language
+Y++ which is much more useable.
+
+This language and all of its subsets and adaptations are not
+meant to replace any other languages. Instead, it is best
+to use other language with much more defined guidelines. This
+language and its bundled lexer and compiler provides no safe
+guard on how things are compiled and lexed. The best use case
+would be for an interface with other toolkits and languages.
+The entry complexity for this language is also very high,
+even me, the writer, does not know the full potential to just
+calculute relations between complex numbers without falling
+down a fault. It is complex for high freedom to the user to
+modify the lowest level of software with ease.
 
 [NOTE: Nothing here is finalized nor has anything close to done]
 
