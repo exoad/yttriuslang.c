@@ -2,6 +2,7 @@
   NULL_PTR;
 }
 // redirects this runtime's memory reference
+// a marker is used as a memory bloc pointer and used universally for memory paging and the runtime manager.
 &#this {
   *->this^brown(this, 0 & 0xFF | 0 >> DEFAULT_SYS_ERRN);
 }
