@@ -3,6 +3,9 @@
 This is the official repository for the 
 kernel of YAPISDK. 
 
+This repository features only official footnotes
+for the child language: Y++.
+
 The Yttrius SDK provides the runtime required for
 platform independency along with binary generation.
 This runtime wrapper is distributed under GPL-3.0
