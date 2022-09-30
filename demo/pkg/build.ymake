@@ -1,0 +1,43 @@
+// THIS YMAKE FILE IS STRICTLY FOR THE FOLLOWING STANDARD
+//
+// This ymake file strictly compiles all *.yxx files independently
+// without a unified starting point, to separate native images 
+// next to the original source code
+//
+// The YMAKE language is written in Y++ and is licensed under
+// GPL-3.0
+//
+// The YMAKE Engine is written in Y++ (Standard 21_3) and is licensed
+// under C_LICENSE (no entrypoint exception)
+
+// YMake provides both a high and low level file system with inbuilt 
+// localization to compile languages directly and mash them with
+// Y++ and all Yttrius subsets.
+
+conf [
+    ver: 1
+    standard: 22_2
+    oflags: sync,cd=4M,cbs=4M
+]
+
+defenv [
+    WORKDIR = !y_WIN32 ?? "./" ".\\"
+    CMD = "y++" | $conf(standard) "_y++"
+    SEARCH = "yxx"
+]
+
+([args?=[
+"oflags", 
+"fs", 
+"reader_sync_ir"
+]):
+    task->BUILD_PER_DIR
+    :{
+        FOR 1 to ? :: var: i ->
+            WORKDIR:*file.get_dir((i ? i < @scope_@this_dirlen)) => (file_curr) // file curr is automatically converted to a type of char stringable in ASCII
+            $$$:system_now_beg
+                {CMD} {file_curr}.{SEARCH} -F{$conf(oflags) + $args([])} -OCA -DCA_{$conf(standard)}
+            $$$:system_now_fin
+    }
+
+    echo:"DONE"
