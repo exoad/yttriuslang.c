@@ -1,0 +1,46 @@
+// this importation uses the latest 22 Standard
+// 
+// The 22 Standard includes the following guards:
+// Generic templates
+// Standard Pragma Importation
+// Macro Importation
+// @prep () Pre-processor direct call
+// @hope (:w_int8*) standard random serializable for runtime manager
+// @cxx importation of C++11 snippets from other pre compiled parts
+// #p__ignore__ Ignores all guards (.yxr) placed within the import directory
+//
+// @author : Jack Meng
+// @cite : Me
+
+@imports -> all@22 {
+    // _of refers to a concurrently generated define that is parsed during compilation and not preprocessing
+    standards: "22" -> _of(STL_YXX_VERSION),
+    @ignorable_none : settable??
+}
+
+@macro 
+
+family: me {
+    constructor: [null] {
+
+    }
+
+    [unsafe, dynamic]:
+        forium_  ()!0 of int8_t { // !0 was originall introduced as a way for a programmer to know that a function may or may not return a value
+            for registers -> i:int8_t= 0;(i);(i==?1) {
+                registers ?=> {x} x.__get("__t_def_main_32"::2) {
+                    ?? -> return x
+                }
+            }
+        }
+}
+
+defines {
+    // this section allows for the quick access of macros related to the system
+    // 
+    // this definitions allows the programmer to not have to mess directly with
+    // the system interface register, as the register itself is completely 
+    #[STL_YXX_VERSION <- register[::1][0] ?? register[::(&(int8_t([::int8_t.__size()])))] !! this::forium_]
+    #[CLIENT_NAME] <- register[::1].depth(int8_t(_of(register[::1]))[0])
+
+}

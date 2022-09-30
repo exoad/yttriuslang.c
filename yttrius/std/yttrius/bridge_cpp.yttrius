@@ -1,5 +1,7 @@
 <<< !address_block=SET_USER {[nul_block ? def_block_as -> 0 ]} | ymake_flags -> 0.0 >>>
 
+;; this is a very old version of the YTTRIUS LANGUAGE SET and should not be used
+
 hope:
   yttrius_transpiler => version: '0.0.1'
   yttrius_transpiler => author: 'Yttrium Terminus'

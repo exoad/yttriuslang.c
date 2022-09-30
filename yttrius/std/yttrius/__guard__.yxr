@@ -1,0 +1,17 @@
+// YXR STANDARD GUARD
+@visibility: (total_package)
+@__locale__: ("/yttrius")
+@warn({
+    // search depth of 1, but could be overridden by the compiler using @style.note("@warn")->includable[::n] such that n is signed
+    ??@this_includable(::1) -> {
+        RULE_SET$A1 // disables all compiler forced inlining
+        RULE_SET$E1 // disables all compiler forced inits
+    }
+
+    _mentionable():??"$$this.$subpkg"
+
+    ??@unk_includes(@this) -> {
+        _of(RULESET_DEPRECATION("*.yttrius") := "Yttrius STL direct interfaces are currently deprecated. Compiling code with deprecation will be replaced with stub.%nUse '"(@this_mentionable)"' to force the compiler to use an older language set."):??
+    }
+})
+
