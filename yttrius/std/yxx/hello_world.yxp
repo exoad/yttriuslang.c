@@ -1,4 +1,0 @@
-imports -> ALL
-
-main :: IO
-  -> "HELLO WORLD"
