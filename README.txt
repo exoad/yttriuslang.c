@@ -22,7 +22,7 @@ to configure how they act.
 
 Everything below is detailed under the Yttrius subset language
 Y++ which is much more useable under a multiparadigm, high
-noise orientation. Featuring OOP & AOP
+sugar orientation. Featuring OOP & AOP
 
 This language and all of its subsets and adaptations are not
 meant to replace any other languages. Instead, it is best
