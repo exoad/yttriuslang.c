@@ -8,9 +8,9 @@ for the child language: Y++.
 
 The Yttrius SDK provides the runtime required for
 platform independency along with binary generation.
-This runtime wrapper is distributed under GPL-3.0
+This runtime wrapper is distributed under C-License
 and you can modify and redistribute under the terms
-of the GPL-3.0 license agreement.
+of the C-License license agreement.
 
 The Yttrius Language entitles full freedom and control
 to the programmer. Without a standard for coding conventions,
