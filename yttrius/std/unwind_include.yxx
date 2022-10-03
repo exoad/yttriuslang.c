@@ -17,7 +17,7 @@ includes prep -> Y22@COMPILER_JOBS:{
         jobs(x):
             load: [ "@this({", x, "})" ],
             image: [ "@this" ],
-            comments: [ "@this({'Generated_Standard':%n", (x[0] << 16), (x[1] << 8), "_", ((x[2] - x[0]) & 0xFF), "})"],
+            comments: [ "@this({'Generated_Standard':%n", (x[0] ?<< 16), (x[1] ?<< 8), "_", ((x[2] - x[0]) & 0xFF), "})"],
     }
 }
 includes filesys -> Y22@SYSTEM:"files"

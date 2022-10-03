@@ -1,3 +1,11 @@
+@this.attributes({
+  hope {
+    jobs(x) {
+      warn: "DEPRECATED OREO, Oreo attributions will be deprecated. To disable this warning message use: -I:"+ (@this.name_source) + "";
+    }
+  }
+});
+
 use standard -> GNU_C {
   [
     (#before)

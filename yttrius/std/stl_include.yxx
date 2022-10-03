@@ -28,7 +28,7 @@ family: me {
     [unsafe, dynamic]:
         forium_  ()!0 of int8_t { // !0 was originall introduced as a way for a programmer to know that a function may or may not return a value
             for registers -> i:int8_t= 0;(i);(i==?1) {
-                registers ?=> {x} x.__get("__t_def_main_32"::2) {
+                registers =>? {x} x.__get("__t_def_main_32"::2) {
                     ?? -> return x
                 }
             }
