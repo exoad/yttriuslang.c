@@ -1,0 +1,51 @@
+// the Y++22 standard for a single pkg include zip
+// this library parses the included pkgs from a standard
+// ARCHIVE File signed with Y++Signature: 32bit-key
+// 
+// No retrace
+
+// @author: Jack Meng
+// @cite : Me
+
+#if __Y_22_2__
+includes std -> STDIO@IO
+#else
+includes YXX_STDIO -> STDIO@STREAMS
+#endif
+includes prep -> Y22@COMPILER_JOBS:{
+    hope {
+        jobs(x):
+            load: [ "@this({", x, "})" ],
+            image: [ "@this" ],
+            comments: [ "@this({'Generated_Standard':%n", (x[0] << 16), (x[1] << 8), "_", ((x[2] - x[0]) & 0xFF), "})"],
+    }
+}
+includes filesys -> Y22@SYSTEM:"files"
+
+nsp:@this("unwind") visible {
+    static {
+        /**
+         * Parses the individual files and adds a FILE_ONLY compiler
+         * directive to load all of these files right here. (Injected into
+         * the final compiled code, and not dynamically or staticalled linked)
+         * @arg s -> Of types: [s_string, charable]
+         *
+         */
+        void unl dyn archive_File(??(s:s_string|s:charable)) {
+            var t:filesys::f_lock = filesys::__f_getc(s);
+            t -> (x<std::promise|std::async_lock>?? <= t) x::retrieve(x.codec()).load();
+            var reader:filesys::__r_getc(t);
+            var source:atomic_byte_t = reader.fetch(filesys.__async__t);
+            prep.get_jobs-> (x??) x.set__load(__stl__safe_cast(source, std.uint8_t));
+
+
+            @async:@this -> {
+                @this.unload(prep).for [i...2] (x <= i) -> {
+                    // IGNORE
+                }
+
+                @this.unload(@this)
+            }
+        }
+    }
+}
