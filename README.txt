@@ -1,4 +1,4 @@
------ Yttrius WebAPI Interactions SDK -----
+----- Yttrius Language Toolkit SDK -----
 
 This is the official repository for the 
 kernel of YAPISDK. 
