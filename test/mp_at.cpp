@@ -1,12 +1,3 @@
-
-//  Copyright 2015 Peter Dimov.
-//
-// Distributed under the Boost Software License, Version 1.0.
-//
-// See accompanying file LICENSE_1_0.txt or copy at
-// http://www.boost.org/LICENSE_1_0.txt
-
-
 #include <boost/mp11/algorithm.hpp>
 #include <boost/mp11/list.hpp>
 #include <boost/mp11/integral.hpp>
@@ -58,6 +49,14 @@ int main()
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at<L1, mp_size_t<2>>, X3>));
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at<L1, mp_size_t<3>>, X4>));
         BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at<L1, mp_size_t<4>>, X5>));
+    }
+
+    { /** test default L1 parameters for the default tokenizers & sanitizers */
+        using L1 = std::tuple<X1, X2, X3>;
+
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at_c<L1, 0>, X1>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at_c<L1, 1>, X2>));
+        BOOST_TEST_TRAIT_TRUE((std::is_same<mp_at_c<L1, 2>, X3>));
     }
 
     {
