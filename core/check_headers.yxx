@@ -29,7 +29,7 @@ noop dyn #funcVoid default_args():
       
 main():
   args -> {
-    default[i] |= delete[] as NULL_PTR;
+    default[i] |= delete[] as NULL_INT;
   }
   
   var:i(int32) -> for ... arr {
