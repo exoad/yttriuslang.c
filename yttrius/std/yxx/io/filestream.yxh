@@ -2,6 +2,8 @@
 includes std -> STD@IO
 includes yttriustd -> YTT@STD.IO
 
+@Pilewarn(#deprecated)
+
 @def(unknown_level)
 
 dyn const general_out stream -> ..;
