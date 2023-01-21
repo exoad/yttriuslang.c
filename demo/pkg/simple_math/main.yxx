@@ -1,0 +1,11 @@
+import "stream" : STANDARD_YXH
+
+main():
+  i32 a = 0
+  i32 b = 0
+  a += b
+  b *= a
+  io::puts->a
+  io::puts->b
+  
+  
