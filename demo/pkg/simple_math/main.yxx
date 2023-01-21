@@ -5,6 +5,12 @@ main():
   i32 b = 0
   a += b
   b *= a
+  for(i32 i = 0; i < 50; i++)
+  {
+    a **= 3 // exponents
+    
+    
+  } 
   io::puts->a
   io::puts->b
   
