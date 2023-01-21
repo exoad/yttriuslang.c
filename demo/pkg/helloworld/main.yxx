@@ -1,8 +1,5 @@
-import "stream":STANDARD_YXH -> NO:__PREP__
-
-@this_standard:YXX_22_2 // standard variable to keep up to date, and does not affect compilation in any way
+import "stream":STANDARD_YXH
 
 main():
-    set_io // this is done automatically, but best to invoke it manually
-    io::puts "hello world"
+    io::puts->"hello world"
 
