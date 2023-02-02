@@ -3,6 +3,8 @@
 This is the official repository for the 
 kernel of YAPISDK. 
 
+A compiler compiler.
+
 This repository features only official footnotes
 for the child language: Y++.
 
@@ -54,12 +56,27 @@ minimal support for OOP, while tying in a strong
 focus for overall programmer freedom and complete
 lack of strict syntaxing. In many ways it adopts
 the many aspects of C, including pointes, complete memory access,
-basic syntax, typing system, and declarative syntax.
+basic syntax, typing system, and declarative syntax. However,
+the benfit of Y++ is that is an option to bundle the program
+with a "caregiver" runtime which takes care of the source 
+program while it runs. For example, optimizing code (JIT) and
+more advanced optimization of syscalls. There is no garbage collection,
+but the programmer may use the inbuilt auto-page feature of a caregiving
+runtime to keep track of avaliable memory and dealloc memory ondemand.
 
 The Yttrius Language set by itself could be used
 as its own language, but the main derivative of it
 is Y++. The next being Y++-Exon, mainly used for interfacing
-between WASM and ActionScript.
+between WASM and ActionScript. Exon is an interpreted language
+used primarily in Y++ for JIT compilation. Furthermore, Exon
+can directly executed JIT by the Y++ parser by calling the directive
+"r@:exon(__22__, codehere)" where "codehere" is treated as a 
+separate area for a different parser to be called for.
+
+Exon is directly executed via a virtual machine, featuring garbage
+collection and inbuilt hardware acceleration for graphical 
+operations. This virtual machine is currently experimental and will
+soon be released for evaluation.
 
 StdLangSet is a standard node based language; however,
 by default does not feature a GUI based node interface.
@@ -165,6 +182,37 @@ Execution & Compilation Arch.:
   "TT_YXX_strate_nameq” which is used as an allocator for a standard 
   strategy that is suggested to be compiled as a specific paging callback.
  
+Runtime Environments (Y++):
+If the programmer chooses to use a runtime of any kind when bundling their
+program, they may choose to compile with a runtime, which only come in 64
+bit flavors.
+
+"Caregiver"
+The caregiver runtime env. provides memory paging management and JIT
+optimizations for linking with any libraries. This is the most simple
+and lightweight runtime that can be linked with a Yttrius program.
+
+"GC Runtime"
+The GC runtime provides a very basic gabrage collection system and can
+be inteprolated with other runtimes. It handles a generational heap of
+all avaliable information, where it follows similar guidelines to a JVM
+young and old pruning GC. However, due to garbage collection, there is
+a Stop the world event ans extra CPU is used when there is a GC event.
+This runtime is experimental and should be used with care. It is not
+recommended to use this runtime as Y++ already features highly intuitive
+memory allocation along with compiler optimized dealloc and free calls.
+
+"Virtualized"
+Virtualized runtime provides the programmer with a AOT runtime that can
+be able to simulate the behavior of different machine information. For 
+example it can simulate different register sizes and bit endianess. 
+However due to this high avaliability for customization, many system level
+directives are disabled when the compiler is compiled with the top level
+argument "-virtual" which forces the compiler to adapt the code for the 
+virtualized environment. The compiler thus outputs a special file that
+can be specifically read by the desired virtualization runtime. This file format
+may vary between vendor, but the code is treated as "bytecode" and features
+minimal code optimizations.
 
 Copyright (C) Jack Meng 2023
 -------------------------------------------
