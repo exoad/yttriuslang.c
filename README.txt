@@ -185,7 +185,13 @@ Execution & Compilation Arch.:
 Runtime Environments (Y++):
 If the programmer chooses to use a runtime of any kind when bundling their
 program, they may choose to compile with a runtime, which only come in 64
-bit flavors.
+bit flavors. Every other environment besides the Virtualized Environment
+does not compile to an intermediate paradigm and then executed from there. 
+The program all are compiled using the "-reenv" tag in order to expose
+cerain functionalities to the runtime to interact between program and runtime
+at a native execution speed. Additionally, if the program is run without an environment,
+there are severe risks like memory leaks and other memory insecurities that might
+take place due to the program itself being very very exposed.
 
 "Caregiver"
 The caregiver runtime env. provides memory paging management and JIT
