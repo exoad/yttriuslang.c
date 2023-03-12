@@ -5,26 +5,6 @@
 #include "cache.h"
 
 /**
- * Allocate a cache entry
- */
-struct cache_entry *alloc_entry(char *path, char *content_type, void *content, int content_length)
-{
-    ///////////////////
-    // IMPLEMENT ME! //
-    ///////////////////
-}
-
-/**
- * Deallocate a cache entry
- */
-void free_entry(struct cache_entry *entry)
-{
-    ///////////////////
-    // IMPLEMENT ME! //
-    ///////////////////
-}
-
-/**
  * Insert a cache entry at the head of the linked list
  */
 void dllist_insert_head(struct cache *cache, struct cache_entry *ce)
@@ -83,19 +63,6 @@ struct cache_entry *dllist_remove_tail(struct cache *cache)
     return oldtail;
 }
 
-/**
- * Create a new cache
- * 
- * max_size: maximum number of entries in the cache
- * hashsize: hashtable size (0 for default)
- */
-struct cache *cache_create(int max_size, int hashsize)
-{
-    ///////////////////
-    // IMPLEMENT ME! //
-    ///////////////////
-}
-
 void cache_free(struct cache *cache)
 {
     struct cache_entry *cur_entry = cache->head;
@@ -111,28 +78,4 @@ void cache_free(struct cache *cache)
     }
 
     free(cache);
-}
-
-/**
- * Store an entry in the cache
- *
- * This will also remove the least-recently-used items as necessary.
- * 
- * NOTE: doesn't check for duplicate cache entries
- */
-void cache_put(struct cache *cache, char *path, char *content_type, void *content, int content_length)
-{
-    ///////////////////
-    // IMPLEMENT ME! //
-    ///////////////////
-}
-
-/**
- * Retrieve an entry from the cache
- */
-struct cache_entry *cache_get(struct cache *cache, char *path)
-{
-    ///////////////////
-    // IMPLEMENT ME! //
-    ///////////////////
 }
