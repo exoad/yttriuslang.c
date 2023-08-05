@@ -3,6 +3,76 @@
 This is the official repository for the 
 kernel of YAPISDK. 
 
+Descriiption:
+
+The Yttrius language (Y++) is a procedural programming 
+language that emphasizes programmer autonomy and 
+relaxed syntaxing while offering limited support for 
+object-oriented programming (OOP) concepts. It heavily 
+borrows from C, incorporating features like pointers, 
+direct memory access, a concise syntax, a robust type 
+system, and declarative constructs.
+
+One of the prominent features of Y++ is its optional 
+"caregiver" runtime, which provides runtime optimizations 
+such as Just-In-Time (JIT) compilation and advanced 
+syscall optimization. JIT compilation dynamically 
+translates the source code into native machine code 
+during execution, improving performance by capitalizing 
+on runtime information. The caregiver runtime's advanced
+syscall optimization streamlines the interactions between
+the program and the operating system, reducing overhead 
+and enhancing efficiency.
+
+Notably, Y++ lacks automatic garbage collection. 
+Instead, it offers an inbuilt auto-page mechanism 
+within the caregiver runtime. This mechanism efficiently 
+manages memory by tracking available memory and allowing 
+the programmer to explicitly deallocate memory on demand, 
+providing fine-grained control over memory usage.
+
+Y++ serves as the basis for Y++-Exon, a derivative language 
+specialized for interfacing between WebAssembly (WASM) 
+and ActionScript. Y++-Exon combines the advantages of both 
+Y++ and Exon, provide an efficient platform for bridging 
+the gap between WASM and ActionScript environments.
+
+Exon, an essential component of Y++-Exon, is an interpreted 
+language with JIT compilation support. It can be directly
+executed using a virtual machine (VM) integrated into 
+Y++. The directive "r@:exon(22, codehere)" triggers a 
+separate parser to process Exon code, enabling seamless 
+integration between the two languages.
+
+The Exon VM also features garbage collection capabilities, 
+efficiently managing memory resources and reducing the 
+burden on developers to handle memory deallocation 
+manually. Additionally, the VM includes inbuilt 
+hardware acceleration for graphical operations, 
+enabling faster rendering and computation of graphical elements.
+
+Despite its promising features, the Exon VM is currently 
+in an experimental phase, and its upcoming release is 
+intended for thorough evaluation and validation. This 
+evaluation will provide insights into its real-world 
+performance and identify areas for further optimization 
+and refinement.
+
+In contrast, StdLangSet adopts a standard node-based 
+approach but lacks a graphical user interface (GUI) for 
+node interactions. Instead, developers must rely on 
+textual descriptions and semantic specifications to 
+define nodes, potentially resulting in verbose node 
+definitions with numerous attributes and children. 
+This approach can lead to code inefficiencies and 
+hinder the development process.
+
+To address these issues, languages like Y++ have been 
+developed to serve as language sets for converting code
+from StdLangSet to a more low-level representation. 
+This conversion streamlines the coding process, resulting 
+in more concise and efficient programs.
+
 A compiler compiler.
 
 This repository features only official footnotes
