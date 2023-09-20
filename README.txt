@@ -3,7 +3,7 @@
 This is the official repository for the 
 kernel of YAPISDK. 
 
-Descriiption:
+Description:
 
 The Yttrius language (Y++) is a procedural programming 
 language that emphasizes programmer autonomy and 
